@@ -216,9 +216,11 @@
     .apropos-image-wrap:hover::before { transform: translate(-4px, -4px); }
     .apropos-image-wrap img { position: relative; z-index: 1; overflow: hidden; }
     .section-tag {
-      display: inline-block; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.2rem;
     }
+    .brand-mark { height: 18px; width: auto; opacity: 0.75; mix-blend-mode: multiply; }
     .section-title {
       font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 2.8rem);
       font-weight: 300; line-height: 1.2; color: var(--charcoal); margin-bottom: 1.8rem;
@@ -615,7 +617,7 @@
       </div>
       <div class="apropos-text reveal-right">
         <span class="section-line"></span>
-        <span class="section-tag">À propos</span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />À propos</span>
         <h2 class="section-title">Caroline Lubac,<br><em>Avocat engagée</em></h2>
         <p>Diplômée en droit, je suis avocate inscrite au Barreau de Paris depuis plus de 10 ans. J'interviens dans toute la France — en présentiel à Paris et en visioconférence pour accompagner mes clients où qu'ils se trouvent sur le territoire. Mon parcours m'a amenée à développer une expertise pluridisciplinaire, au service des particuliers comme des entreprises.</p>
         <p>Je crois profondément que le droit est avant tout un outil au service des personnes. C'est pourquoi j'accorde une importance particulière à l'écoute, à la pédagogie et à la transparence dans ma relation avec chaque client.</p>
@@ -632,7 +634,7 @@
   <section id="expertises">
     <div class="expertises-header reveal">
       <span class="section-line" style="margin:0 auto 1.5rem; transform-origin:center;"></span>
-      <span class="section-tag">Domaines d'intervention</span>
+      <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Domaines d'intervention</span>
       <h2 class="section-title">Mes <em>expertises</em></h2>
     </div>
     <div class="expertises-grid">
@@ -696,7 +698,7 @@
     <div class="honoraires-inner">
       <div class="honoraires-text reveal-left">
         <span class="section-line"></span>
-        <span class="section-tag">Transparence & clarté</span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Transparence & clarté</span>
         <h2 class="section-title">Mes <em>honoraires</em></h2>
         <p>La question des honoraires est abordée dès le premier rendez-vous, en toute transparence. Je vous remets une convention d'honoraires claire avant tout engagement, afin que vous puissiez décider en connaissance de cause.</p>
         <p>Les honoraires varient selon la nature et la complexité du dossier. Plusieurs modes de facturation sont possibles :</p>
@@ -730,7 +732,7 @@
     <div class="faq-inner">
       <div class="faq-header reveal">
         <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
-        <span class="section-tag">Questions fréquentes</span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Questions fréquentes</span>
         <h2 class="section-title">Tout ce que vous devez <em>savoir</em></h2>
       </div>
       <div class="faq-list reveal">
@@ -823,7 +825,7 @@
     <div class="contact-inner">
       <div class="contact-info reveal-left">
         <span class="section-line"></span>
-        <span class="section-tag">Prenons contact</span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Prenons contact</span>
         <h2 class="section-title">Parlons de <em>votre situation</em></h2>
         <p>Le premier rendez-vous est offert. C'est l'occasion d'exposer votre situation, d'obtenir une première analyse et de décider ensemble de la marche à suivre, sans engagement.</p>
         <div class="contact-details">
