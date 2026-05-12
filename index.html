@@ -30,24 +30,60 @@
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; cursor: none; }
 
-    .cursor { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; mix-blend-mode: multiply; }
-    .cursor-dot { width: 8px; height: 8px; background: var(--terracotta); border-radius: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease; }
-    .cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; width: 40px; height: 40px; border: 1.5px solid var(--terracotta); border-radius: 50%; transform: translate(-50%, -50%); transition: transform 0.12s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease, border-color 0.3s ease; opacity: 0.6; }
-    .cursor-ring.hovering { width: 64px; height: 64px; opacity: 1; }
+    /* ── CUSTOM CURSOR ── */
+    .cursor {
+      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+      mix-blend-mode: multiply;
+    }
+    .cursor-dot {
+      width: 8px; height: 8px; background: var(--terracotta); border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    }
+    .cursor-ring {
+      position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998;
+      width: 40px; height: 40px;
+      border: 1.5px solid var(--terracotta);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.12s ease, width 0.3s ease, height 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+      opacity: 0.6;
+    }
+    .cursor-ring.hovering { width: 64px; height: 64px; opacity: 1; border-color: var(--terracotta); }
     .cursor-dot.hovering { width: 4px; height: 4px; opacity: 0.6; }
     @media (max-width: 768px) { .cursor, .cursor-ring { display: none; } body, a { cursor: auto; } }
 
-    #navbar { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(250,247,244,0.85); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(232,224,216,0.5); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; z-index: 1000; transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s ease; }
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h);
+      background: rgba(250,247,244,0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(232,224,216,0.5);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; z-index: 1000;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease, background 0.3s ease;
+    }
     #navbar.hidden { transform: translateY(-100%); }
     #navbar.scrolled { box-shadow: 0 2px 40px rgba(0,0,0,0.06); }
     .nav-logo img { height: 38px; width: auto; transition: opacity 0.2s; }
     .nav-logo:hover img { opacity: 0.7; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); transition: color 0.2s; position: relative; }
-    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--terracotta); transition: width 0.3s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .nav-links a {
+      font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--charcoal); transition: color 0.2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+      background: var(--terracotta); transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
     .nav-links a:hover { color: var(--terracotta); }
     .nav-links a:hover::after { width: 100%; }
-    .nav-cta { background: var(--terracotta); color: var(--white) !important; padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.75rem !important; letter-spacing: 0.12em; transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important; }
+    .nav-cta {
+      background: var(--terracotta); color: var(--white) !important;
+      padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.75rem !important;
+      letter-spacing: 0.12em; transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+    }
     .nav-cta::after { display: none !important; }
     .nav-cta:hover { background: var(--terracotta-light) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,122,98,0.35) !important; }
     .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: none; background: none; border: none; padding: 4px; }
@@ -61,20 +97,58 @@
       .nav-toggle { display: flex; }
     }
 
-    #accueil { min-height: 100vh; padding-top: var(--nav-h); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
-    .hero-text { display: flex; flex-direction: column; justify-content: center; padding: 5% 6% 5% 8%; background: var(--cream); }
-    .hero-overline { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.5rem; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s forwards; }
-    .hero-title { font-family: var(--font-serif); font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 300; line-height: 1.15; color: var(--charcoal); margin-bottom: 1.8rem; overflow: hidden; }
-    .hero-title .word { display: inline-block; opacity: 0; transform: translateY(60px); animation: wordUp 0.7s cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
+    /* ── HERO ── */
+    #accueil {
+      min-height: 100vh; padding-top: var(--nav-h);
+      display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+    }
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5% 6% 5% 8%; background: var(--cream);
+    }
+    .hero-overline {
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 1.5rem;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    }
+    .hero-title {
+      font-family: var(--font-serif); font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-weight: 300; line-height: 1.15; color: var(--charcoal); margin-bottom: 1.8rem;
+      overflow: hidden;
+    }
+    .hero-title .word {
+      display: inline-block;
+      opacity: 0; transform: translateY(60px);
+      animation: wordUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
     .hero-title em { font-style: italic; color: var(--terracotta); }
-    .hero-desc { font-size: 1rem; font-weight: 300; color: var(--mid-gray); max-width: 440px; margin-bottom: 2.8rem; line-height: 1.8; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.9s forwards; }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 1.1s forwards; }
+    .hero-desc {
+      font-size: 1rem; font-weight: 300; color: var(--mid-gray);
+      max-width: 440px; margin-bottom: 2.8rem; line-height: 1.8;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.1s forwards;
+    }
     .hero-image { position: relative; overflow: hidden; }
-    .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transform: scale(1.1); animation: heroImageReveal 1.4s cubic-bezier(0.25,0.46,0.45,0.94) 0.2s forwards; will-change: transform; }
-    .hero-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--cream) 0%, transparent 18%); }
+    .hero-image img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      transform: scale(1.1);
+      animation: heroImageReveal 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+      will-change: transform;
+    }
+    .hero-image::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--cream) 0%, transparent 18%);
+    }
     @keyframes heroImageReveal { to { transform: scale(1); } }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     @keyframes wordUp { to { opacity: 1; transform: translateY(0); } }
+
     @media (max-width: 768px) {
       #accueil { grid-template-columns: 1fr; grid-template-rows: 60vw auto; }
       .hero-text { padding: 2.5rem 6% 3rem; order: 1; }
@@ -82,49 +156,121 @@
       .hero-image::after { background: linear-gradient(to top, var(--cream) 0%, transparent 25%); }
     }
 
-    .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(50px);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-left { opacity: 0; transform: translateX(-60px); transition: opacity 0.9s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .reveal-left {
+      opacity: 0; transform: translateX(-60px);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
     .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right { opacity: 0; transform: translateX(60px); transition: opacity 0.9s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .reveal-right {
+      opacity: 0; transform: translateX(60px);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
     .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-scale {
+      opacity: 0; transform: scale(0.92);
+      transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
     .delay-1 { transition-delay: 0.1s !important; }
     .delay-2 { transition-delay: 0.2s !important; }
     .delay-3 { transition-delay: 0.3s !important; }
     .delay-4 { transition-delay: 0.4s !important; }
+    .delay-5 { transition-delay: 0.5s !important; }
 
-    .btn-primary { display: inline-block; background: var(--terracotta); color: var(--white); padding: 0.85rem 2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; position: relative; overflow: hidden; transition: background 0.3s, transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s; }
-    .btn-primary::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; }
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-block; background: var(--terracotta); color: var(--white);
+      padding: 0.85rem 2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 2px; position: relative; overflow: hidden;
+      transition: background 0.3s, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
+    .btn-primary::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.3s;
+    }
     .btn-primary:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,98,0.4); }
     .btn-primary:hover::before { opacity: 1; }
-    .btn-outline { display: inline-block; border: 1px solid var(--terracotta); color: var(--terracotta); padding: 0.85rem 2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; position: relative; overflow: hidden; transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); }
-    .btn-outline::before { content: ''; position: absolute; inset: 0; background: var(--terracotta); transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94); z-index: 0; }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-outline {
+      display: inline-block; border: 1px solid var(--terracotta); color: var(--terracotta);
+      padding: 0.85rem 2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 2px; position: relative; overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .btn-outline::before {
+      content: ''; position: absolute; inset: 0; background: var(--terracotta);
+      transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      z-index: 0;
+    }
     .btn-outline span { position: relative; z-index: 1; }
     .btn-outline:hover { color: var(--white); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,98,0.25); }
     .btn-outline:hover::before { transform: translateX(0); }
 
+    /* ── À PROPOS ── */
     #apropos { background: var(--white); padding: 8rem 8%; }
     .apropos-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
     .apropos-image-wrap { position: relative; }
-    .apropos-image-wrap img { width: 100%; height: 540px; object-fit: cover; object-position: top; border-radius: 2px; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .apropos-image-wrap img {
+      width: 100%; height: 540px; object-fit: cover; object-position: top; border-radius: 2px;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
     .apropos-image-wrap:hover img { transform: scale(1.02); }
-    .apropos-image-wrap::before { content: ''; position: absolute; top: -16px; left: -16px; right: 16px; bottom: 16px; border: 1px solid var(--beige); border-radius: 2px; z-index: 0; transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .apropos-image-wrap::before {
+      content: ''; position: absolute; top: -16px; left: -16px; right: 16px; bottom: 16px;
+      border: 1px solid var(--beige); border-radius: 2px; z-index: 0;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
     .apropos-image-wrap:hover::before { transform: translate(-4px, -4px); }
-    .apropos-image-wrap img { position: relative; z-index: 1; }
-    .section-tag { display: inline-block; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.2rem; }
-    .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; line-height: 1.2; color: var(--charcoal); margin-bottom: 1.8rem; }
+    .apropos-image-wrap img { position: relative; z-index: 1; overflow: hidden; }
+    .section-tag {
+      display: inline-block; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.2rem;
+    }
+    .section-title {
+      font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300; line-height: 1.2; color: var(--charcoal); margin-bottom: 1.8rem;
+    }
     .section-title em { font-style: italic; color: var(--terracotta); }
     .apropos-text p { font-size: 0.97rem; color: var(--mid-gray); line-height: 1.85; margin-bottom: 1.2rem; }
     .apropos-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
-    .stat-number { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 300; color: var(--terracotta); line-height: 1; }
+    .stat-number {
+      font-family: var(--font-serif); font-size: 2.4rem; font-weight: 300;
+      color: var(--terracotta); line-height: 1;
+    }
     .stat-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-top: 0.3rem; }
-    @media (max-width: 900px) { #apropos { padding: 5rem 6%; } .apropos-inner { grid-template-columns: 1fr; gap: 3rem; } .apropos-image-wrap img { height: 380px; } }
+    @media (max-width: 900px) {
+      #apropos { padding: 5rem 6%; }
+      .apropos-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .apropos-image-wrap img { height: 380px; }
+    }
 
+    /* ── EXPERTISES ── */
     #expertises { background: var(--beige); padding: 8rem 8%; }
     .expertises-header { max-width: 1100px; margin: 0 auto 4rem; text-align: center; }
     .expertises-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .expertise-card { background: var(--white); padding: 2.8rem 2.2rem; border-radius: 2px; transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s cubic-bezier(0.25,0.46,0.45,0.94); position: relative; overflow: hidden; }
-    .expertise-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .expertise-card {
+      background: var(--white); padding: 2.8rem 2.2rem; border-radius: 2px;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative; overflow: hidden;
+    }
+    .expertise-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
     .expertise-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.1); }
     .expertise-card:hover::before { transform: scaleX(1); }
     .expertise-icon { width: 48px; height: 48px; margin-bottom: 1.6rem; color: var(--terracotta); transition: transform 0.3s; }
@@ -132,38 +278,70 @@
     .expertise-card h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; line-height: 1.2; }
     .expertise-card p { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.8; margin-bottom: 1.6rem; }
     .expertise-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-    .expertise-list li { font-size: 0.85rem; color: var(--mid-gray); padding-left: 1rem; position: relative; transition: padding-left 0.3s; }
+    .expertise-list li { font-size: 0.85rem; color: var(--mid-gray); padding-left: 1rem; position: relative; transition: color 0.2s, padding-left 0.3s; }
     .expertise-list li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); font-size: 0.75rem; transition: left 0.3s; }
     .expertise-card:hover .expertise-list li { padding-left: 1.4rem; }
     .expertise-card:hover .expertise-list li::before { left: 0.2rem; }
     @media (max-width: 900px) { #expertises { padding: 5rem 6%; } .expertises-grid { grid-template-columns: 1fr; } }
     @media (min-width: 901px) and (max-width: 1100px) { .expertises-grid { grid-template-columns: repeat(2, 1fr); } }
 
+    /* ── HONORAIRES ── */
     #honoraires { background: var(--cream); padding: 8rem 8%; }
     .honoraires-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
     .honoraires-text p { font-size: 0.97rem; color: var(--mid-gray); line-height: 1.85; margin-bottom: 1.2rem; }
     .honoraires-modes { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
-    .mode-item { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.4rem 1.6rem; background: var(--white); border-left: 3px solid var(--terracotta); border-radius: 0 2px 2px 0; transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s; }
+    .mode-item {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.4rem 1.6rem; background: var(--white);
+      border-left: 3px solid var(--terracotta); border-radius: 0 2px 2px 0;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
     .mode-item:hover { transform: translateX(6px); box-shadow: 4px 8px 24px rgba(0,0,0,0.07); }
     .mode-icon { flex-shrink: 0; width: 36px; height: 36px; color: var(--terracotta); margin-top: 2px; transition: transform 0.3s; }
     .mode-item:hover .mode-icon { transform: rotate(10deg) scale(1.1); }
     .mode-content h4 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.3rem; }
     .mode-content p { font-size: 0.87rem; color: var(--mid-gray); line-height: 1.6; margin: 0; }
-    .honoraires-aide { background: var(--beige); border-radius: 2px; padding: 2rem; margin-top: 2rem; transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s; }
+    .honoraires-aide {
+      background: var(--beige); border-radius: 2px; padding: 2rem; margin-top: 2rem;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
     .honoraires-aide:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
     .honoraires-aide h4 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.6rem; }
     .honoraires-aide p { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.7; }
     .honoraires-photo { position: relative; overflow: hidden; border-radius: 2px; }
-    .honoraires-photo img { width: 100%; height: 520px; object-fit: cover; object-position: center top; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .honoraires-photo img {
+      width: 100%; height: 520px; object-fit: cover; object-position: center top;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
     .honoraires-photo:hover img { transform: scale(1.02); }
-    .honoraires-photo-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--terracotta); color: var(--white); padding: 1.6rem 2rem; border-radius: 2px; text-align: center; transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s; }
+    .honoraires-photo-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--terracotta); color: var(--white); padding: 1.6rem 2rem;
+      border-radius: 2px; text-align: center;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
     .honoraires-photo:hover .honoraires-photo-badge { transform: translate(-4px, -4px); box-shadow: 8px 8px 24px rgba(201,122,98,0.35); }
     .honoraires-photo-badge strong { display: block; font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; line-height: 1; }
     .honoraires-photo-badge span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
-    @media (max-width: 900px) { #honoraires { padding: 5rem 6%; } .honoraires-inner { grid-template-columns: 1fr; gap: 3rem; } .honoraires-photo { order: -1; } .honoraires-photo img { height: 320px; } .honoraires-photo-badge { bottom: 1rem; right: 1rem; } }
+    @media (max-width: 900px) {
+      #honoraires { padding: 5rem 6%; }
+      .honoraires-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .honoraires-photo { order: -1; }
+      .honoraires-photo img { height: 320px; }
+      .honoraires-photo-badge { bottom: 1rem; right: 1rem; }
+    }
 
-    #contact { background: var(--charcoal); padding: 8rem 8%; color: var(--white); position: relative; overflow: hidden; }
-    #contact::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,122,98,0.08) 0%, transparent 70%); pointer-events: none; }
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--charcoal); padding: 8rem 8%; color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    #contact::before {
+      content: ''; position: absolute; top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,122,98,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
     .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; position: relative; }
     .contact-info .section-tag { color: var(--terracotta); }
     .contact-info .section-title { color: var(--white); }
@@ -182,37 +360,44 @@
     .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
     .form-field label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); transition: color 0.2s; }
     .form-field:focus-within label { color: var(--terracotta); }
-    .form-field input, .form-field select, .form-field textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; color: var(--white); font-family: var(--font-sans); font-size: 0.95rem; padding: 0.85rem 1rem; outline: none; width: 100%; transition: border-color 0.3s, background 0.3s, box-shadow 0.3s; }
+    .form-field input, .form-field select, .form-field textarea {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 2px; color: var(--white); font-family: var(--font-sans); font-size: 0.95rem;
+      padding: 0.85rem 1rem; outline: none; width: 100%;
+      transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+    }
     .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.25); }
-    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--terracotta); background: rgba(255,255,255,0.08); box-shadow: 0 0 0 3px rgba(201,122,98,0.15); }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      border-color: var(--terracotta); background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 3px rgba(201,122,98,0.15);
+    }
     .form-field select option { background: var(--charcoal); }
     .form-field textarea { resize: vertical; min-height: 120px; }
     .form-submit { margin-top: 0.5rem; }
-    .form-submit button { width: 100%; background: var(--terracotta); color: var(--white); border: none; padding: 1rem 2rem; font-family: var(--font-sans); font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 2px; cursor: none; position: relative; overflow: hidden; transition: background 0.3s, transform 0.3s, box-shadow 0.3s; }
+    .form-submit button {
+      width: 100%; background: var(--terracotta); color: var(--white); border: none;
+      padding: 1rem 2rem; font-family: var(--font-sans); font-size: 0.78rem;
+      letter-spacing: 0.15em; text-transform: uppercase; border-radius: 2px;
+      cursor: none; position: relative; overflow: hidden;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .form-submit button::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.3s;
+    }
     .form-submit button:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,98,0.4); }
+    .form-submit button:hover::after { opacity: 1; }
     .form-notice { font-size: 0.78rem; color: rgba(255,255,255,0.3); line-height: 1.5; margin-top: 0.5rem; }
     @media (max-width: 900px) { #contact { padding: 5rem 6%; } .contact-inner { grid-template-columns: 1fr; gap: 3.5rem; } .form-row { grid-template-columns: 1fr; } }
 
-    /* ── FAQ ── */
-    #faq { background: var(--white); padding: 8rem 8%; }
-    .faq-inner { max-width: 860px; margin: 0 auto; }
-    .faq-header { text-align: center; margin-bottom: 4rem; }
-    .faq-item { border-bottom: 1px solid var(--light-gray); overflow: hidden; }
-    .faq-item:first-child { border-top: 1px solid var(--light-gray); }
-    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.6rem 0; background: none; border: none; cursor: none; text-align: left; font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--charcoal); line-height: 1.3; transition: color 0.2s; }
-    .faq-question:hover { color: var(--terracotta); }
-    .faq-icon { flex-shrink: 0; width: 24px; height: 24px; border: 1px solid var(--light-gray); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s, border-color 0.3s, transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
-    .faq-icon svg { width: 12px; height: 12px; color: var(--mid-gray); transition: color 0.3s; }
-    .faq-item.open .faq-question { color: var(--terracotta); }
-    .faq-item.open .faq-icon { background: var(--terracotta); border-color: var(--terracotta); transform: rotate(45deg); }
-    .faq-item.open .faq-icon svg { color: var(--white); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94); }
-    .faq-answer-inner { padding: 0 0 1.6rem 0; font-size: 0.96rem; color: var(--mid-gray); line-height: 1.85; }
-    .faq-answer-inner strong { color: var(--charcoal); font-weight: 400; }
-    .faq-item.open .faq-answer { max-height: 400px; }
-    @media (max-width: 768px) { #faq { padding: 5rem 6%; } .faq-question { font-size: 1.05rem; } }
-
-    footer { background: #1a1a1a; padding: 2.5rem 8%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a1a; padding: 2.5rem 8%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
     .footer-logo img { height: 28px; opacity: 0.5; filter: brightness(2); transition: opacity 0.3s; }
     .footer-logo:hover img { opacity: 0.8; }
     .footer-links { display: flex; gap: 2rem; list-style: none; }
@@ -221,8 +406,60 @@
     .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
     @media (max-width: 600px) { footer { flex-direction: column; text-align: center; padding: 2rem 6%; } .footer-links { flex-wrap: wrap; justify-content: center; } }
 
-    .section-line { display: block; width: 40px; height: 1px; background: var(--terracotta); margin-bottom: 1.5rem; transform: scaleX(0); transform-origin: left; transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 0.3s; }
-    .reveal.visible .section-line, .reveal-left.visible .section-line, .reveal-right.visible .section-line { transform: scaleX(1); }
+    /* ── FAQ ── */
+    #faq { background: var(--white); padding: 8rem 8%; }
+    .faq-inner { max-width: 860px; margin: 0 auto; }
+    .faq-header { text-align: center; margin-bottom: 4rem; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--light-gray);
+      overflow: hidden;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--light-gray); }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; padding: 1.6rem 0; background: none; border: none;
+      cursor: none; text-align: left;
+      font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400;
+      color: var(--charcoal); line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--terracotta); }
+    .faq-icon {
+      flex-shrink: 0; width: 24px; height: 24px;
+      border: 1px solid var(--light-gray); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s, border-color 0.3s, transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .faq-icon svg { width: 12px; height: 12px; color: var(--mid-gray); transition: color 0.3s; }
+    .faq-item.open .faq-question { color: var(--terracotta); }
+    .faq-item.open .faq-icon { background: var(--terracotta); border-color: var(--terracotta); transform: rotate(45deg); }
+    .faq-item.open .faq-icon svg { color: var(--white); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94), padding 0.3s;
+    }
+    .faq-answer-inner {
+      padding: 0 0 1.6rem 0;
+      font-size: 0.96rem; color: var(--mid-gray); line-height: 1.85;
+    }
+    .faq-answer-inner strong { color: var(--charcoal); font-weight: 400; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    @media (max-width: 768px) {
+      #faq { padding: 5rem 6%; }
+      .faq-question { font-size: 1.05rem; }
+    }
+
+    /* ── SECTION DIVIDER LINE ── */
+    .section-line {
+      display: block; width: 40px; height: 1px; background: var(--terracotta);
+      margin-bottom: 1.5rem;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    }
+    .reveal.visible .section-line,
+    .reveal-left.visible .section-line,
+    .reveal-right.visible .section-line { transform: scaleX(1); }
   </style>
 </head>
 <body>
@@ -231,13 +468,16 @@
   <div class="cursor-ring"></div>
 
   <nav id="navbar">
-    <a class="nav-logo" href="#accueil"><img src="navbar%20logo.png" alt="C Lubac Avocat" /></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a class="nav-logo" href="#accueil">
+      <img src="navbar%20logo.png" alt="C Lubac Avocat" />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#apropos">À propos</a></li>
       <li><a href="#expertises">Expertises</a></li>
       <li><a href="#honoraires">Honoraires</a></li>
-      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Me contacter</a></li>
     </ul>
   </nav>
@@ -280,7 +520,7 @@
 
   <section id="expertises">
     <div class="expertises-header reveal">
-      <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+      <span class="section-line" style="margin:0 auto 1.5rem; transform-origin:center;"></span>
       <span class="section-tag">Domaines d'intervention</span>
       <h2 class="section-title">Mes <em>expertises</em></h2>
     </div>
@@ -404,38 +644,87 @@
         <h2 class="section-title">Tout ce que vous devez <em>savoir</em></h2>
       </div>
       <div class="faq-list reveal">
+
         <div class="faq-item">
-          <button class="faq-question">Quelle est la zone d'intervention de Maître Lubac ?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Inscrite au <strong>Barreau de Paris</strong>, Maître Lubac intervient dans <strong>toute la France</strong>. Les consultations se tiennent en présentiel à Paris ou en visioconférence, ce qui lui permet d'accompagner efficacement ses clients depuis n'importe quelle ville : Lyon, Marseille, Bordeaux, Toulouse, Nantes, Lille, Strasbourg et partout sur le territoire.</div></div>
+          <button class="faq-question">
+            Quelle est la zone d'intervention de Maître Lubac ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Inscrite au <strong>Barreau de Paris</strong>, Maître Lubac intervient dans <strong>toute la France</strong>. Les consultations se tiennent en présentiel à Paris ou en visioconférence, ce qui lui permet d'accompagner efficacement ses clients depuis n'importe quelle ville : Lyon, Marseille, Bordeaux, Toulouse, Nantes, Lille, Strasbourg et partout sur le territoire.
+          </div></div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">Comment se déroule le premier rendez-vous ?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Le <strong>premier rendez-vous est offert</strong> et sans engagement. Il dure environ 45 minutes à 1 heure. C'est l'occasion pour vous d'exposer votre situation librement, d'obtenir une première analyse juridique et de définir ensemble la stratégie la plus adaptée. Vous repartez avec une vision claire des options disponibles et une estimation des honoraires.</div></div>
+          <button class="faq-question">
+            Comment se déroule le premier rendez-vous ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Le <strong>premier rendez-vous est offert</strong> et sans engagement. Il dure environ 45 minutes à 1 heure. C'est l'occasion pour vous d'exposer votre situation librement, d'obtenir une première analyse juridique et de définir ensemble la stratégie la plus adaptée. Vous repartez avec une vision claire des options disponibles et une estimation des honoraires.
+          </div></div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">Quels sont les honoraires d'un avocat en droit de la famille à Paris ?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Les honoraires varient selon la <strong>nature et la complexité du dossier</strong>. Maître Lubac propose plusieurs modes de facturation : honoraire horaire, forfait pour les procédures courantes (divorce par consentement mutuel, par exemple), ou honoraire mixte avec une part au résultat. Une <strong>convention d'honoraires transparente</strong> est établie avant tout engagement, sans surprise.</div></div>
+          <button class="faq-question">
+            Quels sont les honoraires d'un avocat en droit de la famille à Paris ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Les honoraires varient selon la <strong>nature et la complexité du dossier</strong>. Maître Lubac propose plusieurs modes de facturation : honoraire horaire, forfait pour les procédures courantes (divorce par consentement mutuel, par exemple), ou honoraire mixte avec une part au résultat. Une <strong>convention d'honoraires transparente</strong> est établie avant tout engagement, sans surprise.
+          </div></div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">Puis-je bénéficier de l'aide juridictionnelle ?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Oui. L'<strong>aide juridictionnelle</strong> permet à toute personne dont les ressources sont insuffisantes de bénéficier d'une prise en charge totale ou partielle de ses frais d'avocat par l'État. Maître Lubac accepte les dossiers en aide juridictionnelle et vous accompagne dans la constitution du dossier auprès du bureau d'aide juridictionnelle compétent.</div></div>
+          <button class="faq-question">
+            Puis-je bénéficier de l'aide juridictionnelle ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Oui. L'<strong>aide juridictionnelle</strong> permet à toute personne dont les ressources sont insuffisantes de bénéficier d'une prise en charge totale ou partielle de ses frais d'avocat par l'État. Maître Lubac accepte les dossiers en aide juridictionnelle et vous accompagne dans la constitution du dossier auprès du bureau d'aide juridictionnelle compétent.
+          </div></div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">Comment contester un licenciement avec un avocat en droit du travail ?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">En cas de <strong>licenciement abusif ou sans cause réelle et sérieuse</strong>, vous disposez d'un délai de 12 mois à compter de la notification du licenciement pour saisir le Conseil de Prud'hommes. Maître Lubac analyse votre lettre de licenciement, évalue les chances de succès et vous représente devant la juridiction compétente pour obtenir des indemnités ou la réintégration. N'attendez pas : chaque mois compte.</div></div>
+          <button class="faq-question">
+            Comment contester un licenciement avec un avocat en droit du travail ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            En cas de <strong>licenciement abusif ou sans cause réelle et sérieuse</strong>, vous disposez d'un délai de 12 mois à compter de la notification du licenciement pour saisir le Conseil de Prud'hommes. Maître Lubac analyse votre lettre de licenciement, évalue les chances de succès et vous représente devant la juridiction compétente pour obtenir des indemnités ou la réintégration. N'attendez pas : chaque mois compte.
+          </div></div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">Quelle est la différence entre divorce par consentement mutuel et divorce contentieux ?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Le <strong>divorce par consentement mutuel</strong> est amiable : les deux époux se mettent d'accord sur toutes les modalités (garde des enfants, partage des biens, prestation compensatoire). Il est plus rapide et moins coûteux. Le <strong>divorce contentieux</strong> intervient lorsqu'un désaccord persiste : le juge aux affaires familiales tranche. Dans les deux cas, chaque époux doit être représenté par son propre avocat. Maître Lubac intervient pour les deux procédures, partout en France.</div></div>
+          <button class="faq-question">
+            Quelle est la différence entre un divorce par consentement mutuel et un divorce contentieux ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Le <strong>divorce par consentement mutuel</strong> est amiable : les deux époux se mettent d'accord sur toutes les modalités (garde des enfants, partage des biens, prestation compensatoire). Il est plus rapide et moins coûteux. Le <strong>divorce contentieux</strong> intervient lorsqu'un désaccord persiste : le juge aux affaires familiales tranche. Dans les deux cas, chaque époux doit être représenté par son propre avocat. Maître Lubac intervient pour les deux procédures, partout en France.
+          </div></div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">Avocat en droit des affaires : quand faire appel à un avocat pour son entreprise ?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Il est conseillé de consulter un avocat <strong>dès la création de votre entreprise</strong> (choix du statut juridique, rédaction des statuts), puis à chaque étape clé : rédaction ou révision de contrats commerciaux, litige avec un fournisseur ou un client, cession de fonds de commerce, négociation de baux commerciaux. Maître Lubac accompagne dirigeants et entrepreneurs dans toute la France pour sécuriser leurs décisions et prévenir les contentieux.</div></div>
+          <button class="faq-question">
+            Avocat en droit des affaires : quand faire appel à un avocat pour son entreprise ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Il est conseillé de consulter un avocat <strong>dès la création de votre entreprise</strong> (choix du statut juridique, rédaction des statuts), puis à chaque étape clé : rédaction ou révision de contrats commerciaux, litige avec un fournisseur ou un client, cession de fonds de commerce, négociation de baux commerciaux. Maître Lubac accompagne dirigeants et entrepreneurs dans toute la France pour sécuriser leurs décisions et prévenir les contentieux.
+          </div></div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">Est-il possible de consulter un avocat à Paris depuis la province ?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
-          <div class="faq-answer"><div class="faq-answer-inner">Absolument. Maître Lubac propose des <strong>consultations en visioconférence</strong> pour tous les clients situés en dehors de Paris. La distance n'est pas un obstacle : échanges par email, appels téléphoniques et visioconférences sécurisées permettent un suivi rigoureux de votre dossier depuis n'importe quelle ville de France.</div></div>
+          <button class="faq-question">
+            Est-il possible de consulter un avocat à Paris depuis la province ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Absolument. Maître Lubac propose des <strong>consultations en visioconférence</strong> pour tous les clients situés en dehors de Paris. La distance n'est pas un obstacle : échanges par email, appels téléphoniques et visioconférences sécurisées permettent un suivi rigoureux de votre dossier depuis n'importe quelle ville de France. Seules les audiences nécessitant une présence physique mobilisent un déplacement, coordonné en amont.
+          </div></div>
         </div>
+
       </div>
     </div>
   </section>
@@ -446,7 +735,6 @@
       <li><a href="#apropos">À propos</a></li>
       <li><a href="#expertises">Expertises</a></li>
       <li><a href="#honoraires">Honoraires</a></li>
-      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <p class="footer-copy">© 2025 C Lubac Avocat — Barreau de Paris</p>
@@ -460,17 +748,21 @@
       {"@type":"Question","name":"Quelle est la zone d'intervention de Maître Lubac ?","acceptedAnswer":{"@type":"Answer","text":"Inscrite au Barreau de Paris, Maître Lubac intervient dans toute la France. Les consultations se tiennent en présentiel à Paris ou en visioconférence, ce qui lui permet d'accompagner efficacement ses clients depuis n'importe quelle ville : Lyon, Marseille, Bordeaux, Toulouse, Nantes, Lille, Strasbourg et partout sur le territoire."}},
       {"@type":"Question","name":"Comment se déroule le premier rendez-vous ?","acceptedAnswer":{"@type":"Answer","text":"Le premier rendez-vous est offert et sans engagement. Il dure environ 45 minutes à 1 heure. C'est l'occasion pour vous d'exposer votre situation librement, d'obtenir une première analyse juridique et de définir ensemble la stratégie la plus adaptée."}},
       {"@type":"Question","name":"Quels sont les honoraires d'un avocat en droit de la famille à Paris ?","acceptedAnswer":{"@type":"Answer","text":"Les honoraires varient selon la nature et la complexité du dossier. Maître Lubac propose plusieurs modes de facturation : honoraire horaire, forfait pour les procédures courantes, ou honoraire mixte avec une part au résultat. Une convention d'honoraires transparente est établie avant tout engagement."}},
-      {"@type":"Question","name":"Puis-je bénéficier de l'aide juridictionnelle ?","acceptedAnswer":{"@type":"Answer","text":"Oui. L'aide juridictionnelle permet à toute personne dont les ressources sont insuffisantes de bénéficier d'une prise en charge totale ou partielle de ses frais d'avocat par l'État. Maître Lubac accepte les dossiers en aide juridictionnelle."}},
-      {"@type":"Question","name":"Comment contester un licenciement avec un avocat en droit du travail ?","acceptedAnswer":{"@type":"Answer","text":"En cas de licenciement abusif ou sans cause réelle et sérieuse, vous disposez d'un délai de 12 mois à compter de la notification du licenciement pour saisir le Conseil de Prud'hommes. Maître Lubac analyse votre lettre de licenciement et vous représente devant la juridiction compétente."}},
-      {"@type":"Question","name":"Quelle est la différence entre divorce par consentement mutuel et divorce contentieux ?","acceptedAnswer":{"@type":"Answer","text":"Le divorce par consentement mutuel est amiable : les deux époux se mettent d'accord sur toutes les modalités. Le divorce contentieux intervient lorsqu'un désaccord persiste. Dans les deux cas, chaque époux doit être représenté par son propre avocat."}},
-      {"@type":"Question","name":"Avocat en droit des affaires : quand faire appel à un avocat pour son entreprise ?","acceptedAnswer":{"@type":"Answer","text":"Il est conseillé de consulter un avocat dès la création de votre entreprise, puis à chaque étape clé : rédaction de contrats, litiges commerciaux, cession de fonds de commerce, baux commerciaux."}},
-      {"@type":"Question","name":"Est-il possible de consulter un avocat à Paris depuis la province ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Maître Lubac propose des consultations en visioconférence pour tous les clients situés en dehors de Paris. La distance n'est pas un obstacle pour un suivi rigoureux de votre dossier."}}
+      {"@type":"Question","name":"Puis-je bénéficier de l'aide juridictionnelle ?","acceptedAnswer":{"@type":"Answer","text":"Oui. L'aide juridictionnelle permet à toute personne dont les ressources sont insuffisantes de bénéficier d'une prise en charge totale ou partielle de ses frais d'avocat par l'État. Maître Lubac accepte les dossiers en aide juridictionnelle et vous accompagne dans la constitution du dossier."}},
+      {"@type":"Question","name":"Comment contester un licenciement avec un avocat en droit du travail ?","acceptedAnswer":{"@type":"Answer","text":"En cas de licenciement abusif ou sans cause réelle et sérieuse, vous disposez d'un délai de 12 mois à compter de la notification du licenciement pour saisir le Conseil de Prud'hommes. Maître Lubac analyse votre lettre de licenciement, évalue les chances de succès et vous représente devant la juridiction compétente."}},
+      {"@type":"Question","name":"Quelle est la différence entre un divorce par consentement mutuel et un divorce contentieux ?","acceptedAnswer":{"@type":"Answer","text":"Le divorce par consentement mutuel est amiable : les deux époux se mettent d'accord sur toutes les modalités. Le divorce contentieux intervient lorsqu'un désaccord persiste : le juge aux affaires familiales tranche. Dans les deux cas, chaque époux doit être représenté par son propre avocat."}},
+      {"@type":"Question","name":"Avocat en droit des affaires : quand faire appel à un avocat pour son entreprise ?","acceptedAnswer":{"@type":"Answer","text":"Il est conseillé de consulter un avocat dès la création de votre entreprise (choix du statut juridique, rédaction des statuts), puis à chaque étape clé : rédaction ou révision de contrats commerciaux, litige avec un fournisseur ou un client, cession de fonds de commerce."}},
+      {"@type":"Question","name":"Est-il possible de consulter un avocat à Paris depuis la province ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Maître Lubac propose des consultations en visioconférence pour tous les clients situés en dehors de Paris. La distance n'est pas un obstacle : échanges par email, appels téléphoniques et visioconférences sécurisées permettent un suivi rigoureux de votre dossier depuis n'importe quelle ville de France."}}
     ]
   }
   </script>
 
   <script>
-    const lines = [['Un','accompagnement','<em>humain</em>'],['et','expert','à','vos','côtés']];
+    /* ── HERO TITLE — MOT PAR MOT ── */
+    const lines = [
+      ['Un', 'accompagnement', '<em>humain</em>'],
+      ['et', 'expert', 'à', 'vos', 'côtés']
+    ];
     const heroTitle = document.getElementById('heroTitle');
     let d = 0.45;
     lines.forEach(words => {
@@ -478,21 +770,34 @@
       line.style.cssText = 'display:block;overflow:hidden;';
       words.forEach(w => {
         const span = document.createElement('span');
-        span.className = 'word'; span.innerHTML = w + ' '; span.style.animationDelay = d + 's'; d += 0.09;
+        span.className = 'word';
+        span.innerHTML = w + ' ';
+        span.style.animationDelay = d + 's';
+        d += 0.09;
         line.appendChild(span);
       });
       heroTitle.appendChild(line);
     });
 
-    const dot = document.querySelector('.cursor-dot'), ring = document.querySelector('.cursor-ring');
+    /* ── CURSEUR PERSONNALISÉ ── */
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
     let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
-    (function loop() { rx += (mx-rx)*0.12; ry += (my-ry)*0.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(loop); })();
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+    });
+    (function loop() {
+      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(loop);
+    })();
     document.querySelectorAll('a, button, .expertise-card, .mode-item, .honoraires-aide').forEach(el => {
       el.addEventListener('mouseenter', () => { ring.classList.add('hovering'); dot.classList.add('hovering'); });
       el.addEventListener('mouseleave', () => { ring.classList.remove('hovering'); dot.classList.remove('hovering'); });
     });
 
+    /* ── NAVBAR CACHE AU SCROLL ── */
     let lastY = 0;
     const nav = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
@@ -503,31 +808,49 @@
       lastY = y;
     }, { passive: true });
 
-    document.getElementById('navToggle').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
-    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+    /* ── MENU MOBILE ── */
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
 
+    /* ── PARALLAX IMAGE HERO ── */
     const heroImg = document.getElementById('heroImg');
-    window.addEventListener('scroll', () => { heroImg.style.transform = 'translateY('+(window.scrollY*0.18)+'px)'; }, { passive: true });
+    window.addEventListener('scroll', () => {
+      heroImg.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px)';
+    }, { passive: true });
 
+    /* ── SCROLL REVEAL ── */
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => obs.observe(el));
 
+    /* ── COMPTEURS ANIMÉS ── */
     const cObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;
-        const el = e.target, target = +el.dataset.count, suffix = el.dataset.suffix;
+        const el = e.target;
+        const target = +el.dataset.count;
+        const suffix = el.dataset.suffix;
         let cur = 0;
-        const t = setInterval(() => { cur = Math.min(cur + target/80, target); el.textContent = Math.floor(cur)+suffix; if (cur >= target) clearInterval(t); }, 16);
+        const t = setInterval(() => {
+          cur = Math.min(cur + target / 80, target);
+          el.textContent = Math.floor(cur) + suffix;
+          if (cur >= target) clearInterval(t);
+        }, 16);
         cObs.unobserve(el);
       });
     }, { threshold: 0.5 });
     document.querySelectorAll('.stat-number[data-count]').forEach(el => cObs.observe(el));
 
+    /* ── FAQ ACCORDION ── */
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
-        const item = btn.parentElement, isOpen = item.classList.contains('open');
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
         if (!isOpen) item.classList.add('open');
       });
