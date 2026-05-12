@@ -115,17 +115,14 @@
     .hero-image { position: relative; overflow: hidden; }
     .hero-image img {
       width: 100%; height: 100%; object-fit: cover; object-position: top center;
-      transform: scale(1.04);
-      animation: heroImageReveal 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: high-quality;
-      filter: contrast(1.04);
+      animation: heroImageReveal 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+      filter: contrast(1.02);
     }
     .hero-image::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right, var(--cream) 0%, transparent 18%);
     }
-    @keyframes heroImageReveal { to { transform: scale(1); } }
+    @keyframes heroImageReveal { from { opacity: 0; } to { opacity: 1; } }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     @keyframes wordUp { to { opacity: 1; transform: translateY(0); } }
 
@@ -937,14 +934,6 @@
       a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
     });
 
-    /* ── PARALLAX IMAGE HERO ── */
-    const heroImg = document.getElementById('heroImg');
-    heroImg.addEventListener('animationend', () => {
-      heroImg.style.willChange = 'auto';
-    }, { once: true });
-    window.addEventListener('scroll', () => {
-      heroImg.style.transform = 'translateY(' + Math.round(window.scrollY * 0.18) + 'px)';
-    }, { passive: true });
 
     /* ── SCROLL REVEAL ── */
     const obs = new IntersectionObserver(entries => {
