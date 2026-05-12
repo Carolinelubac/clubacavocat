@@ -6,7 +6,7 @@
   <title>Caroline Lubac Avocat – Barreau de Paris | Droit de la famille, Travail, Affaires</title>
   <meta name="description" content="Maître Caroline Lubac, avocate au Barreau de Paris — droit de la famille, droit du travail, droit des affaires. Divorce, licenciement, contrats. Intervention dans toute la France. Premier rendez-vous offert et gratuit." />
   <link rel="canonical" href="https://lubacavocat.fr/" />
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon-opt.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -537,6 +537,63 @@
     .btn-call-white svg, .btn-wa-bar svg { width: 16px; height: 16px; flex-shrink: 0; }
     @media (max-width: 768px) { .cta-bar { padding: 2.5rem 6%; justify-content: center; text-align: center; } }
 
+    /* ── RESPONSIVE GLOBAL ── */
+    @media (max-width: 480px) {
+      :root { --nav-h: 64px; }
+
+      /* Hero */
+      #accueil { grid-template-rows: 55vw auto; }
+      .hero-text { padding: 1.8rem 5% 2.5rem; }
+      .hero-title { font-size: clamp(2rem, 8vw, 2.8rem); margin-bottom: 1.2rem; }
+      .hero-desc { font-size: 0.92rem; margin-bottom: 2rem; }
+      .hero-actions { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .btn-primary, .btn-outline { width: 100%; text-align: center; justify-content: center; }
+      .hero-direct { flex-direction: column; }
+      .btn-call, .btn-wa-inline { width: 100%; justify-content: center; }
+      .hero-form-mini { margin-top: 1.2rem; }
+      .hfm-row { grid-template-columns: 1fr; }
+
+      /* Sections */
+      #apropos { padding: 4rem 5%; }
+      .apropos-inner { gap: 2rem; }
+      .apropos-image-wrap img { height: 260px; }
+      .apropos-image-wrap::before { display: none; }
+      .apropos-stats { flex-direction: column; gap: 1.2rem; }
+
+      #expertises { padding: 4rem 5%; }
+      .expertises-grid { gap: 1rem; }
+      .expertise-card { padding: 2rem 1.4rem; }
+
+      #honoraires { padding: 4rem 5%; }
+      .honoraires-photo img { height: 260px; }
+      .honoraires-photo-badge { bottom: 0.75rem; right: 0.75rem; padding: 1rem 1.2rem; }
+      .honoraires-photo-badge strong { font-size: 1.4rem; }
+
+      #faq { padding: 4rem 5%; }
+      .faq-question { font-size: 1rem; padding: 1.2rem 0; }
+
+      #contact { padding: 4rem 5%; }
+      .contact-inner { gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+
+      /* CTA bar */
+      .cta-bar { padding: 2rem 5%; flex-direction: column; gap: 1.2rem; }
+      .cta-bar-btns { flex-direction: column; width: 100%; }
+      .btn-call-white, .btn-wa-bar { width: 100%; justify-content: center; }
+
+      /* Section typography */
+      .section-title { font-size: clamp(1.6rem, 6vw, 2rem); }
+
+      /* Footer */
+      footer { padding: 2rem 5%; gap: 1.2rem; }
+      .footer-links { gap: 1rem; }
+    }
+
+    @media (max-width: 360px) {
+      .hero-title { font-size: 1.9rem; }
+      .apropos-image-wrap img { height: 220px; }
+    }
+
     /* ── EXPERTISE CARD CTA ── */
     .expertise-cta {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -556,7 +613,10 @@
 
   <nav id="navbar">
     <a class="nav-logo" href="#accueil">
-      <img src="navbar-logo-modifie.png" alt="C Lubac Avocat" />
+      <picture>
+        <source srcset="navbar-logo-modifie.webp" type="image/webp">
+        <img src="navbar-logo-modifie.png" alt="C Lubac Avocat" />
+      </picture>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -609,18 +669,24 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="photo-hero.jpg" alt="Maître Caroline Lubac, avocate au Barreau de Paris" id="heroImg" />
+      <picture>
+        <source srcset="photo-hero.webp" type="image/webp">
+        <img src="photo-hero.jpg" alt="Maître Caroline Lubac, avocate au Barreau de Paris" id="heroImg" />
+      </picture>
     </div>
   </section>
 
   <section id="apropos">
     <div class="apropos-inner">
       <div class="apropos-image-wrap reveal-left">
-        <img src="caroline-lubac-bureau.jpg" alt="Cabinet de Maître Caroline Lubac, avocate à Paris" />
+        <picture>
+          <source srcset="caroline-lubac-bureau.webp" type="image/webp">
+          <img src="caroline-lubac-bureau.jpg" alt="Cabinet de Maître Caroline Lubac, avocate à Paris" />
+        </picture>
       </div>
       <div class="apropos-text reveal-right">
         <span class="section-line"></span>
-        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />À propos</span>
+        <span class="section-tag"><img src="favicon.webp" class="brand-mark" alt="" />À propos</span>
         <h2 class="section-title">Caroline Lubac,<br><em>Avocat engagée</em></h2>
         <p>Diplômée en droit, je suis avocate inscrite au Barreau de Paris depuis plus de 10 ans. J'interviens dans toute la France — en présentiel à Paris et en visioconférence pour accompagner mes clients où qu'ils se trouvent sur le territoire. Mon parcours m'a amenée à développer une expertise pluridisciplinaire, au service des particuliers comme des entreprises.</p>
         <p>Je crois profondément que le droit est avant tout un outil au service des personnes. C'est pourquoi j'accorde une importance particulière à l'écoute, à la pédagogie et à la transparence dans ma relation avec chaque client.</p>
@@ -637,7 +703,7 @@
   <section id="expertises">
     <div class="expertises-header reveal">
       <span class="section-line" style="margin:0 auto 1.5rem; transform-origin:center;"></span>
-      <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Domaines d'intervention</span>
+      <span class="section-tag"><img src="favicon.webp" class="brand-mark" alt="" />Domaines d'intervention</span>
       <h2 class="section-title">Mes <em>expertises</em> juridiques à Paris et en France</h2>
     </div>
     <div class="expertises-grid">
@@ -684,7 +750,7 @@
     <div class="honoraires-inner">
       <div class="honoraires-text reveal-left">
         <span class="section-line"></span>
-        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Transparence & clarté</span>
+        <span class="section-tag"><img src="favicon.webp" class="brand-mark" alt="" />Transparence & clarté</span>
         <h2 class="section-title">Mes <em>honoraires</em></h2>
         <p>La question des honoraires est abordée dès le premier rendez-vous, en toute transparence. Je vous remets une convention d'honoraires claire avant tout engagement, afin que vous puissiez décider en connaissance de cause.</p>
         <p>Les honoraires varient selon la nature et la complexité du dossier. Plusieurs modes de facturation sont possibles :</p>
@@ -708,7 +774,10 @@
         </div>
       </div>
       <div class="honoraires-photo reveal-right">
-        <img src="caroline-lubac-portrait.jpg" alt="Maître Caroline Lubac, consultation juridique" />
+        <picture>
+          <source srcset="caroline-lubac-portrait.webp" type="image/webp">
+          <img src="caroline-lubac-portrait.jpg" alt="Maître Caroline Lubac, consultation juridique" />
+        </picture>
         <div class="honoraires-photo-badge"><strong>1er RDV</strong><span>Consultation offerte</span></div>
       </div>
     </div>
@@ -718,7 +787,7 @@
     <div class="faq-inner">
       <div class="faq-header reveal">
         <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
-        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Questions fréquentes</span>
+        <span class="section-tag"><img src="favicon.webp" class="brand-mark" alt="" />Questions fréquentes</span>
         <h2 class="section-title">Tout ce que vous devez <em>savoir</em></h2>
       </div>
       <div class="faq-list reveal">
@@ -811,7 +880,7 @@
     <div class="contact-inner">
       <div class="contact-info reveal-left">
         <span class="section-line"></span>
-        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Prenons contact</span>
+        <span class="section-tag"><img src="favicon.webp" class="brand-mark" alt="" />Prenons contact</span>
         <h2 class="section-title">Prendre rendez-vous avec <em>Maître Lubac</em></h2>
         <p>Le premier rendez-vous est offert. C'est l'occasion d'exposer votre situation, d'obtenir une première analyse et de décider ensemble de la marche à suivre, sans engagement.</p>
         <div class="contact-details">
@@ -871,7 +940,7 @@
   </div>
 
   <footer>
-    <a class="footer-logo" href="#accueil"><img src="favicon.png" alt="C Lubac Avocat" /></a>
+    <a class="footer-logo" href="#accueil"><img src="favicon-opt.png" alt="C Lubac Avocat" /></a>
     <ul class="footer-links">
       <li><a href="#apropos">À propos</a></li>
       <li><a href="#expertises">Expertises</a></li>
