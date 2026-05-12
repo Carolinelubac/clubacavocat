@@ -118,7 +118,7 @@
       animation: heroImageReveal 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: high-quality;
-      filter: url('#photo-sharpen') contrast(1.04);
+      filter: contrast(1.04);
     }
     .hero-image::after {
       content: ''; position: absolute; inset: 0;
@@ -205,7 +205,7 @@
       transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       image-rendering: -webkit-optimize-contrast;
       image-rendering: high-quality;
-      filter: url('#photo-sharpen') contrast(1.04);
+      filter: contrast(1.04);
     }
     .apropos-image-wrap:hover img { transform: scale(1.02); }
     .apropos-image-wrap::before {
@@ -296,7 +296,7 @@
       transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       image-rendering: -webkit-optimize-contrast;
       image-rendering: high-quality;
-      filter: url('#photo-sharpen') contrast(1.04);
+      filter: contrast(1.04);
     }
     .honoraires-photo:hover img { transform: scale(1.02); }
     .honoraires-photo-badge {
@@ -476,15 +476,6 @@
 </head>
 <body>
 
-  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">
-    <defs>
-      <filter id="photo-sharpen" color-interpolation-filters="linearRGB">
-        <feConvolveMatrix order="3" kernelUnitLength="1"
-          kernel="-0.1 -0.15 -0.1 -0.15 1.8 -0.15 -0.1 -0.15 -0.1"
-          preserveAlpha="true"/>
-      </filter>
-    </defs>
-  </svg>
 
 
 
