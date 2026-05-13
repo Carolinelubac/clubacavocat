@@ -470,6 +470,35 @@
     @media (max-width: 900px) { #avis { padding: 5rem 6%; } .avis-grid { grid-template-columns: 1fr; } }
     @media (min-width: 901px) and (max-width: 1100px) { .avis-grid { grid-template-columns: repeat(2, 1fr); } }
 
+    /* ── GOOGLE BADGE BAR ── */
+    .google-badge-bar { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; max-width: 1100px; margin: 0 auto 3.5rem; }
+    .google-badge {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: var(--white); color: var(--charcoal);
+      border: 1.5px solid var(--light-gray); padding: 14px 24px;
+      border-radius: 2px; text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .google-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+    .google-badge-rating { display: block; font-size: 1.5rem; font-weight: 700; line-height: 1; }
+    .google-badge-stars { display: block; color: var(--terracotta); font-size: 0.95rem; letter-spacing: 2px; line-height: 1.3; }
+    .google-badge-count { display: block; font-size: 0.78rem; color: var(--mid-gray); margin-top: 2px; }
+    .google-btn-avis {
+      display: inline-block; background: var(--terracotta); color: var(--white);
+      padding: 14px 32px; border-radius: 2px; font-weight: 700;
+      font-size: 0.88rem; text-decoration: none; letter-spacing: 0.04em;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .google-btn-avis:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,98,0.35); }
+    #google-reviews-grid { max-width: 1100px; margin: 3rem auto 0; display: none; }
+    #google-reviews-grid.loaded { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .avis-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--terracotta); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; }
+    .avis-author-row { display: flex; align-items: center; gap: 10px; padding-top: 1rem; border-top: 1px solid var(--light-gray); }
+    .avis-author-row .avis-author { padding-top: 0; border-top: none; }
+    @media (max-width: 900px) { #google-reviews-grid.loaded { grid-template-columns: 1fr; } }
+    @media (min-width: 901px) and (max-width: 1100px) { #google-reviews-grid.loaded { grid-template-columns: repeat(2, 1fr); } }
+
     /* ── SECTION DIVIDER LINE ── */
     .section-line {
       display: block; width: 40px; height: 1px; background: var(--terracotta);
@@ -758,6 +787,26 @@
       <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Témoignages clients</span>
       <h2 class="section-title">Ce que disent <em>mes clients</em></h2>
     </div>
+    <!-- Badge note Google + bouton laisser un avis -->
+    <div class="google-badge-bar reveal">
+      <a href="https://www.google.com/maps/search/?api=1&query_place_id=TON_PLACE_ID"
+         target="_blank" rel="noopener noreferrer" class="google-badge">
+        <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.1 33.9 29.5 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.9 20-21 0-1.4-.1-2.7-.5-4z"/>
+          <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.5-17.7 11.7z"/>
+          <path fill="#FBBC05" d="M24 45c5.4 0 10.3-1.8 14.1-4.9l-6.5-5.5C29.4 36.4 26.8 37 24 37c-5.4 0-10-3-12.1-7.4l-7 5.4C8.3 40.9 15.6 45 24 45z"/>
+          <path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.9 2.5-2.6 4.6-4.8 6.1l6.5 5.5C41.1 36.9 45 31 45 24c0-1.4-.1-2.7-.5-4z"/>
+        </svg>
+        <span>
+          <span class="google-badge-rating">5,0</span>
+          <span class="google-badge-stars">★★★★★</span>
+          <span class="google-badge-count"><span id="google-avis-count">…</span> avis Google · Voir la fiche</span>
+        </span>
+      </a>
+      <a href="https://search.google.com/local/writereview?placeid=TON_PLACE_ID"
+         target="_blank" rel="noopener noreferrer" class="google-btn-avis">Laisser un avis Google</a>
+    </div>
+
     <div class="avis-grid">
 
       <div class="avis-card reveal delay-1">
@@ -857,6 +906,9 @@
       </div>
 
     </div>
+
+    <!-- Avis Google chargés dynamiquement via Places API -->
+    <div id="google-reviews-grid" role="list" aria-label="Avis Google vérifiés"></div>
   </section>
 
   <section id="faq">
@@ -1121,6 +1173,82 @@
         if (!isOpen) item.classList.add('open');
       });
     });
+  </script>
+
+  <!-- ── GOOGLE PLACES API – Avis dynamiques ── -->
+  <script>
+  (function () {
+    var PLACE_ID = 'TON_PLACE_ID'; // ← remplacer par l'identifiant ChIJ… de la fiche Google Maps
+    var API_KEY  = 'TA_CLE_API';   // ← remplacer par la clé Google Cloud (Maps JS API + Places API New)
+
+    var STAR_SVG = '<svg viewBox="0 0 20 20" width="16" height="16" style="fill:#C97A62"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 13.27l-4.78 2.43.91-5.32L2.27 6.62l5.34-.78z"/></svg>';
+
+    function starsHtml(n) {
+      var s = '';
+      for (var i = 0; i < 5; i++) s += STAR_SVG;
+      return '<div class="avis-stars" aria-label="' + n + ' étoiles sur 5">' + s + '</div>';
+    }
+
+    function initials(name) {
+      return (name || 'A').split(' ').map(function (w) { return w[0] || ''; }).slice(0, 2).join('').toUpperCase() || 'A';
+    }
+
+    function esc(str) {
+      return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    window._googlePlacesCallback = async function () {
+      try {
+        var grid = document.getElementById('google-reviews-grid');
+        if (!grid) return;
+
+        var { Place } = await google.maps.importLibrary('places');
+        var place = new Place({ id: PLACE_ID, requestedLanguage: 'fr' });
+        await place.fetchFields({ fields: ['rating', 'userRatingCount', 'reviews'] });
+
+        var countEl = document.getElementById('google-avis-count');
+        if (countEl && place.userRatingCount != null) countEl.textContent = place.userRatingCount;
+
+        var reviews = (place.reviews || [])
+          .filter(function (r) { return r.rating >= 4; })
+          .slice(0, 6);
+
+        if (!reviews.length) return;
+
+        grid.innerHTML = reviews.map(function (r) {
+          var name    = esc((r.authorAttribution && r.authorAttribution.displayName) || 'Client');
+          var rawText = (r.text && r.text.text) ? r.text.text : (typeof r.text === 'string' ? r.text : '');
+          var text    = esc(rawText);
+          var relTime = esc(r.relativePublishTimeDescription || '');
+          var note    = r.rating || 5;
+
+          return '<div class="avis-card" role="listitem">'
+            + '<span class="avis-source">Google</span>'
+            + starsHtml(note)
+            + (text ? '<p class="avis-quote">' + text + '</p>' : '')
+            + '<div class="avis-author-row">'
+            +   '<div class="avis-avatar" aria-hidden="true">' + initials(name) + '</div>'
+            +   '<div class="avis-author">'
+            +     '<strong>' + name + '</strong>'
+            +     (relTime ? '<span>' + relTime + '</span>' : '')
+            +   '</div>'
+            + '</div>'
+            + '</div>';
+        }).join('');
+
+        grid.classList.add('loaded');
+      } catch (e) {
+        console.error('[Places API] Erreur:', e);
+      }
+    };
+
+    var s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY
+          + '&callback=_googlePlacesCallback&loading=async&language=fr';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  })();
   </script>
 </body>
 </html>
