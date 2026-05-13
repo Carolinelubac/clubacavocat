@@ -789,8 +789,8 @@
     </div>
     <!-- Badge note Google + bouton laisser un avis -->
     <div class="google-badge-bar reveal">
-      <a href="https://www.google.com/maps/search/?api=1&query_place_id=TON_PLACE_ID"
-         target="_blank" rel="noopener noreferrer" class="google-badge">
+      <a href="https://www.google.com/maps/search/?api=1&query=C.+LUBAC+Avocat+Paris"
+         id="google-badge-link" target="_blank" rel="noopener noreferrer" class="google-badge">
         <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
           <path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.1 33.9 29.5 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.9 20-21 0-1.4-.1-2.7-.5-4z"/>
           <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.5-17.7 11.7z"/>
@@ -803,8 +803,8 @@
           <span class="google-badge-count"><span id="google-avis-count">…</span> avis Google · Voir la fiche</span>
         </span>
       </a>
-      <a href="https://search.google.com/local/writereview?placeid=TON_PLACE_ID"
-         target="_blank" rel="noopener noreferrer" class="google-btn-avis">Laisser un avis Google</a>
+      <a href="https://www.google.com/maps/search/?q=C.+LUBAC+Avocat+Paris"
+         id="google-review-link" target="_blank" rel="noopener noreferrer" class="google-btn-avis">Laisser un avis Google</a>
     </div>
 
     <div class="avis-grid">
@@ -1178,8 +1178,7 @@
   <!-- ── GOOGLE PLACES API – Avis dynamiques ── -->
   <script>
   (function () {
-    var PLACE_ID = 'TON_PLACE_ID'; // ← remplacer par l'identifiant ChIJ… de la fiche Google Maps
-    var API_KEY  = 'TA_CLE_API';   // ← remplacer par la clé Google Cloud (Maps JS API + Places API New)
+    var API_KEY = 'TA_CLE_API'; // ← remplacer par la clé Google Cloud (Maps JS API + Places API New activées)
 
     var STAR_SVG = '<svg viewBox="0 0 20 20" width="16" height="16" style="fill:#C97A62"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 13.27l-4.78 2.43.91-5.32L2.27 6.62l5.34-.78z"/></svg>';
 
@@ -1203,9 +1202,28 @@
         if (!grid) return;
 
         var { Place } = await google.maps.importLibrary('places');
-        var place = new Place({ id: PLACE_ID, requestedLanguage: 'fr' });
-        await place.fetchFields({ fields: ['rating', 'userRatingCount', 'reviews'] });
 
+        // Recherche par texte — pas besoin de place_id manuel
+        var result = await Place.searchByText({
+          textQuery: 'C. LUBAC Avocat Paris',
+          fields: ['id', 'rating', 'userRatingCount', 'reviews'],
+          language: 'fr',
+          region: 'fr',
+        });
+
+        var places = result && result.places;
+        if (!places || !places.length) return;
+        var place = places[0];
+
+        // Mise à jour des liens badge et bouton avec l'identifiant trouvé
+        if (place.id) {
+          var badgeLink  = document.getElementById('google-badge-link');
+          var reviewLink = document.getElementById('google-review-link');
+          if (badgeLink)  badgeLink.href  = 'https://www.google.com/maps/search/?api=1&query=C.+LUBAC+Avocat+Paris&query_place_id=' + place.id;
+          if (reviewLink) reviewLink.href = 'https://search.google.com/local/writereview?placeid=' + place.id;
+        }
+
+        // Mise à jour du compteur d'avis
         var countEl = document.getElementById('google-avis-count');
         if (countEl && place.userRatingCount != null) countEl.textContent = place.userRatingCount;
 
