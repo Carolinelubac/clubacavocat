@@ -1237,8 +1237,7 @@
           var name    = esc((r.authorAttribution && r.authorAttribution.displayName) || 'Client');
           var rawText = (r.text && r.text.text) ? r.text.text : (typeof r.text === 'string' ? r.text : '');
           var text    = esc(rawText);
-          var relTime = esc(r.relativePublishTimeDescription || '');
-          var note    = r.rating || 5;
+          var note = r.rating || 5;
 
           return '<div class="avis-card" role="listitem">'
             + '<span class="avis-source">Google</span>'
@@ -1246,10 +1245,7 @@
             + (text ? '<p class="avis-quote">' + text + '</p>' : '')
             + '<div class="avis-author-row">'
             +   '<div class="avis-avatar" aria-hidden="true">' + initials(name) + '</div>'
-            +   '<div class="avis-author">'
-            +     '<strong>' + name + '</strong>'
-            +     (relTime ? '<span>' + relTime + '</span>' : '')
-            +   '</div>'
+            +   '<div class="avis-author"><strong>' + name + '</strong></div>'
             + '</div>'
             + '</div>';
         }).join('');
