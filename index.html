@@ -604,6 +604,42 @@
     }
     .expertise-cta:hover { background: var(--terracotta); color: #fff; transform: translateY(-2px); }
     .expertise-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── AVIS ── */
+    #avis { background: var(--beige); padding: 8rem 8%; }
+    .avis-header { max-width: 1100px; margin: 0 auto 4rem; text-align: center; }
+    .avis-header .section-title { font-size: clamp(2.2rem, 3.5vw, 3.2rem); }
+    .avis-header .avis-subtitle { font-size: 1rem; color: var(--mid-gray); margin-top: 1rem; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .avis-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    }
+    .avis-card {
+      background: var(--white); padding: 2.4rem 2rem; border-radius: 2px;
+      display: flex; flex-direction: column; gap: 1.4rem;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
+      position: relative;
+    }
+    .avis-card::before {
+      content: '\201C'; position: absolute; top: 1.2rem; right: 1.6rem;
+      font-family: var(--font-serif); font-size: 5rem; line-height: 1;
+      color: var(--beige); pointer-events: none;
+    }
+    .avis-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .avis-stars { display: flex; gap: 3px; }
+    .avis-stars svg { width: 16px; height: 16px; fill: var(--terracotta); }
+    .avis-text {
+      font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300;
+      line-height: 1.75; color: var(--charcoal); font-style: italic; flex: 1;
+    }
+    .avis-author { display: flex; flex-direction: column; gap: 0.2rem; padding-top: 1rem; border-top: 1px solid var(--light-gray); }
+    .avis-author strong { font-size: 0.85rem; font-weight: 600; color: var(--charcoal); letter-spacing: 0.03em; }
+    .avis-author span { font-size: 0.78rem; color: var(--mid-gray); text-transform: uppercase; letter-spacing: 0.1em; }
+    .avis-source { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem; }
+    .avis-source svg { width: 14px; height: 14px; color: #4285F4; flex-shrink: 0; }
+    .avis-source span { font-size: 0.72rem; color: var(--mid-gray); }
+    @media (max-width: 900px) { #avis { padding: 5rem 6%; } .avis-grid { grid-template-columns: 1fr; gap: 1.2rem; } }
+    @media (max-width: 480px) { #avis { padding: 4rem 5%; } .avis-card { padding: 1.8rem 1.4rem; } }
   </style>
 </head>
 <body>
@@ -626,6 +662,7 @@
       <li><a href="#expertises">Expertises</a></li>
       <li><a href="#honoraires">Honoraires</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#avis">Avis</a></li>
       <li><a href="#contact" class="nav-cta">Me contacter</a></li>
     </ul>
   </nav>
@@ -873,6 +910,75 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section id="avis">
+    <div class="avis-header reveal">
+      <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+      <span class="section-tag"><img src="favicon.webp" class="brand-mark" alt="" />Témoignages</span>
+      <h2 class="section-title">Ils nous ont <em>fait confiance</em></h2>
+      <p class="avis-subtitle">Chaque dossier est unique. Voici ce que disent ceux qui m'ont confié le leur.</p>
+    </div>
+    <div class="avis-grid">
+
+      <div class="avis-card reveal delay-1">
+        <div class="avis-stars">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+        </div>
+        <p class="avis-text">Maître Lubac a su défendre mes intérêts lors d'un litige commercial complexe avec une rigueur et une clarté remarquables. Elle m'a guidé à chaque étape, sans jargon inutile. Résultat au-delà de mes espérances.</p>
+        <div class="avis-author">
+          <strong>Thomas D.</strong>
+          <span>Dirigeant PME — Droit des affaires</span>
+          <div class="avis-source">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <span>Avis Google vérifié</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-card reveal delay-2">
+        <div class="avis-stars">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+        </div>
+        <p class="avis-text">Une avocate à l'écoute, humaine et extrêmement professionnelle. Ma procédure de divorce était une épreuve difficile — Maître Lubac m'a aidée à traverser cette période avec sérénité et efficacité. Je recommande sans hésitation.</p>
+        <div class="avis-author">
+          <strong>Sophie M.</strong>
+          <span>Particulier — Droit de la famille</span>
+          <div class="avis-source">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <span>Avis Google vérifié</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis-card reveal delay-3">
+        <div class="avis-stars">
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+        </div>
+        <p class="avis-text">J'ai fait appel à Maître Lubac suite à un licenciement abusif. Sa connaissance du droit du travail et sa détermination ont fait la différence. Procédure rapide, communication claire, résultat positif. Merci infiniment.</p>
+        <div class="avis-author">
+          <strong>Karim B.</strong>
+          <span>Salarié — Droit du travail</span>
+          <div class="avis-source">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <span>Avis Google vérifié</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
