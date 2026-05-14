@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5997PF2J');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caroline Lubac Avocat – Barreau de Paris | Droit de la famille, Travail, Affaires</title>
+  <meta name="description" content="Maître Caroline Lubac, avocate au Barreau de Paris — droit de la famille, droit du travail, droit des affaires. Divorce, licenciement, contrats. Intervention dans toute la France. Premier rendez-vous offert et gratuit." />
+  <link rel="canonical" href="https://lubacavocat.fr/" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --terracotta: #C97A62;
+      --terracotta-light: #D99282;
+      --beige: #F0E6DC;
+      --cream: #FAF7F4;
+      --charcoal: #2C2C2C;
+      --mid-gray: #6B6B6B;
+      --light-gray: #E8E0D8;
+      --white: #FFFFFF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Lato', sans-serif;
+      --nav-h: 72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font-sans); color: var(--charcoal); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAVBAR ── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h);
+      background: rgba(250,247,244,0.85);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(232,224,216,0.5);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; z-index: 1000;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease, background 0.3s ease;
+    }
+    #navbar.hidden { transform: translateY(-100%); }
+    #navbar.scrolled { box-shadow: 0 2px 40px rgba(0,0,0,0.06); }
+    .nav-logo img { height: 56px; width: auto; transition: opacity 0.2s; mix-blend-mode: multiply; }
+    .nav-logo:hover img { opacity: 0.7; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--charcoal); transition: color 0.2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+      background: var(--terracotta); transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--terracotta); color: var(--white) !important;
+      padding: 0.55rem 1.4rem; border-radius: 2px; font-size: 0.75rem !important;
+      letter-spacing: 0.12em; transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--terracotta-light) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,122,98,0.35) !important; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: all 0.3s; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; gap: 0; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(250,247,244,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--light-gray); padding: 1rem 0; }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid var(--beige); }
+      .nav-links a { display: block; padding: 0.9rem 5%; font-size: 0.85rem; }
+      .nav-cta { margin: 0.5rem 5%; display: inline-block; }
+      .nav-toggle { display: flex; }
+    }
+
+    /* ── HERO ── */
+    #accueil {
+      min-height: 100vh; padding-top: var(--nav-h);
+      display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+    }
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5% 6% 5% 8%; background: var(--cream);
+    }
+    .hero-overline {
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 1.5rem;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    }
+    .hero-title {
+      font-family: var(--font-serif); font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      font-weight: 300; line-height: 1.15; color: var(--charcoal); margin-bottom: 1.8rem;
+      overflow: hidden;
+    }
+    .hero-title .word {
+      display: inline-block;
+      opacity: 0; transform: translateY(60px);
+      animation: wordUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--terracotta); }
+    .hero-desc {
+      font-size: 1rem; font-weight: 300; color: var(--mid-gray);
+      max-width: 440px; margin-bottom: 2.8rem; line-height: 1.8;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.1s forwards;
+    }
+    .hero-image { position: relative; overflow: hidden; }
+    .hero-image img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+      animation: heroImageReveal 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+      filter: contrast(1.02);
+    }
+    .hero-image::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--cream) 0%, transparent 18%);
+    }
+    @keyframes heroImageReveal { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes wordUp { to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      #accueil { grid-template-columns: 1fr; grid-template-rows: 60vw auto; }
+      .hero-text { padding: 2.5rem 6% 3rem; order: 1; }
+      .hero-image { order: 0; }
+      .hero-image::after { background: linear-gradient(to top, var(--cream) 0%, transparent 25%); }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0; transform: translateY(50px);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+      opacity: 0; transform: translateX(-60px);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0; transform: translateX(60px);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-scale {
+      opacity: 0; transform: scale(0.92);
+      transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+    .delay-1 { transition-delay: 0.1s !important; }
+    .delay-2 { transition-delay: 0.2s !important; }
+    .delay-3 { transition-delay: 0.3s !important; }
+    .delay-4 { transition-delay: 0.4s !important; }
+    .delay-5 { transition-delay: 0.5s !important; }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-block; background: var(--terracotta); color: var(--white);
+      padding: 0.85rem 2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 2px; position: relative; overflow: hidden;
+      transition: background 0.3s, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
+    .btn-primary::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .btn-primary:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,98,0.4); }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-outline {
+      display: inline-block; border: 1px solid var(--terracotta); color: var(--terracotta);
+      padding: 0.85rem 2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 2px; position: relative; overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .btn-outline::before {
+      content: ''; position: absolute; inset: 0; background: var(--terracotta);
+      transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      z-index: 0;
+    }
+    .btn-outline span { position: relative; z-index: 1; }
+    .btn-outline:hover { color: var(--white); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,98,0.25); }
+    .btn-outline:hover::before { transform: translateX(0); }
+
+    /* ── À PROPOS ── */
+    #apropos { background: var(--white); padding: 8rem 8%; }
+    .apropos-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .apropos-image-wrap { position: relative; }
+    .apropos-image-wrap img {
+      width: 100%; height: 540px; object-fit: cover; object-position: top; border-radius: 2px;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      filter: contrast(1.04);
+    }
+    .apropos-image-wrap:hover img { transform: scale(1.02); }
+    .apropos-image-wrap::before {
+      content: ''; position: absolute; top: -16px; left: -16px; right: 16px; bottom: 16px;
+      border: 1px solid var(--beige); border-radius: 2px; z-index: 0;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .apropos-image-wrap:hover::before { transform: translate(-4px, -4px); }
+    .apropos-image-wrap img { position: relative; z-index: 1; overflow: hidden; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.2rem;
+    }
+    .brand-mark { height: 18px; width: auto; opacity: 0.75; mix-blend-mode: multiply; }
+    .section-title {
+      font-family: var(--font-serif); font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300; line-height: 1.2; color: var(--charcoal); margin-bottom: 1.8rem;
+    }
+    .section-title em { font-style: italic; color: var(--terracotta); }
+    .apropos-text p { font-size: 0.97rem; color: var(--mid-gray); line-height: 1.85; margin-bottom: 1.2rem; }
+    .apropos-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--light-gray); }
+    .stat-number {
+      font-family: var(--font-serif); font-size: 2.4rem; font-weight: 300;
+      color: var(--terracotta); line-height: 1;
+    }
+    .stat-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid-gray); margin-top: 0.3rem; }
+    @media (max-width: 900px) {
+      #apropos { padding: 5rem 6%; }
+      .apropos-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .apropos-image-wrap img { height: 380px; }
+    }
+
+    /* ── EXPERTISES ── */
+    #expertises { background: var(--beige); padding: 8rem 8%; }
+    .expertises-header { max-width: 1100px; margin: 0 auto 4rem; text-align: center; }
+    .expertises-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .expertise-card {
+      background: var(--white); padding: 2.8rem 2.2rem; border-radius: 2px;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative; overflow: hidden;
+    }
+    .expertise-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .expertise-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.1); }
+    .expertise-card:hover::before { transform: scaleX(1); }
+    .expertise-icon { width: 48px; height: 48px; margin-bottom: 1.6rem; color: var(--terracotta); transition: transform 0.3s; }
+    .expertise-card:hover .expertise-icon { transform: scale(1.1) rotate(-5deg); }
+    .expertise-card h3 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; line-height: 1.2; }
+    .expertise-card p { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.8; margin-bottom: 1.6rem; }
+    .expertise-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+    .expertise-list li { font-size: 0.85rem; color: var(--mid-gray); padding-left: 1rem; position: relative; transition: color 0.2s, padding-left 0.3s; }
+    .expertise-list li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); font-size: 0.75rem; transition: left 0.3s; }
+    .expertise-card:hover .expertise-list li { padding-left: 1.4rem; }
+    .expertise-card:hover .expertise-list li::before { left: 0.2rem; }
+    @media (max-width: 900px) { #expertises { padding: 5rem 6%; } .expertises-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 901px) and (max-width: 1100px) { .expertises-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── HONORAIRES ── */
+    #honoraires { background: var(--cream); padding: 8rem 8%; }
+    .honoraires-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .honoraires-text p { font-size: 0.97rem; color: var(--mid-gray); line-height: 1.85; margin-bottom: 1.2rem; }
+    .honoraires-modes { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+    .mode-item {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.4rem 1.6rem; background: var(--white);
+      border-left: 3px solid var(--terracotta); border-radius: 0 2px 2px 0;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
+    .mode-item:hover { transform: translateX(6px); box-shadow: 4px 8px 24px rgba(0,0,0,0.07); }
+    .mode-icon { flex-shrink: 0; width: 36px; height: 36px; color: var(--terracotta); margin-top: 2px; transition: transform 0.3s; }
+    .mode-item:hover .mode-icon { transform: rotate(10deg) scale(1.1); }
+    .mode-content h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.3rem; }
+    .mode-content p { font-size: 0.87rem; color: var(--mid-gray); line-height: 1.6; margin: 0; }
+    .honoraires-aide {
+      background: var(--beige); border-radius: 2px; padding: 2rem; margin-top: 2rem;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
+    .honoraires-aide:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); }
+    .honoraires-aide h3 { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.6rem; }
+    .honoraires-aide p { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.7; }
+    .honoraires-photo { position: relative; overflow: hidden; border-radius: 2px; }
+    .honoraires-photo img {
+      width: 100%; height: 520px; object-fit: cover; object-position: center top;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: high-quality;
+      filter: contrast(1.04);
+    }
+    .honoraires-photo:hover img { transform: scale(1.02); }
+    .honoraires-photo-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--terracotta); color: var(--white); padding: 1.6rem 2rem;
+      border-radius: 2px; text-align: center;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
+    .honoraires-photo:hover .honoraires-photo-badge { transform: translate(-4px, -4px); box-shadow: 8px 8px 24px rgba(201,122,98,0.35); }
+    .honoraires-photo-badge strong { display: block; font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; line-height: 1; }
+    .honoraires-photo-badge span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+    @media (max-width: 900px) {
+      #honoraires { padding: 5rem 6%; }
+      .honoraires-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .honoraires-photo { order: -1; }
+      .honoraires-photo img { height: 320px; }
+      .honoraires-photo-badge { bottom: 1rem; right: 1rem; }
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--charcoal); padding: 8rem 8%; color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    #contact::before {
+      content: ''; position: absolute; top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,122,98,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; position: relative; }
+    .contact-info .section-tag { color: var(--terracotta); }
+    .contact-info .section-title { color: var(--white); }
+    .contact-info .section-title em { color: var(--terracotta); }
+    .contact-info p { font-size: 0.97rem; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 2.5rem; }
+    .contact-details { display: flex; flex-direction: column; gap: 1.4rem; }
+    .contact-detail { display: flex; gap: 1rem; align-items: flex-start; transition: transform 0.3s; }
+    .contact-detail:hover { transform: translateX(6px); }
+    .contact-detail-icon { flex-shrink: 0; width: 20px; height: 20px; color: var(--terracotta); margin-top: 2px; }
+    .contact-detail-text strong { display: block; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.2rem; }
+    .contact-detail-text span { font-size: 0.97rem; color: rgba(255,255,255,0.85); }
+    .contact-detail-text a { color: rgba(255,255,255,0.85); transition: color 0.2s; }
+    .contact-detail-text a:hover { color: var(--terracotta); }
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-field label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .form-field:focus-within label { color: var(--terracotta); }
+    .form-field input, .form-field select, .form-field textarea {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 2px; color: var(--white); font-family: var(--font-sans); font-size: 0.95rem;
+      padding: 0.85rem 1rem; outline: none; width: 100%;
+      transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+    }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      border-color: var(--terracotta); background: rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 3px rgba(201,122,98,0.15);
+    }
+    .form-field select option { background: var(--charcoal); }
+    .form-field textarea { resize: vertical; min-height: 120px; }
+    .form-submit { margin-top: 0.5rem; }
+    .form-submit button {
+      width: 100%; background: var(--terracotta); color: var(--white); border: none;
+      padding: 1rem 2rem; font-family: var(--font-sans); font-size: 0.78rem;
+      letter-spacing: 0.15em; text-transform: uppercase; border-radius: 2px;
+      position: relative; overflow: hidden;
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .form-submit button::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .form-submit button:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,98,0.4); }
+    .form-submit button:hover::after { opacity: 1; }
+    .form-notice { font-size: 0.78rem; color: rgba(255,255,255,0.3); line-height: 1.5; margin-top: 0.5rem; }
+    @media (max-width: 900px) { #contact { padding: 5rem 6%; } .contact-inner { grid-template-columns: 1fr; gap: 3.5rem; } .form-row { grid-template-columns: 1fr; } }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1a1a; padding: 2.5rem 8%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-logo img { height: 48px; width: auto; opacity: 0.85; transition: opacity 0.3s; }
+    .footer-logo:hover img { opacity: 0.8; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--terracotta); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+    @media (max-width: 600px) { footer { flex-direction: column; text-align: center; padding: 2rem 6%; } .footer-links { flex-wrap: wrap; justify-content: center; } }
+
+    /* ── FAQ ── */
+    #faq { background: var(--white); padding: 8rem 8%; }
+    .faq-inner { max-width: 860px; margin: 0 auto; }
+    .faq-header { text-align: center; margin-bottom: 4rem; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--light-gray);
+      overflow: hidden;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--light-gray); }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; padding: 1.6rem 0; background: none; border: none;
+      text-align: left;
+      font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400;
+      color: var(--charcoal); line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--terracotta); }
+    .faq-icon {
+      flex-shrink: 0; width: 24px; height: 24px;
+      border: 1px solid var(--light-gray); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s, border-color 0.3s, transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .faq-icon svg { width: 12px; height: 12px; color: var(--mid-gray); transition: color 0.3s; }
+    .faq-item.open .faq-question { color: var(--terracotta); }
+    .faq-item.open .faq-icon { background: var(--terracotta); border-color: var(--terracotta); transform: rotate(45deg); }
+    .faq-item.open .faq-icon svg { color: var(--white); }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94), padding 0.3s;
+    }
+    .faq-answer-inner {
+      padding: 0 0 1.6rem 0;
+      font-size: 0.96rem; color: var(--mid-gray); line-height: 1.85;
+    }
+    .faq-answer-inner strong { color: var(--charcoal); font-weight: 400; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-question-heading { margin: 0; font-size: inherit; font-weight: inherit; }
+    @media (max-width: 768px) {
+      #faq { padding: 5rem 6%; }
+      .faq-question { font-size: 1.05rem; }
+    }
+
+    /* ── AVIS ── */
+    #avis { background: var(--beige); padding: 8rem 8%; }
+    .avis-header { max-width: 1100px; margin: 0 auto 4rem; text-align: center; }
+    .avis-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .avis-card {
+      background: var(--white); padding: 2.2rem 2rem; border-radius: 2px;
+      display: flex; flex-direction: column; gap: 1.2rem;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
+      position: relative;
+    }
+    .avis-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .avis-stars { display: flex; gap: 3px; }
+    .avis-stars svg { width: 16px; height: 16px; fill: var(--terracotta); }
+    .avis-quote {
+      font-family: var(--font-serif); font-size: 1.08rem; font-weight: 300;
+      color: var(--charcoal); line-height: 1.75; font-style: italic;
+      flex: 1;
+    }
+    .avis-quote::before { content: '\201C'; color: var(--terracotta); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-right: 2px; }
+    .avis-quote::after  { content: '\201D'; color: var(--terracotta); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-left: 2px; }
+    .avis-author { display: flex; flex-direction: column; gap: 0.15rem; padding-top: 1rem; border-top: 1px solid var(--light-gray); }
+    .avis-author strong { font-size: 0.85rem; font-weight: 700; color: var(--charcoal); letter-spacing: 0.04em; }
+    .avis-author span { font-size: 0.78rem; color: var(--mid-gray); letter-spacing: 0.06em; text-transform: uppercase; }
+    .avis-source { position: absolute; top: 1.4rem; right: 1.6rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); opacity: 0.7; }
+    @media (max-width: 900px) { #avis { padding: 5rem 6%; } .avis-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 901px) and (max-width: 1100px) { .avis-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── GOOGLE BADGE BAR ── */
+    .google-badge-bar { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; max-width: 1100px; margin: 0 auto 3.5rem; }
+    .google-badge {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: var(--white); color: var(--charcoal);
+      border: 1.5px solid var(--light-gray); padding: 14px 24px;
+      border-radius: 2px; text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .google-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+    .google-badge-rating { display: block; font-size: 1.5rem; font-weight: 700; line-height: 1; }
+    .google-badge-stars { display: block; color: var(--terracotta); font-size: 0.95rem; letter-spacing: 2px; line-height: 1.3; }
+    .google-badge-count { display: block; font-size: 0.78rem; color: var(--mid-gray); margin-top: 2px; }
+    .google-btn-avis {
+      display: inline-block; background: var(--terracotta); color: var(--white);
+      padding: 14px 32px; border-radius: 2px; font-weight: 700;
+      font-size: 0.88rem; text-decoration: none; letter-spacing: 0.04em;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .google-btn-avis:hover { background: var(--terracotta-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,122,98,0.35); }
+    #google-reviews-grid { max-width: 1100px; margin: 3rem auto 0; display: none; }
+    #google-reviews-grid.loaded { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .avis-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--terracotta); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; }
+    .avis-author-row { display: flex; align-items: center; gap: 10px; padding-top: 1rem; border-top: 1px solid var(--light-gray); }
+    .avis-author-row .avis-author { padding-top: 0; border-top: none; }
+    @media (max-width: 900px) { #google-reviews-grid.loaded { grid-template-columns: 1fr; } }
+    @media (min-width: 901px) and (max-width: 1100px) { #google-reviews-grid.loaded { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ── SECTION DIVIDER LINE ── */
+    .section-line {
+      display: block; width: 40px; height: 1px; background: var(--terracotta);
+      margin-bottom: 1.5rem;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    }
+    .reveal.visible .section-line,
+    .reveal-left.visible .section-line,
+    .reveal-right.visible .section-line { transform: scaleX(1); }
+
+    /* ── WHATSAPP BUBBLE ── */
+    .whatsapp-bubble {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 9000;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 0.75rem;
+    }
+    .whatsapp-tooltip {
+      background: var(--charcoal); color: var(--white);
+      font-size: 0.8rem; padding: 0.55rem 1rem; border-radius: 100px;
+      white-space: nowrap; opacity: 0; transform: translateX(8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+    .whatsapp-bubble:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
+    .whatsapp-btn {
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.25s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.25s ease;
+    }
+    .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+    .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+    @media (max-width: 768px) {
+      .whatsapp-bubble { bottom: 1.25rem; right: 1.25rem; }
+      .whatsapp-btn { width: 52px; height: 52px; }
+    }
+    /* ── HERO DIRECT CONTACT ── */
+    .hero-direct { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+    .btn-call {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: #fff; border: 1.5px solid var(--terracotta); color: var(--terracotta);
+      padding: 0.65rem 1.3rem; border-radius: 100px; font-size: 0.85rem; font-weight: 700;
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-call:hover { background: var(--terracotta); color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,122,98,0.35); }
+    .btn-wa-inline {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: #25D366; color: #fff;
+      padding: 0.65rem 1.3rem; border-radius: 100px; font-size: 0.85rem; font-weight: 700;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-wa-inline:hover { background: #1aad54; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+    .btn-call svg, .btn-wa-inline svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ── HERO MINI FORM ── */
+    .hero-form-mini { margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--light-gray); }
+    .hero-form-mini > p { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1rem; }
+    .hero-form-mini form { display: flex; flex-direction: column; gap: 0.65rem; }
+    .hfm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+    .hero-form-mini input, .hero-form-mini select {
+      width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--light-gray);
+      border-radius: 4px; font-family: var(--font-sans); font-size: 0.88rem;
+      background: #fff; color: var(--charcoal); transition: border-color 0.2s;
+    }
+    .hero-form-mini input:focus, .hero-form-mini select:focus { outline: none; border-color: var(--terracotta); }
+    .hero-form-mini button {
+      background: var(--terracotta); color: #fff; border: none;
+      padding: 0.85rem; border-radius: 4px; font-family: var(--font-sans);
+      font-size: 0.88rem; font-weight: 700; letter-spacing: 0.04em;
+      cursor: pointer; transition: background 0.2s, transform 0.2s;
+    }
+    .hero-form-mini button:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+    .hero-form-mini .hfm-notice { font-size: 0.72rem; color: var(--mid-gray); text-align: center; }
+    @media (max-width: 768px) { .hfm-row { grid-template-columns: 1fr; } .hero-form-mini { margin-top: 1.5rem; } }
+
+    /* ── CTA BAR ── */
+    .cta-bar {
+      background: var(--charcoal); padding: 3rem 8%;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .cta-bar-text strong { display: block; font-family: var(--font-serif); font-size: 1.6rem; font-weight: 300; color: #fff; line-height: 1.3; }
+    .cta-bar-text span { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+    .cta-bar-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-call-white {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: #fff; color: var(--charcoal);
+      padding: 0.85rem 1.6rem; border-radius: 100px; font-size: 0.88rem; font-weight: 700;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-call-white:hover { background: var(--terracotta); color: #fff; transform: translateY(-2px); }
+    .btn-wa-bar {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      background: #25D366; color: #fff;
+      padding: 0.85rem 1.6rem; border-radius: 100px; font-size: 0.88rem; font-weight: 700;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-wa-bar:hover { background: #1aad54; transform: translateY(-2px); }
+    .btn-call-white svg, .btn-wa-bar svg { width: 16px; height: 16px; flex-shrink: 0; }
+    @media (max-width: 768px) { .cta-bar { padding: 2.5rem 6%; justify-content: center; text-align: center; } }
+
+    /* ── EXPERTISE CARD CTA ── */
+    .expertise-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.5rem; padding: 0.6rem 1.2rem;
+      border: 1.5px solid var(--terracotta); border-radius: 100px;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--terracotta); transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .expertise-cta:hover { background: var(--terracotta); color: #fff; transform: translateY(-2px); }
+    .expertise-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5997PF2J"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+
+  <nav id="navbar">
+    <a class="nav-logo" href="#accueil">
+      <img src="navbar-logo-modifie.png" alt="C Lubac Avocat" />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#expertises">Expertises</a></li>
+      <li><a href="#honoraires">Honoraires</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+    </ul>
+  </nav>
+
+  <section id="accueil">
+    <div class="hero-text">
+      <p class="hero-overline">Avocat au Barreau de Paris — Intervention France entière</p>
+      <h1 class="hero-title" id="heroTitle">Un accompagnement humain et expert à vos côtés</h1>
+      <p class="hero-desc">Je défends vos intérêts avec rigueur et bienveillance, en droit de la famille, droit du travail et droit des affaires. Parce que chaque situation est unique, je prends le temps de vous écouter.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+        <a href="#expertises" class="btn-outline"><span>Mes expertises</span></a>
+      </div>
+      <div class="hero-direct">
+        <a href="tel:+33663561541" class="btn-call">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.02L6.91 7.22a11.05 11.05 0 005.87 5.87l1.22-1.21a1 1 0 011.02-.23l3.3 1.1A1 1 0 0119 13.72V16a2 2 0 01-2 2C8.61 18 2 11.39 2 3z"/></svg>
+          06 63 56 15 41
+        </a>
+      </div>
+      <div class="hero-form-mini">
+        <p>— Être rappelé(e) rapidement —</p>
+        <form name="rappel" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
+          <input type="hidden" name="_subject" value="Demande de rappel — lubacavocat.fr" />
+          <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" />
+          <div class="hfm-row">
+            <input type="text" name="prenom" placeholder="Votre prénom" required />
+            <input type="tel" name="telephone" placeholder="Votre téléphone" required />
+          </div>
+          <select name="domaine">
+            <option value="">Domaine juridique</option>
+            <option>Droit de la famille</option>
+            <option>Droit du travail</option>
+            <option>Droit des affaires</option>
+            <option>Autre</option>
+          </select>
+          <button type="submit">Demander à être rappelé(e)</button>
+          <p class="hfm-notice">1er rendez-vous offert · Réponse sous 24h</p>
+        </form>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="photo-hero.jpg" alt="Maître Caroline Lubac, avocate au Barreau de Paris" id="heroImg" />
+    </div>
+  </section>
+
+  <section id="apropos">
+    <div class="apropos-inner">
+      <div class="apropos-image-wrap reveal-left">
+        <img src="caroline-lubac-bureau.jpg" alt="Cabinet de Maître Caroline Lubac, avocate à Paris" />
+      </div>
+      <div class="apropos-text reveal-right">
+        <span class="section-line"></span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />À propos</span>
+        <h2 class="section-title">Caroline Lubac,<br><em>Avocat engagée</em></h2>
+        <p>Diplômée en droit, je suis avocate inscrite au Barreau de Paris depuis plus de 10 ans. J'interviens dans toute la France — en présentiel à Paris et en visioconférence pour accompagner mes clients où qu'ils se trouvent sur le territoire. Mon parcours m'a amenée à développer une expertise pluridisciplinaire, au service des particuliers comme des entreprises.</p>
+        <p>Je crois profondément que le droit est avant tout un outil au service des personnes. C'est pourquoi j'accorde une importance particulière à l'écoute, à la pédagogie et à la transparence dans ma relation avec chaque client.</p>
+        <p>Mon cabinet est un espace où vous pouvez exposer votre situation librement, dans un cadre confidentiel et bienveillant, afin de construire ensemble la meilleure stratégie.</p>
+        <div class="apropos-stats">
+          <div class="stat-item"><div class="stat-number" data-count="10" data-suffix="+">0</div><div class="stat-label">Années d'expérience</div></div>
+          <div class="stat-item"><div class="stat-number" data-count="500" data-suffix="+">0</div><div class="stat-label">Dossiers traités</div></div>
+          <div class="stat-item"><div class="stat-number" data-count="3" data-suffix="">0</div><div class="stat-label">Domaines d'expertise</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertises">
+    <div class="expertises-header reveal">
+      <span class="section-line" style="margin:0 auto 1.5rem; transform-origin:center;"></span>
+      <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Domaines d'intervention</span>
+      <h2 class="section-title">Mes <em>expertises</em> juridiques à Paris et en France</h2>
+    </div>
+    <div class="expertises-grid">
+      <div class="expertise-card reveal delay-1">
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 8C18 8 13 13 13 19c0 8 11 21 11 21s11-13 11-21c0-6-5-11-11-11z"/><circle cx="24" cy="19" r="3.5"/></svg>
+        <h3>Avocat en droit de la famille à Paris</h3>
+        <p>Je vous accompagne dans toutes les étapes de votre vie familiale, avec discrétion et bienveillance, pour protéger vos intérêts et ceux de vos proches.</p>
+        <ul class="expertise-list">
+          <li>Divorce et séparation</li><li>Garde des enfants et autorité parentale</li><li>Pension alimentaire et prestation compensatoire</li><li>Succession et héritage</li><li>Adoption et filiation</li>
+        </ul>
+        <a href="https://wa.me/33663561541" target="_blank" rel="noopener" class="expertise-cta">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.83 1.8 6.856L2 30l7.347-1.775A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.34 19.36c-.347-.174-2.055-1.013-2.374-1.13-.32-.116-.552-.174-.784.174-.232.347-.9 1.13-1.103 1.362-.203.232-.406.26-.753.087-.347-.174-1.464-.54-2.788-1.72-1.03-.92-1.726-2.055-1.928-2.402-.203-.347-.022-.535.152-.708.156-.155.347-.406.52-.61.174-.203.232-.347.347-.579.116-.232.058-.435-.029-.61-.087-.174-.784-1.89-1.074-2.588-.283-.68-.57-.587-.784-.598l-.667-.012c-.232 0-.61.087-.928.435-.32.347-1.218 1.19-1.218 2.9s1.247 3.364 1.42 3.596c.174.232 2.454 3.747 5.946 5.254.831.36 1.48.574 1.986.735.834.266 1.594.228 2.194.138.67-.1 2.055-.84 2.345-1.652.29-.81.29-1.507.203-1.652-.087-.145-.32-.232-.667-.406z"/></svg>
+          Me contacter
+        </a>
+      </div>
+      <div class="expertise-card reveal delay-2">
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="14" width="32" height="26" rx="1"/><path d="M16 14v-3a2 2 0 012-2h12a2 2 0 012 2v3"/><line x1="24" y1="22" x2="24" y2="32"/><line x1="19" y1="27" x2="29" y2="27"/></svg>
+        <h3>Avocat en droit du travail à Paris</h3>
+        <p>Salarié ou employeur, je défends vos droits face aux litiges professionnels, du conseil préventif jusqu'à la représentation devant le Conseil de Prud'hommes.</p>
+        <ul class="expertise-list">
+          <li>Licenciement abusif ou économique</li><li>Rupture conventionnelle</li><li>Harcèlement moral et sexuel</li><li>Contrats de travail et négociation</li><li>Contentieux prud'homal</li>
+        </ul>
+        <a href="https://wa.me/33663561541" target="_blank" rel="noopener" class="expertise-cta">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.83 1.8 6.856L2 30l7.347-1.775A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.34 19.36c-.347-.174-2.055-1.013-2.374-1.13-.32-.116-.552-.174-.784.174-.232.347-.9 1.13-1.103 1.362-.203.232-.406.26-.753.087-.347-.174-1.464-.54-2.788-1.72-1.03-.92-1.726-2.055-1.928-2.402-.203-.347-.022-.535.152-.708.156-.155.347-.406.52-.61.174-.203.232-.347.347-.579.116-.232.058-.435-.029-.61-.087-.174-.784-1.89-1.074-2.588-.283-.68-.57-.587-.784-.598l-.667-.012c-.232 0-.61.087-.928.435-.32.347-1.218 1.19-1.218 2.9s1.247 3.364 1.42 3.596c.174.232 2.454 3.747 5.946 5.254.831.36 1.48.574 1.986.735.834.266 1.594.228 2.194.138.67-.1 2.055-.84 2.345-1.652.29-.81.29-1.507.203-1.652-.087-.145-.32-.232-.667-.406z"/></svg>
+          Me contacter
+        </a>
+      </div>
+      <div class="expertise-card reveal delay-3">
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 38V18l14-10 14 10v20H10z"/><rect x="18" y="26" width="12" height="12"/><line x1="24" y1="10" x2="24" y2="14"/></svg>
+        <h3>Avocat en droit des affaires à Paris</h3>
+        <p>J'accompagne dirigeants et entrepreneurs dans la structuration juridique de leurs projets et la résolution de leurs litiges commerciaux.</p>
+        <ul class="expertise-list">
+          <li>Création et cession d'entreprise</li><li>Rédaction et négociation de contrats</li><li>Litiges commerciaux et recouvrement</li><li>Droit des sociétés</li><li>Baux commerciaux</li>
+        </ul>
+        <a href="https://wa.me/33663561541" target="_blank" rel="noopener" class="expertise-cta">
+          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.83 1.8 6.856L2 30l7.347-1.775A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.34 19.36c-.347-.174-2.055-1.013-2.374-1.13-.32-.116-.552-.174-.784.174-.232.347-.9 1.13-1.103 1.362-.203.232-.406.26-.753.087-.347-.174-1.464-.54-2.788-1.72-1.03-.92-1.726-2.055-1.928-2.402-.203-.347-.022-.535.152-.708.156-.155.347-.406.52-.61.174-.203.232-.347.347-.579.116-.232.058-.435-.029-.61-.087-.174-.784-1.89-1.074-2.588-.283-.68-.57-.587-.784-.598l-.667-.012c-.232 0-.61.087-.928.435-.32.347-1.218 1.19-1.218 2.9s1.247 3.364 1.42 3.596c.174.232 2.454 3.747 5.946 5.254.831.36 1.48.574 1.986.735.834.266 1.594.228 2.194.138.67-.1 2.055-.84 2.345-1.652.29-.81.29-1.507.203-1.652-.087-.145-.32-.232-.667-.406z"/></svg>
+          Me contacter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="honoraires">
+    <div class="honoraires-inner">
+      <div class="honoraires-text reveal-left">
+        <span class="section-line"></span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Transparence & clarté</span>
+        <h2 class="section-title">Mes <em>honoraires</em></h2>
+        <p>La question des honoraires est abordée dès le premier rendez-vous, en toute transparence. Je vous remets une convention d'honoraires claire avant tout engagement, afin que vous puissiez décider en connaissance de cause.</p>
+        <p>Les honoraires varient selon la nature et la complexité du dossier. Plusieurs modes de facturation sont possibles :</p>
+        <div class="honoraires-modes">
+          <div class="mode-item reveal delay-1">
+            <svg class="mode-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="13"/><path d="M18 11v7l4 4"/></svg>
+            <div class="mode-content"><h3>Honoraire horaire</h3><p>Facturation au temps passé sur votre dossier. Adapté aux consultations et aux dossiers courts.</p></div>
+          </div>
+          <div class="mode-item reveal delay-2">
+            <svg class="mode-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="9" width="22" height="18" rx="1"/><line x1="12" y1="15" x2="24" y2="15"/><line x1="12" y1="20" x2="20" y2="20"/></svg>
+            <div class="mode-content"><h3>Forfait</h3><p>Honoraire global fixé à l'avance pour une prestation définie. Idéal pour les procédures courantes.</p></div>
+          </div>
+          <div class="mode-item reveal delay-3">
+            <svg class="mode-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 26l6-12 6 8 4-5"/><circle cx="26" cy="26" r="4"/></svg>
+            <div class="mode-content"><h3>Honoraire de résultat</h3><p>Une partie des honoraires est conditionnée au résultat obtenu, en complément d'un honoraire de base.</p></div>
+          </div>
+        </div>
+        <div class="honoraires-aide reveal delay-4">
+          <h3>Aide juridictionnelle</h3>
+          <p>Sous conditions de ressources, vous pouvez bénéficier de l'aide juridictionnelle (totale ou partielle) pour que l'État prenne en charge tout ou partie de mes honoraires. Je vous aide à constituer votre dossier.</p>
+        </div>
+      </div>
+      <div class="honoraires-photo reveal-right">
+        <img src="caroline-lubac-portrait.jpg" alt="Maître Caroline Lubac, consultation juridique" />
+        <div class="honoraires-photo-badge"><strong>1er RDV</strong><span>Consultation offerte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="avis">
+    <div class="avis-header reveal">
+      <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+      <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Témoignages clients</span>
+      <h2 class="section-title">Ce que disent <em>mes clients</em></h2>
+    </div>
+    <!-- Badge note Google + bouton laisser un avis -->
+    <div class="google-badge-bar reveal">
+      <a href="https://www.google.com/maps/search/?api=1&query=C.+LUBAC+Avocat+Paris"
+         id="google-badge-link" target="_blank" rel="noopener noreferrer" class="google-badge">
+        <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.1 33.9 29.5 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.9 20-21 0-1.4-.1-2.7-.5-4z"/>
+          <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.5-17.7 11.7z"/>
+          <path fill="#FBBC05" d="M24 45c5.4 0 10.3-1.8 14.1-4.9l-6.5-5.5C29.4 36.4 26.8 37 24 37c-5.4 0-10-3-12.1-7.4l-7 5.4C8.3 40.9 15.6 45 24 45z"/>
+          <path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.9 2.5-2.6 4.6-4.8 6.1l6.5 5.5C41.1 36.9 45 31 45 24c0-1.4-.1-2.7-.5-4z"/>
+        </svg>
+        <span>
+          <span class="google-badge-rating">5,0</span>
+          <span class="google-badge-stars">★★★★★</span>
+          <span class="google-badge-count"><span id="google-avis-count">…</span> avis Google · Voir la fiche</span>
+        </span>
+      </a>
+      <a href="https://www.google.com/maps/search/?q=C.+LUBAC+Avocat+Paris"
+         id="google-review-link" target="_blank" rel="noopener noreferrer" class="google-btn-avis">Laisser un avis Google</a>
+    </div>
+
+    <!-- Avis Google chargés dynamiquement via Places API -->
+    <div id="google-reviews-grid" role="list" aria-label="Avis Google vérifiés"></div>
+  </section>
+
+  <section id="faq">
+    <div class="faq-inner">
+      <div class="faq-header reveal">
+        <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Questions fréquentes</span>
+        <h2 class="section-title">Tout ce que vous devez <em>savoir</em></h2>
+      </div>
+      <div class="faq-list reveal">
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Quelle est la zone d'intervention de Maître Lubac ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Inscrite au <strong>Barreau de Paris</strong>, Maître Lubac intervient dans <strong>toute la France</strong>. Les consultations se tiennent en présentiel à Paris ou en visioconférence, ce qui lui permet d'accompagner efficacement ses clients depuis n'importe quelle ville : Lyon, Marseille, Bordeaux, Toulouse, Nantes, Lille, Strasbourg et partout sur le territoire.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Comment se déroule le premier rendez-vous ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Le <strong>premier rendez-vous est offert</strong> et sans engagement. Il dure environ 45 minutes à 1 heure. C'est l'occasion pour vous d'exposer votre situation librement, d'obtenir une première analyse juridique et de définir ensemble la stratégie la plus adaptée. Vous repartez avec une vision claire des options disponibles et une estimation des honoraires.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Quels sont les honoraires d'un avocat en droit de la famille à Paris ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Les honoraires varient selon la <strong>nature et la complexité du dossier</strong>. Maître Lubac propose plusieurs modes de facturation : honoraire horaire, forfait pour les procédures courantes (divorce par consentement mutuel, par exemple), ou honoraire mixte avec une part au résultat. Une <strong>convention d'honoraires transparente</strong> est établie avant tout engagement, sans surprise.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Puis-je bénéficier de l'aide juridictionnelle ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Oui. L'<strong>aide juridictionnelle</strong> permet à toute personne dont les ressources sont insuffisantes de bénéficier d'une prise en charge totale ou partielle de ses frais d'avocat par l'État. Maître Lubac accepte les dossiers en aide juridictionnelle et vous accompagne dans la constitution du dossier auprès du bureau d'aide juridictionnelle compétent.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Comment contester un licenciement avec un avocat en droit du travail ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            En cas de <strong>licenciement abusif ou sans cause réelle et sérieuse</strong>, vous disposez d'un délai de 12 mois à compter de la notification du licenciement pour saisir le Conseil de Prud'hommes. Maître Lubac analyse votre lettre de licenciement, évalue les chances de succès et vous représente devant la juridiction compétente pour obtenir des indemnités ou la réintégration. N'attendez pas : chaque mois compte.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Quelle est la différence entre un divorce par consentement mutuel et un divorce contentieux ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Le <strong>divorce par consentement mutuel</strong> est amiable : les deux époux se mettent d'accord sur toutes les modalités (garde des enfants, partage des biens, prestation compensatoire). Il est plus rapide et moins coûteux. Le <strong>divorce contentieux</strong> intervient lorsqu'un désaccord persiste : le juge aux affaires familiales tranche. Dans les deux cas, chaque époux doit être représenté par son propre avocat. Maître Lubac intervient pour les deux procédures, partout en France.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Avocat en droit des affaires : quand faire appel à un avocat pour son entreprise ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Il est conseillé de consulter un avocat <strong>dès la création de votre entreprise</strong> (choix du statut juridique, rédaction des statuts), puis à chaque étape clé : rédaction ou révision de contrats commerciaux, litige avec un fournisseur ou un client, cession de fonds de commerce, négociation de baux commerciaux. Maître Lubac accompagne dirigeants et entrepreneurs dans toute la France pour sécuriser leurs décisions et prévenir les contentieux.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Est-il possible de consulter un avocat à Paris depuis la province ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Absolument. Maître Lubac propose des <strong>consultations en visioconférence</strong> pour tous les clients situés en dehors de Paris. La distance n'est pas un obstacle : échanges par email, appels téléphoniques et visioconférences sécurisées permettent un suivi rigoureux de votre dossier depuis n'importe quelle ville de France. Seules les audiences nécessitant une présence physique mobilisent un déplacement, coordonné en amont.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-info reveal-left">
+        <span class="section-line"></span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Prenons contact</span>
+        <h2 class="section-title">Prendre rendez-vous avec <em>Maître Lubac</em></h2>
+        <p>Le premier rendez-vous est offert. C'est l'occasion d'exposer votre situation, d'obtenir une première analyse et de décider ensemble de la marche à suivre, sans engagement.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 11a4 4 0 100-8 4 4 0 000 8z"/><path d="M3 18c0-3.314 3.134-6 7-6s7 2.686 7 6"/></svg>
+            <div class="contact-detail-text"><strong>Cabinet</strong><span>Paris — Intervention France entière</span></div>
+          </div>
+          <div class="contact-detail">
+            <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5h14v11H3z"/><path d="M3 5l7 7 7-7"/></svg>
+            <div class="contact-detail-text"><strong>Email</strong><a href="mailto:contact@clubacavocat.fr">contact@clubacavocat.fr</a></div>
+          </div>
+          <div class="contact-detail">
+            <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.02L7.91 9.22a11.05 11.05 0 005.87 5.87l2.22-1.21a1 1 0 011.02-.23l3.3 1.1A1 1 0 0121 15.72V18a2 2 0 01-2 2C9.61 20 0 10.39 0 1 0 3.61.9 2 2 2z" transform="scale(0.85) translate(1.5,1)"/></svg>
+            <div class="contact-detail-text"><strong>Téléphone</strong><a href="tel:+33663561541">06 63 56 15 41</a></div>
+          </div>
+          <div class="contact-detail">
+            <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="16" height="14" rx="1"/><line x1="2" y1="8" x2="18" y2="8"/><line x1="7" y1="3" x2="7" y2="8"/><line x1="13" y1="3" x2="13" y2="8"/></svg>
+            <div class="contact-detail-text"><strong>Horaires</strong><span>Lun – Ven : 9h – 18h<br>Sur rendez-vous</span></div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form reveal-right" name="contact" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
+        <input type="hidden" name="_subject" value="Nouveau contact — lubacavocat.fr" />
+        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" />
+        <div class="form-row">
+          <div class="form-field"><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required /></div>
+          <div class="form-field"><label for="nom">Nom</label><input type="text" id="nom" name="nom" placeholder="Votre nom" required /></div>
+        </div>
+        <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="votre@email.fr" required /></div>
+        <div class="form-field"><label for="telephone">Téléphone</label><input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" /></div>
+        <div class="form-field">
+          <label for="domaine">Domaine juridique</label>
+          <select id="domaine" name="domaine">
+            <option value="">Sélectionnez un domaine</option>
+            <option>Droit de la famille</option>
+            <option>Droit du travail</option>
+            <option>Droit des affaires</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-field"><label for="message">Votre situation (en quelques mots)</label><textarea id="message" name="message" placeholder="Décrivez brièvement votre situation…"></textarea></div>
+        <div class="form-submit"><button type="submit">Envoyer ma demande</button></div>
+        <p class="form-notice">Vos données sont strictement confidentielles et ne seront jamais transmises à des tiers.</p>
+      </form>
+    </div>
+  </section>
+
+  <div class="whatsapp-bubble">
+    <span class="whatsapp-tooltip">Discutez sur WhatsApp</span>
+    <a class="whatsapp-btn" href="https://wa.me/33663561541" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.83 1.8 6.856L2 30l7.347-1.775A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.54 11.54 0 0 1-5.88-1.607l-.422-.25-4.36 1.053 1.083-4.25-.276-.437A11.558 11.558 0 0 1 4.4 16C4.4 9.59 9.59 4.4 16 4.4S27.6 9.59 27.6 16 22.41 27.6 16 27.6zm6.34-8.64c-.347-.174-2.055-1.013-2.374-1.13-.32-.116-.552-.174-.784.174-.232.347-.9 1.13-1.103 1.362-.203.232-.406.26-.753.087-.347-.174-1.464-.54-2.788-1.72-1.03-.92-1.726-2.055-1.928-2.402-.203-.347-.022-.535.152-.708.156-.155.347-.406.52-.61.174-.203.232-.347.347-.579.116-.232.058-.435-.029-.61-.087-.174-.784-1.89-1.074-2.588-.283-.68-.57-.587-.784-.598l-.667-.012c-.232 0-.61.087-.928.435-.32.347-1.218 1.19-1.218 2.9s1.247 3.364 1.42 3.596c.174.232 2.454 3.747 5.946 5.254.831.36 1.48.574 1.986.735.834.266 1.594.228 2.194.138.67-.1 2.055-.84 2.345-1.652.29-.81.29-1.507.203-1.652-.087-.145-.32-.232-.667-.406z"/>
+      </svg>
+    </a>
+  </div>
+
+  <footer>
+    <a class="footer-logo" href="#accueil"><img src="favicon.png" alt="C Lubac Avocat" /></a>
+    <ul class="footer-links">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#expertises">Expertises</a></li>
+      <li><a href="#honoraires">Honoraires</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 C Lubac Avocat — Barreau de Paris</p>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Quelle est la zone d'intervention de Maître Lubac ?","acceptedAnswer":{"@type":"Answer","text":"Inscrite au Barreau de Paris, Maître Lubac intervient dans toute la France. Les consultations se tiennent en présentiel à Paris ou en visioconférence, ce qui lui permet d'accompagner efficacement ses clients depuis n'importe quelle ville : Lyon, Marseille, Bordeaux, Toulouse, Nantes, Lille, Strasbourg et partout sur le territoire."}},
+      {"@type":"Question","name":"Comment se déroule le premier rendez-vous ?","acceptedAnswer":{"@type":"Answer","text":"Le premier rendez-vous est offert et sans engagement. Il dure environ 45 minutes à 1 heure. C'est l'occasion pour vous d'exposer votre situation librement, d'obtenir une première analyse juridique et de définir ensemble la stratégie la plus adaptée."}},
+      {"@type":"Question","name":"Quels sont les honoraires d'un avocat en droit de la famille à Paris ?","acceptedAnswer":{"@type":"Answer","text":"Les honoraires varient selon la nature et la complexité du dossier. Maître Lubac propose plusieurs modes de facturation : honoraire horaire, forfait pour les procédures courantes, ou honoraire mixte avec une part au résultat. Une convention d'honoraires transparente est établie avant tout engagement."}},
+      {"@type":"Question","name":"Puis-je bénéficier de l'aide juridictionnelle ?","acceptedAnswer":{"@type":"Answer","text":"Oui. L'aide juridictionnelle permet à toute personne dont les ressources sont insuffisantes de bénéficier d'une prise en charge totale ou partielle de ses frais d'avocat par l'État. Maître Lubac accepte les dossiers en aide juridictionnelle et vous accompagne dans la constitution du dossier."}},
+      {"@type":"Question","name":"Comment contester un licenciement avec un avocat en droit du travail ?","acceptedAnswer":{"@type":"Answer","text":"En cas de licenciement abusif ou sans cause réelle et sérieuse, vous disposez d'un délai de 12 mois à compter de la notification du licenciement pour saisir le Conseil de Prud'hommes. Maître Lubac analyse votre lettre de licenciement, évalue les chances de succès et vous représente devant la juridiction compétente."}},
+      {"@type":"Question","name":"Quelle est la différence entre un divorce par consentement mutuel et un divorce contentieux ?","acceptedAnswer":{"@type":"Answer","text":"Le divorce par consentement mutuel est amiable : les deux époux se mettent d'accord sur toutes les modalités. Le divorce contentieux intervient lorsqu'un désaccord persiste : le juge aux affaires familiales tranche. Dans les deux cas, chaque époux doit être représenté par son propre avocat."}},
+      {"@type":"Question","name":"Avocat en droit des affaires : quand faire appel à un avocat pour son entreprise ?","acceptedAnswer":{"@type":"Answer","text":"Il est conseillé de consulter un avocat dès la création de votre entreprise (choix du statut juridique, rédaction des statuts), puis à chaque étape clé : rédaction ou révision de contrats commerciaux, litige avec un fournisseur ou un client, cession de fonds de commerce."}},
+      {"@type":"Question","name":"Est-il possible de consulter un avocat à Paris depuis la province ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Maître Lubac propose des consultations en visioconférence pour tous les clients situés en dehors de Paris. La distance n'est pas un obstacle : échanges par email, appels téléphoniques et visioconférences sécurisées permettent un suivi rigoureux de votre dossier depuis n'importe quelle ville de France."}}
+    ]
+  }
+  </script>
+
+  <script>
+    /* ── HERO TITLE — MOT PAR MOT ── */
+    const lines = [
+      ['Un', 'accompagnement', '<em>humain</em>'],
+      ['et', 'expert', 'à', 'vos', 'côtés']
+    ];
+    const heroTitle = document.getElementById('heroTitle');
+    heroTitle.textContent = '';
+    let d = 0.45;
+    lines.forEach(words => {
+      const line = document.createElement('span');
+      line.style.cssText = 'display:block;overflow:hidden;';
+      words.forEach(w => {
+        const span = document.createElement('span');
+        span.className = 'word';
+        span.innerHTML = w + ' ';
+        span.style.animationDelay = d + 's';
+        d += 0.09;
+        line.appendChild(span);
+      });
+      heroTitle.appendChild(line);
+    });
+
+
+
+    /* ── NAVBAR CACHE AU SCROLL ── */
+    let lastY = 0;
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 10);
+      if (y > lastY + 5 && y > 120) nav.classList.add('hidden');
+      else if (y < lastY - 5 || y < 10) nav.classList.remove('hidden');
+      lastY = y;
+    }, { passive: true });
+
+    /* ── MENU MOBILE ── */
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+
+    /* ── SCROLL REVEAL ── */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => obs.observe(el));
+
+    /* ── COMPTEURS ANIMÉS ── */
+    const cObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = +el.dataset.count;
+        const suffix = el.dataset.suffix;
+        let cur = 0;
+        const t = setInterval(() => {
+          cur = Math.min(cur + target / 80, target);
+          el.textContent = Math.floor(cur) + suffix;
+          if (cur >= target) clearInterval(t);
+        }, 16);
+        cObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number[data-count]').forEach(el => cObs.observe(el));
+
+    /* ── FAQ ACCORDION ── */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+  <!-- ── GOOGLE PLACES API – Avis dynamiques ── -->
+  <script>
+  (function () {
+    var API_KEY = 'AIzaSyCqz-E5S7YkpHSMy15t8O9ETn9nlY1zhnc';
+
+    var STAR_SVG = '<svg viewBox="0 0 20 20" width="16" height="16" style="fill:#C97A62"><path d="M10 1l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 13.27l-4.78 2.43.91-5.32L2.27 6.62l5.34-.78z"/></svg>';
+
+    function starsHtml(n) {
+      var s = '';
+      for (var i = 0; i < 5; i++) s += STAR_SVG;
+      return '<div class="avis-stars" aria-label="' + n + ' étoiles sur 5">' + s + '</div>';
+    }
+
+    function initials(name) {
+      return (name || 'A').split(' ').map(function (w) { return w[0] || ''; }).slice(0, 2).join('').toUpperCase() || 'A';
+    }
+
+    function esc(str) {
+      return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    window._googlePlacesCallback = async function () {
+      try {
+        var grid = document.getElementById('google-reviews-grid');
+        if (!grid) return;
+
+        var { Place } = await google.maps.importLibrary('places');
+
+        // Recherche par texte — pas besoin de place_id manuel
+        var result = await Place.searchByText({
+          textQuery: 'C. LUBAC Avocat Paris',
+          fields: ['id', 'rating', 'userRatingCount', 'reviews'],
+          language: 'fr',
+          region: 'fr',
+        });
+
+        var places = result && result.places;
+        if (!places || !places.length) return;
+        var place = places[0];
+
+        // Mise à jour des liens badge et bouton avec l'identifiant trouvé
+        if (place.id) {
+          var badgeLink  = document.getElementById('google-badge-link');
+          var reviewLink = document.getElementById('google-review-link');
+          if (badgeLink)  badgeLink.href  = 'https://www.google.com/maps/search/?api=1&query=C.+LUBAC+Avocat+Paris&query_place_id=' + place.id;
+          if (reviewLink) reviewLink.href = 'https://search.google.com/local/writereview?placeid=' + place.id;
+        }
+
+        // Mise à jour du compteur d'avis
+        var countEl = document.getElementById('google-avis-count');
+        if (countEl && place.userRatingCount != null) countEl.textContent = place.userRatingCount;
+
+        var reviews = (place.reviews || [])
+          .filter(function (r) { return r.rating >= 4; })
+          .slice(0, 6);
+
+        if (!reviews.length) return;
+
+        grid.innerHTML = reviews.map(function (r) {
+          var name    = esc((r.authorAttribution && r.authorAttribution.displayName) || 'Client');
+          var rawText = (r.text && r.text.text) ? r.text.text : (typeof r.text === 'string' ? r.text : '');
+          var text    = esc(rawText);
+          var note = r.rating || 5;
+
+          return '<div class="avis-card" role="listitem">'
+            + '<span class="avis-source">Google</span>'
+            + starsHtml(note)
+            + (text ? '<p class="avis-quote">' + text + '</p>' : '')
+            + '<div class="avis-author-row">'
+            +   '<div class="avis-avatar" aria-hidden="true">' + initials(name) + '</div>'
+            +   '<div class="avis-author"><strong>' + name + '</strong></div>'
+            + '</div>'
+            + '</div>';
+        }).join('');
+
+        grid.classList.add('loaded');
+      } catch (e) {
+        console.error('[Places API] Erreur:', e);
+      }
+    };
+
+    var s = document.createElement('script');
+    s.src = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY
+          + '&callback=_googlePlacesCallback&loading=async&language=fr';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  })();
+  </script>
+</body>
+</html>
