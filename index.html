@@ -1187,23 +1187,36 @@
       var track    = document.getElementById('avis-slider-track');
       if (!sliderEl || !track) return;
 
+      function showFallback(msg) {
+        // Affiche le slider avec un message si l'API échoue
+        track.innerHTML = '<div class="avis-slide" style="min-width:100%"><div class="avis-card" style="text-align:center;justify-content:center;">'
+          + '<p style="color:var(--mid-gray);font-size:0.9rem;">' + msg + '</p>'
+          + '<a href="https://www.google.com/maps/search/?api=1&query=C.+LUBAC+Avocat+Paris" target="_blank" rel="noopener" class="google-btn-avis" style="margin-top:1rem;display:inline-block;">Voir les avis Google</a>'
+          + '</div></div>';
+        sliderEl.classList.add('loaded');
+      }
+
       try {
         var { Place } = await google.maps.importLibrary('places');
+        console.log('[Places API] Bibliothèque chargée');
 
-        // Étape 1 : trouver la fiche par texte
+        // Étape 1 : recherche par texte avec avis inclus directement
         var result = await Place.searchByText({
           textQuery: 'C. LUBAC Avocat Paris',
-          fields: ['id', 'rating', 'userRatingCount'],
+          fields: ['id', 'rating', 'userRatingCount', 'reviews'],
           language: 'fr',
           region: 'fr',
         });
 
         var places = result && result.places;
         if (!places || !places.length) {
-          console.warn('[Places API] Aucune fiche trouvée');
+          console.warn('[Places API] Aucune fiche trouvée pour ce nom');
+          showFallback('Avis temporairement indisponibles.');
           return;
         }
+
         var place = places[0];
+        console.log('[Places API] Fiche trouvée — id:', place.id, '| note:', place.rating, '| nb avis:', place.userRatingCount);
 
         // Mise à jour des liens
         if (place.id) {
@@ -1217,15 +1230,25 @@
         var countEl = document.getElementById('google-avis-count');
         if (countEl && place.userRatingCount != null) countEl.textContent = place.userRatingCount;
 
-        // Étape 2 : récupérer les avis séparément
-        await place.fetchFields({ fields: ['reviews'] });
+        var reviews = place.reviews || [];
+        console.log('[Places API] Avis dans searchByText:', reviews.length);
 
-        var reviews = (place.reviews || [])
-          .filter(function (r) { return r.rating >= 4; })
-          .slice(0, 6);
+        // Étape 2 : si pas d'avis, essai avec fetchFields
+        if (!reviews.length) {
+          try {
+            await place.fetchFields({ fields: ['reviews'] });
+            reviews = place.reviews || [];
+            console.log('[Places API] Avis après fetchFields:', reviews.length);
+          } catch (fe) {
+            console.warn('[Places API] fetchFields échoué:', fe.message || fe);
+          }
+        }
+
+        reviews = reviews.filter(function (r) { return r.rating >= 4; }).slice(0, 6);
+        console.log('[Places API] Avis ≥ 4 étoiles affichés:', reviews.length);
 
         if (!reviews.length) {
-          console.warn('[Places API] Aucun avis ≥ 4 étoiles retourné');
+          showFallback('Avis temporairement indisponibles.');
           return;
         }
 
@@ -1252,7 +1275,8 @@
         initSlider(reviews.length);
 
       } catch (e) {
-        console.error('[Places API] Erreur:', e.message || e);
+        console.error('[Places API] Erreur principale:', e.message || e);
+        showFallback('Avis temporairement indisponibles.');
       }
     };
 
