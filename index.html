@@ -1183,24 +1183,29 @@
     }
 
     window._googlePlacesCallback = async function () {
-      try {
-        var sliderEl = document.getElementById('avis-slider');
-        var track    = document.getElementById('avis-slider-track');
-        if (!sliderEl || !track) return;
+      var sliderEl = document.getElementById('avis-slider');
+      var track    = document.getElementById('avis-slider-track');
+      if (!sliderEl || !track) return;
 
+      try {
         var { Place } = await google.maps.importLibrary('places');
 
+        // Étape 1 : trouver la fiche par texte
         var result = await Place.searchByText({
           textQuery: 'C. LUBAC Avocat Paris',
-          fields: ['id', 'rating', 'userRatingCount', 'reviews'],
+          fields: ['id', 'rating', 'userRatingCount'],
           language: 'fr',
           region: 'fr',
         });
 
         var places = result && result.places;
-        if (!places || !places.length) return;
+        if (!places || !places.length) {
+          console.warn('[Places API] Aucune fiche trouvée');
+          return;
+        }
         var place = places[0];
 
+        // Mise à jour des liens
         if (place.id) {
           var badgeLink  = document.getElementById('google-badge-link');
           var reviewLink = document.getElementById('google-review-link');
@@ -1208,14 +1213,21 @@
           if (reviewLink) reviewLink.href = 'https://search.google.com/local/writereview?placeid=' + place.id;
         }
 
+        // Compteur
         var countEl = document.getElementById('google-avis-count');
         if (countEl && place.userRatingCount != null) countEl.textContent = place.userRatingCount;
+
+        // Étape 2 : récupérer les avis séparément
+        await place.fetchFields({ fields: ['reviews'] });
 
         var reviews = (place.reviews || [])
           .filter(function (r) { return r.rating >= 4; })
           .slice(0, 6);
 
-        if (!reviews.length) return;
+        if (!reviews.length) {
+          console.warn('[Places API] Aucun avis ≥ 4 étoiles retourné');
+          return;
+        }
 
         track.innerHTML = reviews.map(function (r) {
           var name    = esc((r.authorAttribution && r.authorAttribution.displayName) || 'Client');
@@ -1238,8 +1250,9 @@
 
         sliderEl.classList.add('loaded');
         initSlider(reviews.length);
+
       } catch (e) {
-        console.error('[Places API] Erreur:', e);
+        console.error('[Places API] Erreur:', e.message || e);
       }
     };
 
