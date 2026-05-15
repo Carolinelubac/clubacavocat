@@ -247,7 +247,7 @@
     /* ── EXPERTISES ── */
     #expertises { background: var(--beige); padding: 8rem 8%; }
     .expertises-header { max-width: 1100px; margin: 0 auto 4rem; text-align: center; }
-    .expertises-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .expertises-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     .expertise-card {
       background: var(--white); padding: 2.8rem 2.2rem; border-radius: 2px;
       transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -271,8 +271,7 @@
     .expertise-list li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); font-size: 0.75rem; transition: left 0.3s; }
     .expertise-card:hover .expertise-list li { padding-left: 1.4rem; }
     .expertise-card:hover .expertise-list li::before { left: 0.2rem; }
-    @media (max-width: 900px) { #expertises { padding: 5rem 6%; } .expertises-grid { grid-template-columns: 1fr; } }
-    @media (min-width: 901px) and (max-width: 1100px) { .expertises-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { #expertises { padding: 5rem 6%; } .expertises-grid { grid-template-columns: 1fr; } }
 
     /* ── HONORAIRES ── */
     #honoraires { background: var(--cream); padding: 8rem 8%; }
@@ -626,6 +625,52 @@
     }
     .expertise-cta:hover { background: var(--terracotta); color: #fff; transform: translateY(-2px); }
     .expertise-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── PRICING CARDS (new honoraires layout) ── */
+    .honoraires-new-inner { max-width: 1100px; margin: 0 auto; }
+    .honoraires-header { text-align: center; margin-bottom: 3.5rem; }
+    .honoraires-intro { font-size: 1rem; color: var(--mid-gray); line-height: 1.8; max-width: 580px; margin: 0 auto; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .pricing-card {
+      background: var(--white); padding: 2.8rem 2.5rem; border-radius: 2px;
+      position: relative; overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s;
+    }
+    .pricing-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+    }
+    .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.1); }
+    .pricing-card-price {
+      font-family: var(--font-serif); font-size: 2rem; font-weight: 300;
+      color: var(--terracotta); line-height: 1; margin-bottom: 0.4rem;
+    }
+    .pricing-card-format {
+      font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--mid-gray); margin-bottom: 1.6rem; padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .pricing-card h3 {
+      font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400;
+      color: var(--charcoal); margin-bottom: 1rem; line-height: 1.25;
+    }
+    .pricing-card p { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.8; margin-bottom: 1.8rem; }
+    .pricing-card-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.4rem; border: 1.5px solid var(--terracotta);
+      border-radius: 100px; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .pricing-card-cta:hover { background: var(--terracotta); color: var(--white); transform: translateY(-2px); }
+    .pricing-card-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .honoraires-note {
+      text-align: center; margin-top: 3rem;
+      font-size: 0.92rem; color: var(--mid-gray); line-height: 1.75;
+      background: var(--beige); padding: 1.8rem 2.5rem; border-radius: 2px;
+      max-width: 720px; margin: 3rem auto 0;
+    }
+    @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } .honoraires-note { padding: 1.5rem 1.5rem; } }
   </style>
 </head>
 <body>
@@ -680,10 +725,11 @@
             <input type="tel" name="telephone" placeholder="Votre téléphone" required />
           </div>
           <select name="domaine">
-            <option value="">Domaine juridique</option>
-            <option>Droit de la famille</option>
-            <option>Droit du travail</option>
-            <option>Droit des affaires</option>
+            <option value="">Domaine</option>
+            <option>CGV e-commerce</option>
+            <option>Contrats fournisseurs / fabricants</option>
+            <option>Contrats de distribution / revendeurs</option>
+            <option>Protection des créations</option>
             <option>Autre</option>
           </select>
           <button type="submit">Demander à être rappelé(e)</button>
@@ -705,13 +751,15 @@
         <span class="section-line"></span>
         <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />À propos</span>
         <h2 class="section-title">Caroline Lubac,<br><em>Avocat engagée</em></h2>
-        <p>Diplômée en droit, je suis avocate inscrite au Barreau de Paris depuis plus de 10 ans. J'interviens dans toute la France — en présentiel à Paris et en visioconférence pour accompagner mes clients où qu'ils se trouvent sur le territoire. Mon parcours m'a amenée à développer une expertise pluridisciplinaire, au service des particuliers comme des entreprises.</p>
-        <p>Je crois profondément que le droit est avant tout un outil au service des personnes. C'est pourquoi j'accorde une importance particulière à l'écoute, à la pédagogie et à la transparence dans ma relation avec chaque client.</p>
-        <p>Mon cabinet est un espace où vous pouvez exposer votre situation librement, dans un cadre confidentiel et bienveillant, afin de construire ensemble la meilleure stratégie.</p>
+        <p>Avocate au Barreau de Paris, ancienne juriste d'entreprise pendant plus de 10 ans.</p>
+        <p>Mon parcours m'a forgée dans la matière contractuelle — rédiger, analyser, sécuriser des engagements dans des contextes opérationnels exigeants. Pas la théorie : le réel.</p>
+        <p>Depuis la création de mon cabinet il y a 3 ans, j'accompagne des dirigeants et prestataires de services sur leurs contrats et leurs CGV. C'est cette expérience — concrète, terrain, centrée sur ce que les gens signent sans toujours comprendre ce qu'ils acceptent — qui m'a amenée à me spécialiser sur les fondatrices de marques de produits.</p>
+        <p>Aujourd'hui j'accompagne les fondatrices de marques — bijoux, accessoires, textile, déco, objets — qui veulent sécuriser leur base contractuelle et comprendre ce qu'elles signent.</p>
+        <p>Mon objectif n'est pas que vous dépendiez de moi. C'est que vous n'ayez plus besoin de moi au quotidien — parce que vous avez les outils, les modèles et les réflexes pour piloter seule.</p>
         <div class="apropos-stats">
           <div class="stat-item"><div class="stat-number" data-count="10" data-suffix="+">0</div><div class="stat-label">Années d'expérience</div></div>
           <div class="stat-item"><div class="stat-number" data-count="500" data-suffix="+">0</div><div class="stat-label">Dossiers traités</div></div>
-          <div class="stat-item"><div class="stat-number" data-count="3" data-suffix="">0</div><div class="stat-label">Domaines d'expertise</div></div>
+          <div class="stat-item"><div class="stat-number" data-count="4" data-suffix="">0</div><div class="stat-label">Domaines d'intervention</div></div>
         </div>
       </div>
     </div>
@@ -721,79 +769,119 @@
     <div class="expertises-header reveal">
       <span class="section-line" style="margin:0 auto 1.5rem; transform-origin:center;"></span>
       <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Domaines d'intervention</span>
-      <h2 class="section-title">Mes <em>expertises</em> juridiques à Paris et en France</h2>
+      <h2 class="section-title">Mes domaines <em>d'intervention</em></h2>
     </div>
     <div class="expertises-grid">
       <div class="expertise-card reveal delay-1">
-        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 8C18 8 13 13 13 19c0 8 11 21 11 21s11-13 11-21c0-6-5-11-11-11z"/><circle cx="24" cy="19" r="3.5"/></svg>
-        <h3>Avocat en droit de la famille à Paris</h3>
-        <p>Je vous accompagne dans toutes les étapes de votre vie familiale, avec discrétion et bienveillance, pour protéger vos intérêts et ceux de vos proches.</p>
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 28l8-8 6 6 8-10 10 10"/><path d="M10 38h28V14H10z"/><path d="M10 14l14-6 14 6"/></svg>
+        <h3>Contrats fournisseurs et fabricants</h3>
+        <p>Votre fabricant connaît vos modèles, vos matières, vos méthodes. Sans contrat solide, il connaît aussi vos droits — et peut s'en passer. Je structure vos accords de fabrication : propriété des créations, confidentialité, conditions de rupture.</p>
         <ul class="expertise-list">
-          <li>Divorce et séparation</li><li>Garde des enfants et autorité parentale</li><li>Pension alimentaire et prestation compensatoire</li><li>Succession et héritage</li><li>Adoption et filiation</li>
+          <li>Propriété des créations et modèles</li>
+          <li>Clauses de confidentialité</li>
+          <li>Conditions de rupture et sortie</li>
         </ul>
-        <a href="https://wa.me/33663561541" target="_blank" rel="noopener" class="expertise-cta">
-          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.83 1.8 6.856L2 30l7.347-1.775A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.34 19.36c-.347-.174-2.055-1.013-2.374-1.13-.32-.116-.552-.174-.784.174-.232.347-.9 1.13-1.103 1.362-.203.232-.406.26-.753.087-.347-.174-1.464-.54-2.788-1.72-1.03-.92-1.726-2.055-1.928-2.402-.203-.347-.022-.535.152-.708.156-.155.347-.406.52-.61.174-.203.232-.347.347-.579.116-.232.058-.435-.029-.61-.087-.174-.784-1.89-1.074-2.588-.283-.68-.57-.587-.784-.598l-.667-.012c-.232 0-.61.087-.928.435-.32.347-1.218 1.19-1.218 2.9s1.247 3.364 1.42 3.596c.174.232 2.454 3.747 5.946 5.254.831.36 1.48.574 1.986.735.834.266 1.594.228 2.194.138.67-.1 2.055-.84 2.345-1.652.29-.81.29-1.507.203-1.652-.087-.145-.32-.232-.667-.406z"/></svg>
-          Me contacter
+        <a href="#contact" class="expertise-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Prendre rendez-vous
         </a>
       </div>
       <div class="expertise-card reveal delay-2">
-        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="14" width="32" height="26" rx="1"/><path d="M16 14v-3a2 2 0 012-2h12a2 2 0 012 2v3"/><line x1="24" y1="22" x2="24" y2="32"/><line x1="19" y1="27" x2="29" y2="27"/></svg>
-        <h3>Avocat en droit du travail à Paris</h3>
-        <p>Salarié ou employeur, je défends vos droits face aux litiges professionnels, du conseil préventif jusqu'à la représentation devant le Conseil de Prud'hommes.</p>
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="10" width="32" height="28" rx="1"/><path d="M8 18h32"/><path d="M16 14v-4"/><path d="M32 14v-4"/><line x1="15" y1="26" x2="33" y2="26"/><line x1="15" y1="32" x2="24" y2="32"/></svg>
+        <h3>Conditions Générales de Vente</h3>
+        <p>Des CGV copiées sur internet ne vous protègent pas. Elles vous exposent. Je rédige vos CGV consommateurs (Shopify, boutique en ligne) et vos conditions B2B wholesale, adaptées à votre activité réelle.</p>
         <ul class="expertise-list">
-          <li>Licenciement abusif ou économique</li><li>Rupture conventionnelle</li><li>Harcèlement moral et sexuel</li><li>Contrats de travail et négociation</li><li>Contentieux prud'homal</li>
+          <li>CGV e-commerce consommateurs</li>
+          <li>Conditions B2B wholesale</li>
+          <li>Adaptées à votre activité réelle</li>
         </ul>
-        <a href="https://wa.me/33663561541" target="_blank" rel="noopener" class="expertise-cta">
-          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.83 1.8 6.856L2 30l7.347-1.775A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.34 19.36c-.347-.174-2.055-1.013-2.374-1.13-.32-.116-.552-.174-.784.174-.232.347-.9 1.13-1.103 1.362-.203.232-.406.26-.753.087-.347-.174-1.464-.54-2.788-1.72-1.03-.92-1.726-2.055-1.928-2.402-.203-.347-.022-.535.152-.708.156-.155.347-.406.52-.61.174-.203.232-.347.347-.579.116-.232.058-.435-.029-.61-.087-.174-.784-1.89-1.074-2.588-.283-.68-.57-.587-.784-.598l-.667-.012c-.232 0-.61.087-.928.435-.32.347-1.218 1.19-1.218 2.9s1.247 3.364 1.42 3.596c.174.232 2.454 3.747 5.946 5.254.831.36 1.48.574 1.986.735.834.266 1.594.228 2.194.138.67-.1 2.055-.84 2.345-1.652.29-.81.29-1.507.203-1.652-.087-.145-.32-.232-.667-.406z"/></svg>
-          Me contacter
+        <a href="#contact" class="expertise-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Prendre rendez-vous
         </a>
       </div>
       <div class="expertise-card reveal delay-3">
-        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 38V18l14-10 14 10v20H10z"/><rect x="18" y="26" width="12" height="12"/><line x1="24" y1="10" x2="24" y2="14"/></svg>
-        <h3>Avocat en droit des affaires à Paris</h3>
-        <p>J'accompagne dirigeants et entrepreneurs dans la structuration juridique de leurs projets et la résolution de leurs litiges commerciaux.</p>
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="24" r="4"/><circle cx="36" cy="12" r="4"/><circle cx="36" cy="36" r="4"/><line x1="16" y1="22" x2="32" y2="14"/><line x1="16" y1="26" x2="32" y2="34"/></svg>
+        <h3>Contrats de distribution et revendeurs</h3>
+        <p>Vous avez des revendeurs sans contrat formalisé. C'est une zone de risque : marges non protégées, retours non encadrés, exclusivité de zone non définie. Je structure vos contrats de distribution pour que votre réseau soit un atout, pas une source de litiges.</p>
         <ul class="expertise-list">
-          <li>Création et cession d'entreprise</li><li>Rédaction et négociation de contrats</li><li>Litiges commerciaux et recouvrement</li><li>Droit des sociétés</li><li>Baux commerciaux</li>
+          <li>Exclusivité de zone et marges</li>
+          <li>Politique de retours encadrée</li>
+          <li>Conditions d'entrée et de sortie</li>
         </ul>
-        <a href="https://wa.me/33663561541" target="_blank" rel="noopener" class="expertise-cta">
-          <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.655 4.83 1.8 6.856L2 30l7.347-1.775A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.34 19.36c-.347-.174-2.055-1.013-2.374-1.13-.32-.116-.552-.174-.784.174-.232.347-.9 1.13-1.103 1.362-.203.232-.406.26-.753.087-.347-.174-1.464-.54-2.788-1.72-1.03-.92-1.726-2.055-1.928-2.402-.203-.347-.022-.535.152-.708.156-.155.347-.406.52-.61.174-.203.232-.347.347-.579.116-.232.058-.435-.029-.61-.087-.174-.784-1.89-1.074-2.588-.283-.68-.57-.587-.784-.598l-.667-.012c-.232 0-.61.087-.928.435-.32.347-1.218 1.19-1.218 2.9s1.247 3.364 1.42 3.596c.174.232 2.454 3.747 5.946 5.254.831.36 1.48.574 1.986.735.834.266 1.594.228 2.194.138.67-.1 2.055-.84 2.345-1.652.29-.81.29-1.507.203-1.652-.087-.145-.32-.232-.667-.406z"/></svg>
-          Me contacter
+        <a href="#contact" class="expertise-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Prendre rendez-vous
+        </a>
+      </div>
+      <div class="expertise-card reveal delay-4">
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 8l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L24 25l-6.8 4-0.3-.2 1.3-7.4-5.5-5.3 7.5-1.1z"/><path d="M14 34c-3 2-5 5-5 8h30c0-3-2-6-5-8"/></svg>
+        <h3>Protection des créations et des designs</h3>
+        <p>Vos créations sont originales. Sans dépôt, elles ne sont pas juridiquement protégées. Je vous accompagne sur la protection de vos designs, motifs et modèles — avant qu'ils soient copiés.</p>
+        <ul class="expertise-list">
+          <li>Dépôt de designs et motifs</li>
+          <li>Protection des modèles</li>
+          <li>Action en cas de copie</li>
+        </ul>
+        <a href="#contact" class="expertise-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Prendre rendez-vous
         </a>
       </div>
     </div>
   </section>
 
   <section id="honoraires">
-    <div class="honoraires-inner">
-      <div class="honoraires-text reveal-left">
-        <span class="section-line"></span>
-        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Transparence &amp; clarté</span>
-        <h2 class="section-title">Mes <em>honoraires</em></h2>
-        <p>La question des honoraires est abordée dès le premier rendez-vous, en toute transparence. Je vous remets une convention d'honoraires claire avant tout engagement, afin que vous puissiez décider en connaissance de cause.</p>
-        <p>Les honoraires varient selon la nature et la complexité du dossier. Plusieurs modes de facturation sont possibles :</p>
-        <div class="honoraires-modes">
-          <div class="mode-item reveal delay-1">
-            <svg class="mode-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="18" r="13"/><path d="M18 11v7l4 4"/></svg>
-            <div class="mode-content"><h3>Honoraire horaire</h3><p>Facturation au temps passé sur votre dossier. Adapté aux consultations et aux dossiers courts.</p></div>
-          </div>
-          <div class="mode-item reveal delay-2">
-            <svg class="mode-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="9" width="22" height="18" rx="1"/><line x1="12" y1="15" x2="24" y2="15"/><line x1="12" y1="20" x2="20" y2="20"/></svg>
-            <div class="mode-content"><h3>Forfait</h3><p>Honoraire global fixé à l'avance pour une prestation définie. Idéal pour les procédures courantes.</p></div>
-          </div>
-          <div class="mode-item reveal delay-3">
-            <svg class="mode-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 26l6-12 6 8 4-5"/><circle cx="26" cy="26" r="4"/></svg>
-            <div class="mode-content"><h3>Honoraire de résultat</h3><p>Une partie des honoraires est conditionnée au résultat obtenu, en complément d'un honoraire de base.</p></div>
-          </div>
+    <div class="honoraires-new-inner">
+      <div class="honoraires-header reveal">
+        <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Accompagnements</span>
+        <h2 class="section-title">Mes <em>accompagnements</em></h2>
+        <p class="honoraires-intro">Quatre formules, selon où vous en êtes. Les tarifs sont affichés dès le départ — pas de surprise après le premier call.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal delay-1">
+          <div class="pricing-card-price">500 € HT</div>
+          <div class="pricing-card-format">Séance téléphonique unique</div>
+          <h3>Audit</h3>
+          <p>Vous avez une question juridique précise sur un contrat, vos CGV ou une situation en cours. On fait le point ensemble. Vous repartez avec une analyse claire et les étapes prioritaires à enclencher.</p>
+          <a href="#contact" class="pricing-card-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Prendre rendez-vous
+          </a>
         </div>
-        <div class="honoraires-aide reveal delay-4">
-          <h3>Aide juridictionnelle</h3>
-          <p>Sous conditions de ressources, vous pouvez bénéficier de l'aide juridictionnelle (totale ou partielle) pour que l'État prenne en charge tout ou partie de mes honoraires. Je vous aide à constituer votre dossier.</p>
+        <div class="pricing-card reveal delay-2">
+          <div class="pricing-card-price">900 € HT</div>
+          <div class="pricing-card-format">Séance téléphonique + rapport écrit</div>
+          <h3>Audit + livrable écrit</h3>
+          <p>Même démarche que l'Audit, avec en complément un document écrit synthétisant l'analyse, les risques identifiés et les actions concrètes à mener. Un outil que vous gardez et utilisez en autonomie.</p>
+          <a href="#contact" class="pricing-card-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Prendre rendez-vous
+          </a>
+        </div>
+        <div class="pricing-card reveal delay-3">
+          <div class="pricing-card-price">4 500 € HT</div>
+          <div class="pricing-card-format">Durée : 6 semaines</div>
+          <h3>Architecture Juridique</h3>
+          <p>Pour les fondatrices qui ont besoin de poser une base contractuelle solide rapidement. On construit ensemble vos CGV, vos conditions B2B et vos contrats fournisseurs prioritaires. Vous repartez avec des modèles prêts à l'emploi, des process réutilisables et les réflexes pour les faire évoluer seule — sans repasser par un avocat à chaque nouveau contrat.</p>
+          <a href="#contact" class="pricing-card-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Prendre rendez-vous
+          </a>
+        </div>
+        <div class="pricing-card reveal delay-4">
+          <div class="pricing-card-price">7 000 € HT</div>
+          <div class="pricing-card-format">Durée : 3 mois</div>
+          <h3>Expérience Sur-Mesure</h3>
+          <p>Pour les fondatrices dont la marque est en mouvement réel — réseau de revendeurs, fabricant, e-commerce — et qui veulent reprendre la maîtrise complète de leur juridique. Chaque semaine, une session de travail sur vos cas réels. À l'issue des 3 mois, vous disposez de modèles contractuels adaptés à votre marque, de process automatisés et des réflexes pour tout faire évoluer seule.</p>
+          <a href="#contact" class="pricing-card-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Prendre rendez-vous
+          </a>
         </div>
       </div>
-      <div class="honoraires-photo reveal-right">
-        <img src="caroline-lubac-portrait.jpg" alt="Maître Caroline Lubac, consultation juridique" />
-        <div class="honoraires-photo-badge"><strong>1er RDV</strong><span>Consultation offerte</span></div>
-      </div>
+      <p class="honoraires-note reveal">Chaque accompagnement débute par un échange de 30 minutes pour vérifier l'adéquation avec votre situation. <strong>Le premier échange est offert.</strong></p>
     </div>
   </section>
 
@@ -851,81 +939,61 @@
 
         <div class="faq-item">
           <h3 class="faq-question-heading"><button class="faq-question">
-            Quelle est la zone d'intervention de Maître Lubac ?
+            Vous intervenez sur quels types de marques ?
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
           </button></h3>
           <div class="faq-answer"><div class="faq-answer-inner">
-            Inscrite au <strong>Barreau de Paris</strong>, Maître Lubac intervient dans <strong>toute la France</strong>. Les consultations se tiennent en présentiel à Paris ou en visioconférence, ce qui lui permet d'accompagner efficacement ses clients depuis n'importe quelle ville : Lyon, Marseille, Bordeaux, Toulouse, Nantes, Lille, Strasbourg et partout sur le territoire.
+            Marques de produits physiques : <strong>bijoux, accessoires, textile, déco, objets</strong>. Mon positionnement est délibérément spécialisé : contrats, CGV et protection des créations pour les marques en croissance.
           </div></div>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question-heading"><button class="faq-question">
-            Comment se déroule le premier rendez-vous ?
+            Je suis en début de développement, est-ce trop tôt ?
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
           </button></h3>
           <div class="faq-answer"><div class="faq-answer-inner">
-            Le <strong>premier rendez-vous est offert</strong> et sans engagement. Il dure environ 45 minutes à 1 heure. C'est l'occasion pour vous d'exposer votre situation librement, d'obtenir une première analyse juridique et de définir ensemble la stratégie la plus adaptée. Vous repartez avec une vision claire des options disponibles et une estimation des honoraires.
+            Si vous avez des revendeurs, un fabricant, un site e-commerce actif, et que vos contrats sont absents ou bancals — non, ce n'est pas trop tôt. C'est exactement le bon moment. <strong>Attendre le premier litige coûte toujours plus cher.</strong>
           </div></div>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question-heading"><button class="faq-question">
-            Quels sont les honoraires d'un avocat en droit de la famille à Paris ?
+            Comment se passe le premier échange ?
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
           </button></h3>
           <div class="faq-answer"><div class="faq-answer-inner">
-            Les honoraires varient selon la <strong>nature et la complexité du dossier</strong>. Maître Lubac propose plusieurs modes de facturation : honoraire horaire, forfait pour les procédures courantes (divorce par consentement mutuel, par exemple), ou honoraire mixte avec une part au résultat. Une <strong>convention d'honoraires transparente</strong> est établie avant tout engagement, sans surprise.
+            Un appel de <strong>30 minutes, offert, sans engagement</strong>. L'objectif : comprendre votre situation, identifier vos besoins prioritaires, vérifier que l'accompagnement est adapté. Vous repartez avec une vision claire — que vous travailliez avec moi ou non.
           </div></div>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question-heading"><button class="faq-question">
-            Puis-je bénéficier de l'aide juridictionnelle ?
+            Est-ce que vous rédigez mes contrats à ma place ?
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
           </button></h3>
           <div class="faq-answer"><div class="faq-answer-inner">
-            Oui. L'<strong>aide juridictionnelle</strong> permet à toute personne dont les ressources sont insuffisantes de bénéficier d'une prise en charge totale ou partielle de ses frais d'avocat par l'État. Maître Lubac accepte les dossiers en aide juridictionnelle et vous accompagne dans la constitution du dossier auprès du bureau d'aide juridictionnelle compétent.
+            Non — et c'est délibéré. <strong>Je co-construis avec vous.</strong> Vous comprenez ce que vous signez, pourquoi chaque clause est là, et comment vous en servir. À l'issue de l'accompagnement, vous avez des modèles prêts à l'emploi, des process automatisés et les réflexes pour piloter seule — sans repasser par un avocat à chaque nouveau contrat.
           </div></div>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question-heading"><button class="faq-question">
-            Comment contester un licenciement avec un avocat en droit du travail ?
+            Intervenez-vous en dehors de Paris ?
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
           </button></h3>
           <div class="faq-answer"><div class="faq-answer-inner">
-            En cas de <strong>licenciement abusif ou sans cause réelle et sérieuse</strong>, vous disposez d'un délai de 12 mois à compter de la notification du licenciement pour saisir le Conseil de Prud'hommes. Maître Lubac analyse votre lettre de licenciement, évalue les chances de succès et vous représente devant la juridiction compétente pour obtenir des indemnités ou la réintégration. N'attendez pas : chaque mois compte.
+            Oui. Les accompagnements se font <strong>intégralement en visioconférence</strong>. Peu importe où vous êtes en France.
           </div></div>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question-heading"><button class="faq-question">
-            Quelle est la différence entre un divorce par consentement mutuel et un divorce contentieux ?
+            Est-ce que ces tarifs sont réalistes pour une petite marque ?
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
           </button></h3>
           <div class="faq-answer"><div class="faq-answer-inner">
-            Le <strong>divorce par consentement mutuel</strong> est amiable : les deux époux se mettent d'accord sur toutes les modalités (garde des enfants, partage des biens, prestation compensatoire). Il est plus rapide et moins coûteux. Le <strong>divorce contentieux</strong> intervient lorsqu'un désaccord persiste : le juge aux affaires familiales tranche. Dans les deux cas, chaque époux doit être représenté par son propre avocat. Maître Lubac intervient pour les deux procédures, partout en France.
-          </div></div>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question-heading"><button class="faq-question">
-            Avocat en droit des affaires : quand faire appel à un avocat pour son entreprise ?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button></h3>
-          <div class="faq-answer"><div class="faq-answer-inner">
-            Il est conseillé de consulter un avocat <strong>dès la création de votre entreprise</strong> (choix du statut juridique, rédaction des statuts), puis à chaque étape clé : rédaction ou révision de contrats commerciaux, litige avec un fournisseur ou un client, cession de fonds de commerce, négociation de baux commerciaux. Maître Lubac accompagne dirigeants et entrepreneurs dans toute la France pour sécuriser leurs décisions et prévenir les contentieux.
-          </div></div>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question-heading"><button class="faq-question">
-            Est-il possible de consulter un avocat à Paris depuis la province ?
-            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
-          </button></h3>
-          <div class="faq-answer"><div class="faq-answer-inner">
-            Absolument. Maître Lubac propose des <strong>consultations en visioconférence</strong> pour tous les clients situés en dehors de Paris. La distance n'est pas un obstacle : échanges par email, appels téléphoniques et visioconférences sécurisées permettent un suivi rigoureux de votre dossier depuis n'importe quelle ville de France. Seules les audiences nécessitant une présence physique mobilisent un déplacement, coordonné en amont.
+            C'est la bonne question à poser. Ces accompagnements s'adressent à des marques qui ont un <strong>chiffre d'affaires réel</strong> — généralement entre 150 000 € et 500 000 €. Si vous avez un doute sur votre situation, dites-le lors du premier appel — je vous répondrai honnêtement.
           </div></div>
         </div>
 
@@ -938,8 +1006,8 @@
       <div class="contact-info reveal-left">
         <span class="section-line"></span>
         <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Prenons contact</span>
-        <h2 class="section-title">Prendre rendez-vous avec <em>Maître Lubac</em></h2>
-        <p>Le premier rendez-vous est offert. C'est l'occasion d'exposer votre situation, d'obtenir une première analyse et de décider ensemble de la marche à suivre, sans engagement.</p>
+        <h2 class="section-title">Prenons 30 minutes pour <em>faire le point</em></h2>
+        <p>Le premier échange est offert. Une conversation pour comprendre votre situation et voir si je peux vous aider — sans engagement.</p>
         <div class="contact-details">
           <div class="contact-detail">
             <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 11a4 4 0 100-8 4 4 0 000 8z"/><path d="M3 18c0-3.314 3.134-6 7-6s7 2.686 7 6"/></svg>
@@ -971,12 +1039,13 @@
         <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="votre@email.fr" required /></div>
         <div class="form-field"><label for="telephone">Téléphone</label><input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" /></div>
         <div class="form-field">
-          <label for="domaine">Domaine juridique</label>
+          <label for="domaine">Domaine</label>
           <select id="domaine" name="domaine">
             <option value="">Sélectionnez un domaine</option>
-            <option>Droit de la famille</option>
-            <option>Droit du travail</option>
-            <option>Droit des affaires</option>
+            <option>CGV e-commerce</option>
+            <option>Contrats fournisseurs / fabricants</option>
+            <option>Contrats de distribution / revendeurs</option>
+            <option>Protection des créations</option>
             <option>Autre</option>
           </select>
         </div>
@@ -1012,14 +1081,12 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"Quelle est la zone d'intervention de Maître Lubac ?","acceptedAnswer":{"@type":"Answer","text":"Inscrite au Barreau de Paris, Maître Lubac intervient dans toute la France. Les consultations se tiennent en présentiel à Paris ou en visioconférence, ce qui lui permet d'accompagner efficacement ses clients depuis n'importe quelle ville : Lyon, Marseille, Bordeaux, Toulouse, Nantes, Lille, Strasbourg et partout sur le territoire."}},
-      {"@type":"Question","name":"Comment se déroule le premier rendez-vous ?","acceptedAnswer":{"@type":"Answer","text":"Le premier rendez-vous est offert et sans engagement. Il dure environ 45 minutes à 1 heure. C'est l'occasion pour vous d'exposer votre situation librement, d'obtenir une première analyse juridique et de définir ensemble la stratégie la plus adaptée."}},
-      {"@type":"Question","name":"Quels sont les honoraires d'un avocat en droit de la famille à Paris ?","acceptedAnswer":{"@type":"Answer","text":"Les honoraires varient selon la nature et la complexité du dossier. Maître Lubac propose plusieurs modes de facturation : honoraire horaire, forfait pour les procédures courantes, ou honoraire mixte avec une part au résultat. Une convention d'honoraires transparente est établie avant tout engagement."}},
-      {"@type":"Question","name":"Puis-je bénéficier de l'aide juridictionnelle ?","acceptedAnswer":{"@type":"Answer","text":"Oui. L'aide juridictionnelle permet à toute personne dont les ressources sont insuffisantes de bénéficier d'une prise en charge totale ou partielle de ses frais d'avocat par l'État. Maître Lubac accepte les dossiers en aide juridictionnelle et vous accompagne dans la constitution du dossier."}},
-      {"@type":"Question","name":"Comment contester un licenciement avec un avocat en droit du travail ?","acceptedAnswer":{"@type":"Answer","text":"En cas de licenciement abusif ou sans cause réelle et sérieuse, vous disposez d'un délai de 12 mois à compter de la notification du licenciement pour saisir le Conseil de Prud'hommes. Maître Lubac analyse votre lettre de licenciement, évalue les chances de succès et vous représente devant la juridiction compétente."}},
-      {"@type":"Question","name":"Quelle est la différence entre un divorce par consentement mutuel et un divorce contentieux ?","acceptedAnswer":{"@type":"Answer","text":"Le divorce par consentement mutuel est amiable : les deux époux se mettent d'accord sur toutes les modalités. Le divorce contentieux intervient lorsqu'un désaccord persiste : le juge aux affaires familiales tranche. Dans les deux cas, chaque époux doit être représenté par son propre avocat."}},
-      {"@type":"Question","name":"Avocat en droit des affaires : quand faire appel à un avocat pour son entreprise ?","acceptedAnswer":{"@type":"Answer","text":"Il est conseillé de consulter un avocat dès la création de votre entreprise (choix du statut juridique, rédaction des statuts), puis à chaque étape clé : rédaction ou révision de contrats commerciaux, litige avec un fournisseur ou un client, cession de fonds de commerce."}},
-      {"@type":"Question","name":"Est-il possible de consulter un avocat à Paris depuis la province ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. Maître Lubac propose des consultations en visioconférence pour tous les clients situés en dehors de Paris. La distance n'est pas un obstacle : échanges par email, appels téléphoniques et visioconférences sécurisées permettent un suivi rigoureux de votre dossier depuis n'importe quelle ville de France."}}
+      {"@type":"Question","name":"Vous intervenez sur quels types de marques ?","acceptedAnswer":{"@type":"Answer","text":"Marques de produits physiques : bijoux, accessoires, textile, déco, objets. Mon positionnement est délibérément spécialisé : contrats, CGV et protection des créations pour les marques en croissance."}},
+      {"@type":"Question","name":"Je suis en début de développement, est-ce trop tôt ?","acceptedAnswer":{"@type":"Answer","text":"Si vous avez des revendeurs, un fabricant, un site e-commerce actif, et que vos contrats sont absents ou bancals — non, ce n'est pas trop tôt. C'est exactement le bon moment. Attendre le premier litige coûte toujours plus cher."}},
+      {"@type":"Question","name":"Comment se passe le premier échange ?","acceptedAnswer":{"@type":"Answer","text":"Un appel de 30 minutes, offert, sans engagement. L'objectif : comprendre votre situation, identifier vos besoins prioritaires, vérifier que l'accompagnement est adapté. Vous repartez avec une vision claire — que vous travailliez avec moi ou non."}},
+      {"@type":"Question","name":"Est-ce que vous rédigez mes contrats à ma place ?","acceptedAnswer":{"@type":"Answer","text":"Non — et c'est délibéré. Je co-construis avec vous. Vous comprenez ce que vous signez, pourquoi chaque clause est là, et comment vous en servir. À l'issue de l'accompagnement, vous avez des modèles prêts à l'emploi, des process automatisés et les réflexes pour piloter seule."}},
+      {"@type":"Question","name":"Intervenez-vous en dehors de Paris ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les accompagnements se font intégralement en visioconférence. Peu importe où vous êtes en France."}},
+      {"@type":"Question","name":"Est-ce que ces tarifs sont réalistes pour une petite marque ?","acceptedAnswer":{"@type":"Answer","text":"Ces accompagnements s'adressent à des marques qui ont un chiffre d'affaires réel — généralement entre 150 000 € et 500 000 €. Si vous avez un doute sur votre situation, dites-le lors du premier appel — je vous répondrai honnêtement."}}
     ]
   }
   </script>
