@@ -280,7 +280,22 @@
     .expertise-list li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); font-size: 0.75rem; transition: left 0.3s; }
     .expertise-card:hover .expertise-list li { padding-left: 1.4rem; }
     .expertise-card:hover .expertise-list li::before { left: 0.2rem; }
-    @media (max-width: 768px) { #expertises { padding: 5rem 6%; } .expertises-grid { grid-template-columns: 1fr; } }
+    .expertise-toggle { display: none; }
+    @media (max-width: 768px) {
+      #expertises { padding: 5rem 6%; }
+      .expertises-grid { grid-template-columns: 1fr; }
+      .expertise-body { display: none; }
+      .expertise-body.open { display: block; }
+      .expertise-toggle {
+        display: inline-block; margin-bottom: 1rem;
+        background: none; border: 1px solid var(--terracotta);
+        color: var(--terracotta); font-family: var(--font-sans);
+        font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+        padding: 0.5rem 1.1rem; cursor: pointer; border-radius: 2px;
+        transition: background 0.2s, color 0.2s;
+      }
+      .expertise-toggle.open { background: var(--terracotta); color: #fff; }
+    }
 
     /* ── HONORAIRES ── */
     #honoraires { background: var(--cream); padding: 8rem 8%; }
@@ -798,12 +813,15 @@
       <div class="expertise-card reveal delay-1">
         <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 28l8-8 6 6 8-10 10 10"/><path d="M10 38h28V14H10z"/><path d="M10 14l14-6 14 6"/></svg>
         <h3>Contrats fournisseurs et fabricants</h3>
-        <p>Votre fabricant connaît vos modèles, vos matières, vos méthodes. Sans contrat solide, il connaît aussi vos droits — et peut s'en passer. Je structure vos accords de fabrication : propriété des créations, confidentialité, conditions de rupture.</p>
-        <ul class="expertise-list">
-          <li>Propriété des créations et modèles</li>
-          <li>Clauses de confidentialité</li>
-          <li>Conditions de rupture et sortie</li>
-        </ul>
+        <div class="expertise-body">
+          <p>Votre fabricant connaît vos modèles, vos matières, vos méthodes. Sans contrat solide, il connaît aussi vos droits — et peut s'en passer. Je structure vos accords de fabrication : propriété des créations, confidentialité, conditions de rupture.</p>
+          <ul class="expertise-list">
+            <li>Propriété des créations et modèles</li>
+            <li>Clauses de confidentialité</li>
+            <li>Conditions de rupture et sortie</li>
+          </ul>
+        </div>
+        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
         <a href="#contact" class="expertise-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           Prendre rendez-vous
@@ -812,12 +830,15 @@
       <div class="expertise-card reveal delay-2">
         <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="10" width="32" height="28" rx="1"/><path d="M8 18h32"/><path d="M16 14v-4"/><path d="M32 14v-4"/><line x1="15" y1="26" x2="33" y2="26"/><line x1="15" y1="32" x2="24" y2="32"/></svg>
         <h3>Conditions Générales de Vente</h3>
-        <p>Des CGV copiées sur internet ne vous protègent pas. Elles vous exposent. Je rédige vos CGV consommateurs (Shopify, boutique en ligne) et vos conditions B2B wholesale, adaptées à votre activité réelle.</p>
-        <ul class="expertise-list">
-          <li>CGV e-commerce consommateurs</li>
-          <li>Conditions B2B wholesale</li>
-          <li>Adaptées à votre activité réelle</li>
-        </ul>
+        <div class="expertise-body">
+          <p>Des CGV copiées sur internet ne vous protègent pas. Elles vous exposent. Je rédige vos CGV consommateurs (Shopify, boutique en ligne) et vos conditions B2B wholesale, adaptées à votre activité réelle.</p>
+          <ul class="expertise-list">
+            <li>CGV e-commerce consommateurs</li>
+            <li>Conditions B2B wholesale</li>
+            <li>Adaptées à votre activité réelle</li>
+          </ul>
+        </div>
+        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
         <a href="#contact" class="expertise-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           Prendre rendez-vous
@@ -826,12 +847,15 @@
       <div class="expertise-card reveal delay-3">
         <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="24" r="4"/><circle cx="36" cy="12" r="4"/><circle cx="36" cy="36" r="4"/><line x1="16" y1="22" x2="32" y2="14"/><line x1="16" y1="26" x2="32" y2="34"/></svg>
         <h3>Contrats de distribution et revendeurs</h3>
-        <p>Vous avez des revendeurs sans contrat formalisé. C'est une zone de risque : marges non protégées, retours non encadrés, exclusivité de zone non définie. Je structure vos contrats de distribution pour que votre réseau soit un atout, pas une source de litiges.</p>
-        <ul class="expertise-list">
-          <li>Exclusivité de zone et marges</li>
-          <li>Politique de retours encadrée</li>
-          <li>Conditions d'entrée et de sortie</li>
-        </ul>
+        <div class="expertise-body">
+          <p>Vous avez des revendeurs sans contrat formalisé. C'est une zone de risque : marges non protégées, retours non encadrés, exclusivité de zone non définie. Je structure vos contrats de distribution pour que votre réseau soit un atout, pas une source de litiges.</p>
+          <ul class="expertise-list">
+            <li>Exclusivité de zone et marges</li>
+            <li>Politique de retours encadrée</li>
+            <li>Conditions d'entrée et de sortie</li>
+          </ul>
+        </div>
+        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
         <a href="#contact" class="expertise-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           Prendre rendez-vous
@@ -840,12 +864,15 @@
       <div class="expertise-card reveal delay-4">
         <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 8l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L24 25l-6.8 4-0.3-.2 1.3-7.4-5.5-5.3 7.5-1.1z"/><path d="M14 34c-3 2-5 5-5 8h30c0-3-2-6-5-8"/></svg>
         <h3>Protection des créations et des designs</h3>
-        <p>Vos créations sont originales. Sans dépôt, elles ne sont pas juridiquement protégées. Je vous accompagne sur la protection de vos designs, motifs et modèles — avant qu'ils soient copiés.</p>
-        <ul class="expertise-list">
-          <li>Dépôt de designs et motifs</li>
-          <li>Protection des modèles</li>
-          <li>Action en cas de copie</li>
-        </ul>
+        <div class="expertise-body">
+          <p>Vos créations sont originales. Sans dépôt, elles ne sont pas juridiquement protégées. Je vous accompagne sur la protection de vos designs, motifs et modèles — avant qu'ils soient copiés.</p>
+          <ul class="expertise-list">
+            <li>Dépôt de designs et motifs</li>
+            <li>Protection des modèles</li>
+            <li>Action en cas de copie</li>
+          </ul>
+        </div>
+        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
         <a href="#contact" class="expertise-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           Prendre rendez-vous
@@ -1603,6 +1630,17 @@
     s.defer = true;
     document.head.appendChild(s);
   })();
+  </script>
+  <script>
+    document.querySelectorAll('.expertise-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var body = btn.previousElementSibling;
+        var open = body.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open);
+        btn.textContent = open ? 'Réduire' : 'En savoir plus';
+      });
+    });
   </script>
 </body>
 </html>
