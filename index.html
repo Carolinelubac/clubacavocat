@@ -1244,7 +1244,12 @@
           }
         }
 
-        reviews = reviews.filter(function (r) { return r.rating >= 4; }).slice(0, 6);
+        var EXCLUS = ['jeremy saraudi'];
+
+        reviews = reviews.filter(function (r) {
+          var nom = ((r.authorAttribution && r.authorAttribution.displayName) || '').toLowerCase();
+          return r.rating >= 4 && !EXCLUS.some(function(e){ return nom.includes(e); });
+        }).slice(0, 6);
         console.log('[Places API] Avis ≥ 4 étoiles affichés:', reviews.length);
 
         if (!reviews.length) {
