@@ -1402,12 +1402,16 @@
           }
         }
 
-        var EXCLUS = ['jeremy saraudi', 'laurent vanoverveld'];
+        var EXCLUS = ['jeremy saraudi', 'jérémy saraudi', 'laurent vanoverveld'];
         var PRIORITES = ['wladys kawecki', 'julien hory'];
 
+        function normalise(s) {
+          return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+        }
+
         reviews = reviews.filter(function (r) {
-          var nom = ((r.authorAttribution && r.authorAttribution.displayName) || '').toLowerCase();
-          return r.rating >= 4 && !EXCLUS.some(function(e){ return nom.includes(e); });
+          var nom = normalise((r.authorAttribution && r.authorAttribution.displayName) || '');
+          return r.rating >= 4 && !EXCLUS.some(function(e){ return nom.includes(normalise(e)); });
         });
 
         reviews.sort(function (a, b) {
