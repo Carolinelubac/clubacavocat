@@ -62,6 +62,7 @@
     .nav-logo img { height: 56px; width: auto; transition: opacity 0.2s; mix-blend-mode: multiply; }
     .nav-logo:hover img { opacity: 0.7; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-avis-mobile { display: none; }
     .nav-links a {
       font-size: 0.8rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--charcoal); transition: color 0.2s; position: relative;
@@ -86,6 +87,7 @@
       .nav-links.open { display: flex; }
       .nav-links li { border-bottom: 1px solid var(--beige); }
       .nav-links a { display: block; padding: 0.9rem 5%; font-size: 0.85rem; }
+      .nav-avis-mobile { display: block; }
       .nav-cta { margin: 0.5rem 5%; display: inline-block; }
       .nav-toggle { display: flex; }
     }
@@ -737,6 +739,7 @@
       <li><a href="#expertises">Expertises</a></li>
       <li><a href="#honoraires">Honoraires</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li class="nav-avis-mobile"><a href="#avis">Avis</a></li>
       <li><a href="#contact" class="nav-cta">Me contacter</a></li>
     </ul>
   </nav>
