@@ -1245,11 +1245,24 @@
         }
 
         var EXCLUS = ['jeremy saraudi', 'laurent vanoverveld'];
+        var PRIORITES = ['wladys kawecki', 'julien hory'];
 
         reviews = reviews.filter(function (r) {
           var nom = ((r.authorAttribution && r.authorAttribution.displayName) || '').toLowerCase();
           return r.rating >= 4 && !EXCLUS.some(function(e){ return nom.includes(e); });
-        }).slice(0, 6);
+        });
+
+        reviews.sort(function (a, b) {
+          var na = ((a.authorAttribution && a.authorAttribution.displayName) || '').toLowerCase();
+          var nb = ((b.authorAttribution && b.authorAttribution.displayName) || '').toLowerCase();
+          var pa = PRIORITES.findIndex(function(p){ return na.includes(p); });
+          var pb = PRIORITES.findIndex(function(p){ return nb.includes(p); });
+          if (pa === -1) pa = PRIORITES.length;
+          if (pb === -1) pb = PRIORITES.length;
+          return pa - pb;
+        });
+
+        reviews = reviews.slice(0, 6);
         console.log('[Places API] Avis ≥ 4 étoiles affichés:', reviews.length);
 
         if (!reviews.length) {
