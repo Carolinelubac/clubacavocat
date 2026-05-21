@@ -284,7 +284,7 @@
     .expertise-card:hover .expertise-list li { padding-left: 1.4rem; }
     .expertise-card:hover .expertise-list li::before { left: 0.2rem; }
     .expertise-toggle { display: none; }
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       #expertises { padding: 5rem 6%; }
       .expertises-grid { grid-template-columns: 1fr; }
       .expertise-body { display: none; }
@@ -299,6 +299,7 @@
       }
       .expertise-toggle.open { background: var(--terracotta); color: #fff; }
     }
+    @media (min-width: 601px) and (max-width: 900px) { #expertises { padding: 5rem 6%; } .expertises-grid { grid-template-columns: repeat(2, 1fr); } }
 
     /* ── HONORAIRES ── */
     #honoraires { background: var(--cream); padding: 8rem 8%; }
@@ -818,71 +819,78 @@
       <h2 class="section-title">Mes domaines <em>d'intervention</em></h2>
     </div>
     <div class="expertises-grid">
+      <!-- Bloc 1 — Contrats fournisseurs et fabricants -->
       <div class="expertise-card reveal delay-1">
-        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 28l8-8 6 6 8-10 10 10"/><path d="M10 38h28V14H10z"/><path d="M10 14l14-6 14 6"/></svg>
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="10" y="8" width="28" height="36" rx="1"/><line x1="17" y1="18" x2="31" y2="18"/><line x1="17" y1="24" x2="31" y2="24"/><line x1="17" y1="30" x2="25" y2="30"/></svg>
         <h3>Contrats fournisseurs et fabricants</h3>
+        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
         <div class="expertise-body">
-          <p>Votre fabricant connaît vos modèles, vos matières, vos méthodes. Sans contrat solide, il connaît aussi vos droits — et peut s'en passer. Je structure vos accords de fabrication : propriété des créations, confidentialité, conditions de rupture.</p>
+          <p>Un contrat fournisseur marque artisanale mal rédigé peut vous coûter des milliers d'euros en litiges, retards ou copies non protégées. Je rédige et négocie vos contrats de fabrication et de sous-traitance — qu'il s'agisse d'un atelier français ou d'un fabricant à l'étranger. En tant qu'avocat contrat fabricant à Paris, je sécurise chaque relation commerciale et protège votre savoir-faire dès la première commande.</p>
           <ul class="expertise-list">
-            <li>Propriété des créations et modèles</li>
-            <li>Clauses de confidentialité</li>
-            <li>Conditions de rupture et sortie</li>
+            <li>Contrat de fabrication et sous-traitance</li>
+            <li>Contrat d'approvisionnement fournisseur</li>
+            <li>Clause de propriété intellectuelle sur les modèles</li>
+            <li>Accord de confidentialité prestataire et partenaire</li>
           </ul>
         </div>
-        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
-        <a href="#contact" class="expertise-cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener" class="expertise-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Prendre rendez-vous
         </a>
       </div>
+      <!-- Bloc 2 — CGV, CGU & Mentions légales -->
       <div class="expertise-card reveal delay-2">
-        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="10" width="32" height="28" rx="1"/><path d="M8 18h32"/><path d="M16 14v-4"/><path d="M32 14v-4"/><line x1="15" y1="26" x2="33" y2="26"/><line x1="15" y1="32" x2="24" y2="32"/></svg>
-        <h3>Conditions Générales de Vente</h3>
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h32v28H8z"/><path d="M8 12l16-8 16 8"/><line x1="16" y1="22" x2="32" y2="22"/><line x1="16" y1="28" x2="28" y2="28"/><line x1="16" y1="34" x2="24" y2="34"/></svg>
+        <h3>Conditions Générales de Vente, CGU &amp; Mentions légales</h3>
+        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
         <div class="expertise-body">
-          <p>Des CGV copiées sur internet ne vous protègent pas. Elles vous exposent. Je rédige vos CGV consommateurs (Shopify, boutique en ligne) et vos conditions B2B wholesale, adaptées à votre activité réelle.</p>
+          <p>Des CGV e-commerce copiées sur internet ne sont pas adaptées à votre activité réelle — et en cas de litige, elles ne vous protègent pas. Je rédige vos CGV consommateurs (Shopify, boutique en ligne), vos conditions B2B wholesale, vos CGU conformes au RGPD et vos mentions légales obligatoires — adaptés à votre activité réelle. Pour une marque française qui vend en ligne, la conformité CGU RGPD n'est pas une option. Faire appel à un avocat mentions légales site à Paris, c'est sécuriser chaque transaction.</p>
           <ul class="expertise-list">
             <li>CGV e-commerce consommateurs</li>
             <li>Conditions B2B wholesale</li>
-            <li>Adaptées à votre activité réelle</li>
+            <li>CGU site e-commerce et RGPD</li>
+            <li>Mentions légales site vitrine et e-commerce</li>
           </ul>
         </div>
-        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
-        <a href="#contact" class="expertise-cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener" class="expertise-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Prendre rendez-vous
         </a>
       </div>
+      <!-- Bloc 3 — Contrats de distribution et revendeurs -->
       <div class="expertise-card reveal delay-3">
-        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="24" r="4"/><circle cx="36" cy="12" r="4"/><circle cx="36" cy="36" r="4"/><line x1="16" y1="22" x2="32" y2="14"/><line x1="16" y1="26" x2="32" y2="34"/></svg>
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/><circle cx="24" cy="12" r="4"/><line x1="24" y1="16" x2="12" y2="32"/><line x1="24" y1="16" x2="36" y2="32"/></svg>
         <h3>Contrats de distribution et revendeurs</h3>
+        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
         <div class="expertise-body">
-          <p>Vous avez des revendeurs sans contrat formalisé. C'est une zone de risque : marges non protégées, retours non encadrés, exclusivité de zone non définie. Je structure vos contrats de distribution pour que votre réseau soit un atout, pas une source de litiges.</p>
+          <p>Développer votre marque via des revendeurs multi-marques, des détaillants ou des plateformes e-commerce implique un contrat distribution revendeur marque précis et juridiquement solide. Je structure vos accords pour encadrer les conditions commerciales, protéger votre image et sécuriser vos marges. J'encadre également vos contrats de collaboration avec vos prestataires créatifs : propriété des créations, périmètre de mission et conditions de rupture. Pour tout besoin de contrat collaboration prestataire freelance à Paris, je vous accompagne de A à Z.</p>
           <ul class="expertise-list">
-            <li>Exclusivité de zone et marges</li>
-            <li>Politique de retours encadrée</li>
-            <li>Conditions d'entrée et de sortie</li>
+            <li>Contrat de distribution exclusive et sélective</li>
+            <li>Accord de partenariat revendeur et boutique multi-marques</li>
+            <li>Conditions wholesale et politique commerciale</li>
+            <li>Contrat de collaboration (graphiste, photographe, community manager)</li>
           </ul>
         </div>
-        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
-        <a href="#contact" class="expertise-cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener" class="expertise-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Prendre rendez-vous
         </a>
       </div>
+      <!-- Bloc 4 — Protection des créations et des designs -->
       <div class="expertise-card reveal delay-4">
-        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 8l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L24 25l-6.8 4-0.3-.2 1.3-7.4-5.5-5.3 7.5-1.1z"/><path d="M14 34c-3 2-5 5-5 8h30c0-3-2-6-5-8"/></svg>
+        <svg class="expertise-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 6L10 13v12c0 9.4 6 17.8 14 20 8-2.2 14-10.6 14-20V13L24 6z"/></svg>
         <h3>Protection des créations et des designs</h3>
+        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
         <div class="expertise-body">
-          <p>Vos créations sont originales. Sans dépôt, elles ne sont pas juridiquement protégées. Je vous accompagne sur la protection de vos designs, motifs et modèles — avant qu'ils soient copiés.</p>
+          <p>Votre marque est un actif. Sans dépôt de marque INPI, elle n'est pas juridiquement protégée et peut être utilisée ou copiée sans recours. Je vous accompagne dans votre démarche de protection marque artisanale France : analyse de votre situation, vérification disponibilité marque INPI et sécurisation complète de la démarche. En tant qu'avocat dépôt marque INPI à Paris, j'interviens à chaque étape pour que votre identité créative soit pleinement protégée.</p>
           <ul class="expertise-list">
-            <li>Dépôt de designs et motifs</li>
-            <li>Protection des modèles</li>
-            <li>Action en cas de copie</li>
+            <li>Analyse et vérification de disponibilité</li>
+            <li>Accompagnement au dépôt de marque INPI</li>
+            <li>Sécurisation de la démarche</li>
           </ul>
         </div>
-        <button class="expertise-toggle" aria-expanded="false">En savoir plus</button>
-        <a href="#contact" class="expertise-cta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener" class="expertise-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           Prendre rendez-vous
         </a>
       </div>
