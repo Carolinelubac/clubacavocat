@@ -1406,8 +1406,17 @@
           }
         }
 
-        var EXCLUS = ['jeremy saraudi', 'jérémy saraudi', 'laurent vanoverveld'];
+        var EXCLUS = ['jeremy saraudi', 'jérémy saraudi', 'jeremy saraudy', 'jérémy saraudy', 'laurent vanoverveld'];
         var PRIORITES = ['wladys kawecki', 'julien hory'];
+
+        var PINNED = [
+          {
+            _pinned: true,
+            authorAttribution: { displayName: 'Julien Hory' },
+            rating: 5,
+            text: { text: 'Une professionnelle !!! Bravo Caroline pour ton travail réalisé ! Nous sommes souvent dans l\'attente de trouver des personnes engagées dans leurs travaux qui font ça avec passion et qui comprennent très rapidement quels sont nos besoins et nos attentes. Caroline a su parfaitement intégrer le microcosme de ma société et a pu faire un état complet et rédiger ensemble l\'intégralité de mes contrats. Cela fait plaisir de voir que les professionnels sont à l\'écoute comme elle et s\'intéressent, posent les questions où il faut et savent mettre en forme toutes les modalités et la complexité de notre travail. Bravo pour tout et vraiment un énorme merci.' }
+          }
+        ];
 
         function normalise(s) {
           return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -1426,6 +1435,15 @@
           if (pa === -1) pa = PRIORITES.length;
           if (pb === -1) pb = PRIORITES.length;
           return pa - pb;
+        });
+
+        // Injecter les avis pinnés s'ils ne sont pas déjà présents via l'API
+        PINNED.forEach(function(p) {
+          var pNom = normalise(p.authorAttribution.displayName);
+          var alreadyIn = reviews.some(function(r) {
+            return normalise((r.authorAttribution && r.authorAttribution.displayName) || '').includes(pNom);
+          });
+          if (!alreadyIn) reviews.unshift(p);
         });
 
         reviews = reviews.slice(0, 6);
