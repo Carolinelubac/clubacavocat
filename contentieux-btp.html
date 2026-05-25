@@ -467,6 +467,53 @@
       .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; padding: 1.5rem 6% 8rem; }
       .footer-brand-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
     }
+
+    /* ── FAQ ── */
+    #faq { background: var(--white); padding: 8rem 8%; }
+    .faq-inner { max-width: 860px; margin: 0 auto; }
+    .faq-header { text-align: center; margin-bottom: 4rem; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-bottom: 1px solid var(--light-gray); overflow: hidden; }
+    .faq-item:first-child { border-top: 1px solid var(--light-gray); }
+    .faq-block-title {
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--terracotta); padding: 3rem 0 1rem;
+    }
+    .faq-block-title:first-child { padding-top: 0; }
+    .faq-block-title + .faq-item { border-top: 1px solid var(--light-gray); }
+    .faq-step {
+      font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300;
+      color: var(--charcoal); font-style: italic; line-height: 1.4;
+      padding: 1.2rem 0 0.6rem; letter-spacing: 0.01em;
+    }
+    .faq-step + .faq-item { border-top: 1px solid var(--light-gray); }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; padding: 1.6rem 0; background: none; border: none; text-align: left;
+      font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400;
+      color: var(--charcoal); line-height: 1.3; cursor: pointer; transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--terracotta); }
+    .faq-icon {
+      flex-shrink: 0; width: 24px; height: 24px; border: 1px solid var(--light-gray);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s, border-color 0.3s, transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .faq-icon svg { width: 12px; height: 12px; color: var(--mid-gray); transition: color 0.3s; }
+    .faq-item.open .faq-question { color: var(--terracotta); }
+    .faq-item.open .faq-icon { background: var(--terracotta); border-color: var(--terracotta); transform: rotate(45deg); }
+    .faq-item.open .faq-icon svg { color: var(--white); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .faq-answer-inner { padding: 0 0 1.6rem 0; font-size: 0.96rem; color: var(--mid-gray); line-height: 1.85; }
+    .faq-answer-inner p { margin-bottom: 0.8rem; }
+    .faq-answer-inner p:last-child { margin-bottom: 0; }
+    .faq-answer-inner strong { color: var(--charcoal); font-weight: 400; }
+    .faq-answer-inner ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin: 0.8rem 0; }
+    .faq-answer-inner ul li { padding-left: 1.2rem; position: relative; }
+    .faq-answer-inner ul li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); font-size: 0.85rem; }
+    .faq-item.open .faq-answer { max-height: 1200px; }
+    .faq-question-heading { margin: 0; font-size: inherit; font-weight: inherit; }
+    @media (max-width: 768px) { #faq { padding: 5rem 6%; } .faq-question { font-size: 1.05rem; } }
   </style>
 </head>
 <body>
@@ -486,6 +533,7 @@
       <li><a href="#accompagnement">Accompagnement</a></li>
       <li><a href="#surmoi">Sur moi</a></li>
       <li><a href="#avis">Avis</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
@@ -600,6 +648,119 @@
     </div>
   </section>
 
+  <!-- ── FAQ ── -->
+  <section id="faq">
+    <div class="faq-inner">
+      <div class="faq-header reveal">
+        <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+        <span class="section-tag">Questions fréquentes</span>
+        <h2 class="section-title">Tout ce que vous devez <em>savoir</em></h2>
+      </div>
+      <div class="faq-list reveal">
+
+        <p class="faq-block-title">La procédure</p>
+
+        <p class="faq-step">Étape 1 — Vous recevez une assignation par huissier</p>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Qu'est-ce qu'une assignation ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>C'est un acte officiel remis par huissier de justice, par lequel un client ou un maître d'ouvrage vous convoque devant un tribunal. Il vous indique la date de l'audience, le motif du litige et ce qui est demandé contre vous.</p>
+            <p><strong>Ce n'est pas une condamnation. C'est le début d'une procédure.</strong></p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Quelle est la première réaction à avoir ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p><strong>Consulter un avocat immédiatement. Pas dans huit jours. Dès réception.</strong></p>
+            <p>Voici pourquoi :</p>
+            <ul>
+              <li>L'assignation contient une date d'audience. Les délais sont courts.</li>
+              <li>Votre avocat analyse si la demande est fondée, recevable, et quelle stratégie adopter.</li>
+              <li>Il prépare votre constitution — c'est-à-dire l'acte par lequel il se déclare officiellement votre représentant devant le tribunal.</li>
+            </ul>
+            <p>Comparaître sans avocat dans ce type de litige, c'est risquer de laisser passer des arguments de défense essentiels.</p>
+          </div></div>
+        </div>
+
+        <p class="faq-step">Étape 2 — L'audience de référé : qu'est-ce qui se décide ?</p>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            À quoi sert cette première audience ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Le juge des référés examine la demande d'expertise. Il ne tranche pas le fond du litige — il décide uniquement si une expertise judiciaire est nécessaire.</p>
+            <p>Si oui, il rend une ordonnance qui :</p>
+            <ul>
+              <li>désigne l'expert judiciaire chargé du dossier ;</li>
+              <li>définit précisément sa mission (constater les désordres, en identifier l'origine, chiffrer les préjudices…) ;</li>
+              <li>fixe le délai de dépôt du rapport.</li>
+            </ul>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Le juge peut-il refuser d'ordonner l'expertise ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Oui. Le demandeur doit justifier d'un motif légitime. Si sa demande est mal fondée ou que les preuves sont suffisantes sans expertise, le juge peut rejeter la demande. Votre avocat peut plaider en ce sens.</p>
+          </div></div>
+        </div>
+
+        <p class="faq-block-title">Questions administratives</p>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Comment se déroule le premier échange ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Le premier échange est un appel de <strong>30 minutes, offert et sans engagement</strong>. Il me permet de comprendre votre situation et de vous indiquer si votre dossier entre dans le cadre de mon accompagnement. Si c'est le cas, je vous communique le montant du forfait adapté à votre situation.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Dans quelle zone géographique intervenez-vous ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p><strong>J'interviens sur toute la France.</strong></p>
+            <p>Inscrite au Barreau de Paris, je défends votre dossier devant n'importe quelle juridiction française. Lorsque la procédure l'exige, je m'associe à un confrère postulant local.</p>
+            <p>Vous n'avez qu'un seul interlocuteur du début à la fin : moi. C'est moi qui dirige votre dossier, à chaque étape.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Quels documents dois-je préparer avant notre premier échange ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Pour que ces 30 minutes soient utiles, munissez-vous de :</p>
+            <ul>
+              <li>L'assignation reçue par huissier</li>
+              <li>Tout document lié au chantier concerné (contrat, devis, photos, échanges écrits avec le client)</li>
+              <li>La date de votre audience si elle est déjà fixée</li>
+            </ul>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── CONTACT ── -->
   <section id="contact">
     <div class="contact-inner">
@@ -663,6 +824,7 @@
           <li><a href="#accompagnement">Accompagnement</a></li>
           <li><a href="#surmoi">Sur moi</a></li>
           <li><a href="#avis">Avis</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -739,6 +901,16 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+
+    /* ── FAQ ACCORDION ── */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
   </script>
 
   <!-- ── GOOGLE PLACES API – Avis dynamiques ── -->
