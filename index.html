@@ -82,9 +82,12 @@
     .nav-cta::after { display: none !important; }
     .nav-cta:hover { background: var(--terracotta-light) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,122,98,0.35) !important; }
     .nav-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; padding: 8px; cursor: pointer; }
-    .nav-toggle span { display: block; width: 28px; height: 2.5px; background: var(--terracotta); border-radius: 2px; transition: all 0.3s; }
+    .nav-toggle span { display: block; width: 28px; height: 2.5px; background: var(--terracotta); border-radius: 2px; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
     @media (max-width: 768px) {
-      .nav-links { display: none; flex-direction: column; gap: 0; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(250,247,244,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--light-gray); padding: 1rem 0; }
+      .nav-links { display: none; flex-direction: column; gap: 0; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(250,247,244,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--light-gray); padding: 1rem 0; z-index: 999; }
       .nav-links.open { display: flex; }
       .nav-links li { border-bottom: 1px solid var(--beige); }
       .nav-links a { display: block; padding: 0.9rem 5%; font-size: 0.85rem; }
@@ -1285,11 +1288,19 @@
     }, { passive: true });
 
     /* ── MENU MOBILE ── */
-    document.getElementById('navToggle').addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open);
     });
     document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
     });
 
 
