@@ -514,6 +514,43 @@
     .faq-item.open .faq-answer { max-height: 1200px; }
     .faq-question-heading { margin: 0; font-size: inherit; font-weight: inherit; }
     @media (max-width: 768px) { #faq { padding: 5rem 6%; } .faq-question { font-size: 1.05rem; } }
+
+    /* ── RESPONSIVE GLOBAL MOBILE ── */
+    @media (max-width: 768px) {
+      /* Justify crée des espaces disgracieux sur petits écrans */
+      body { text-align: left; }
+
+      /* Boutons full-width sur mobile */
+      .accompagnement-cta-btn { align-self: stretch; text-align: center; }
+      .surmoi-cta .btn-primary { display: block; text-align: center; }
+      .btn-calendly { display: block; text-align: center; }
+
+      /* Hero : boutons empilés sur très petits écrans */
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+
+      /* Badge Google : colonne centrée */
+      .google-badge-bar { flex-direction: column; align-items: center; }
+      .google-btn-avis { text-align: center; }
+
+      /* Section title : supprimer le saut de ligne forcé */
+      .accompagnement-header .section-title br { display: none; }
+
+      /* FAQ : padding intérieur réduit */
+      .faq-answer-inner { font-size: 0.92rem; }
+      .faq-step { font-size: 0.97rem; }
+    }
+
+    @media (max-width: 480px) {
+      /* Hero title encore plus petit sur très petits écrans */
+      .hero-title { font-size: clamp(1.75rem, 8vw, 2.8rem); }
+      /* Accompagnement card : padding réduit */
+      .accompagnement-card,
+      .accompagnement-cta-block { padding: 2rem 1.6rem; }
+      /* Contact : padding réduit */
+      #contact { padding: 4rem 6%; }
+      /* Bouton Calendly : texte plus court possible */
+      .btn-calendly { font-size: 0.78rem; padding: 0.85rem 1.2rem; }
+    }
   </style>
 </head>
 <body>
