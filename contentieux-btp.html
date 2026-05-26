@@ -596,15 +596,16 @@
 
     /* ── RESPONSIVE GLOBAL MOBILE ── */
     @media (max-width: 768px) {
-      /* Justify crée des espaces disgracieux sur petits écrans */
-
       /* Boutons full-width sur mobile */
       .accompagnement-cta-btn { align-self: stretch; text-align: center; }
       .surmoi-cta .btn-primary { display: block; text-align: center; }
       .btn-calendly { display: block; text-align: center; }
 
-      /* Hero : boutons empilés sur très petits écrans */
-      .hero-actions { flex-direction: column; align-items: flex-start; }
+      /* Hero : boutons + téléphone pleine largeur */
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-outline { text-align: center; }
+      .hero-phone-btn { align-self: stretch; justify-content: center; border-radius: 4px; }
 
       /* Badge Google : colonne centrée */
       .google-badge-bar { flex-direction: column; align-items: center; }
@@ -616,18 +617,23 @@
       /* FAQ : padding intérieur réduit */
       .faq-answer-inner { font-size: 0.92rem; }
       .faq-step { font-size: 0.97rem; }
+
+      /* Étapes clés */
+      .etapes-wrap { margin-top: 3rem; }
+      .etape-item { gap: 1.3rem; padding-bottom: 2rem; }
+      .etape-title { font-size: 1.05rem; }
     }
 
     @media (max-width: 480px) {
-      /* Hero title encore plus petit sur très petits écrans */
       .hero-title { font-size: clamp(1.75rem, 8vw, 2.8rem); }
-      /* Accompagnement card : padding réduit */
       .accompagnement-card,
       .accompagnement-cta-block { padding: 2rem 1.6rem; }
-      /* Contact : padding réduit */
       #contact { padding: 4rem 6%; }
-      /* Bouton Calendly : texte plus court possible */
       .btn-calendly { font-size: 0.78rem; padding: 0.85rem 1.2rem; }
+      .etape-num { width: 34px; height: 34px; font-size: 0.88rem; }
+      .etapes-list::before { left: 16px; }
+      .etape-title { font-size: 1rem; }
+      .etape-desc { font-size: 0.85rem; }
     }
   </style>
 </head>
