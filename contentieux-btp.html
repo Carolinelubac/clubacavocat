@@ -335,6 +335,40 @@
       .accompagnement-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── ÉTAPES CLÉS ── */
+    .etapes-wrap { margin-top: 5rem; }
+    .etapes-section-title {
+      font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 300; color: var(--charcoal); margin-bottom: 3rem; text-align: center;
+    }
+    .etapes-section-title em { font-style: italic; color: var(--terracotta); }
+    .etapes-list { list-style: none; position: relative; max-width: 760px; margin: 0 auto; }
+    .etapes-list::before {
+      content: ''; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 1px;
+      background: var(--light-gray);
+    }
+    .etape-item { display: flex; gap: 2rem; padding-bottom: 2.8rem; position: relative; }
+    .etape-item:last-child { padding-bottom: 0; }
+    .etape-num {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+      background: var(--terracotta); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-size: 1rem; font-weight: 400;
+      position: relative; z-index: 1;
+    }
+    .etape-content { padding-top: 0.55rem; }
+    .etape-title {
+      font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400;
+      color: var(--charcoal); line-height: 1.4; margin-bottom: 0.5rem;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem;
+    }
+    .etape-tag {
+      font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--terracotta);
+      border: 1px solid var(--terracotta); padding: 0.18rem 0.55rem; border-radius: 2px;
+    }
+    .etape-desc { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.75; }
+
     /* ── SUR MOI ── */
     #surmoi { background: var(--white); padding: 8rem 8%; }
     .surmoi-inner {
@@ -682,6 +716,50 @@
           <p class="accompagnement-cta-desc">On fait le point sur votre dossier. Je vous indique le montant du forfait adapté à votre situation.</p>
           <a href="https://calendly.com/contact-clubacavocat/30min" target="_blank" rel="noopener noreferrer" class="accompagnement-cta-btn">Réserver mon créneau de 30 minutes</a>
         </div>
+      </div>
+
+      <div class="etapes-wrap reveal">
+        <h3 class="etapes-section-title">Les étapes clés de <em>votre accompagnement</em></h3>
+        <ol class="etapes-list">
+          <li class="etape-item">
+            <span class="etape-num">1</span>
+            <div class="etape-content">
+              <p class="etape-title">Premier échange téléphonique <span class="etape-tag">30 min offerts</span></p>
+              <p class="etape-desc">Exposez votre situation. Munissez-vous de l'assignation reçue et de tout document lié au chantier : contrat, devis, photos, échanges écrits.</p>
+            </div>
+          </li>
+          <li class="etape-item">
+            <span class="etape-num">2</span>
+            <div class="etape-content">
+              <p class="etape-title">Signature de la convention d'honoraires</p>
+            </div>
+          </li>
+          <li class="etape-item">
+            <span class="etape-num">3</span>
+            <div class="etape-content">
+              <p class="etape-title">Envoi de l'assignation et des pièces nécessaires</p>
+              <p class="etape-desc">Transmission de l'assignation reçue par huissier et des pièces du chantier.</p>
+            </div>
+          </li>
+          <li class="etape-item">
+            <span class="etape-num">4</span>
+            <div class="etape-content">
+              <p class="etape-title">Lancement du dossier : audience et réunion d'expertise</p>
+            </div>
+          </li>
+          <li class="etape-item">
+            <span class="etape-num">5</span>
+            <div class="etape-content">
+              <p class="etape-title">Pré-rapport, rédaction des dires si nécessaire</p>
+            </div>
+          </li>
+          <li class="etape-item">
+            <span class="etape-num">6</span>
+            <div class="etape-content">
+              <p class="etape-title">Rapport final</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
