@@ -100,8 +100,8 @@
       display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
     }
     .hero-text {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 5% 6% 5% 8%; background: var(--cream);
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 7% 6% 6% 8%; background: var(--cream);
     }
     .hero-overline {
       font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
@@ -141,6 +141,51 @@
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right, var(--cream) 0%, transparent 18%);
     }
+    /* ── HERO PHONE + MINI FORM ── */
+    .hero-phone-btn {
+      display: inline-flex; align-items: center; gap: 0.65rem;
+      border: 1.5px solid var(--terracotta); color: var(--terracotta);
+      padding: 0.75rem 1.6rem; border-radius: 50px;
+      font-size: 0.88rem; font-weight: 400; letter-spacing: 0.05em;
+      transition: background 0.25s, color 0.25s; margin-top: 0.8rem;
+      opacity: 0; transform: translateY(20px);
+      animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 1.25s forwards;
+    }
+    .hero-phone-btn:hover { background: var(--terracotta); color: var(--white); }
+    .hero-mini-sep {
+      display: block; height: 1px; background: var(--light-gray);
+      margin: 2rem 0 1.8rem;
+      opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 1.35s forwards;
+    }
+    .hero-mini-label {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--mid-gray); text-align: center; margin-bottom: 1.2rem;
+      opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 1.4s forwards;
+    }
+    .hero-mini-form {
+      display: flex; flex-direction: column; gap: 0.7rem;
+      opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 1.45s forwards;
+    }
+    .hero-mini-input {
+      width: 100%; padding: 0.85rem 1.1rem;
+      border: 1.5px solid var(--light-gray); border-radius: 8px;
+      background: var(--white); color: var(--charcoal);
+      font-family: var(--font-sans); font-size: 0.92rem; outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .hero-mini-input::placeholder { color: rgba(44,44,44,0.35); }
+    .hero-mini-input:focus { border-color: var(--terracotta); box-shadow: 0 0 0 3px rgba(201,122,98,0.12); }
+    .hero-mini-submit {
+      width: 100%; padding: 0.95rem; background: var(--terracotta); color: var(--white);
+      border: none; border-radius: 8px; font-family: var(--font-sans);
+      font-size: 0.9rem; letter-spacing: 0.03em; cursor: pointer; margin-top: 0.3rem;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .hero-mini-submit:hover { background: var(--terracotta-light); transform: translateY(-1px); }
+    .hero-mini-notice {
+      font-size: 0.75rem; color: var(--mid-gray); text-align: center; line-height: 1.5;
+    }
+
     @keyframes heroImageReveal { from { opacity: 0; } to { opacity: 1; } }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
     @keyframes wordUp { to { opacity: 1; transform: translateY(0); } }
@@ -585,6 +630,24 @@
         <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
         <a href="#accompagnement" class="btn-outline"><span>Mon accompagnement</span></a>
       </div>
+      <a href="tel:+33663561541" class="hero-phone-btn">
+        <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5A1.5 1.5 0 013.5 2h1.926a1 1 0 01.97.757l.69 2.758a1 1 0 01-.29.985L5.3 7.495A11.04 11.04 0 0012.5 14.7l1.995-1.497a1 1 0 01.985-.29l2.758.69A1 1 0 0119 14.574V16.5A1.5 1.5 0 0117.5 18C8.44 18 1 10.56 1 1.5z" transform="translate(0.5,0.5)"/></svg>
+        06 63 56 15 41
+      </a>
+      <span class="hero-mini-sep"></span>
+      <p class="hero-mini-label">Être rappelé(e) rapidement</p>
+      <form class="hero-mini-form" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
+        <input type="hidden" name="_subject" value="Demande de rappel · Contentieux BTP" />
+        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" />
+        <input class="hero-mini-input" type="text" name="prenom" placeholder="Votre prénom" required />
+        <input class="hero-mini-input" type="tel" name="telephone" placeholder="Votre téléphone" required />
+        <input class="hero-mini-input" type="text" name="date_audience" placeholder="Date de votre audience (ex : 15/06/2026)" />
+        <input class="hero-mini-input" type="text" name="ville_tribunal" placeholder="Ville du tribunal" />
+        <button type="submit" class="hero-mini-submit">Demander à être rappelé(e)</button>
+        <p class="hero-mini-notice">1er rendez-vous de 30 min offert · Réponse sous 24h</p>
+      </form>
     </div>
     <div class="hero-image">
       <img src="photo-hero.jpg" alt="Maître Caroline Lubac, avocate au Barreau de Paris" />
