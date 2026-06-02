@@ -601,11 +601,14 @@
       .surmoi-cta .btn-primary { display: block; text-align: center; }
       .btn-calendly { display: block; text-align: center; }
 
-      /* Hero : boutons + téléphone pleine largeur */
+      /* Hero : boutons + téléphone pleine largeur, padding bas augmenté pour le formulaire */
+      .hero-text { padding-bottom: 4.5rem; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .hero-actions .btn-primary,
       .hero-actions .btn-outline { text-align: center; }
       .hero-phone-btn { align-self: stretch; justify-content: center; border-radius: 4px; }
+      .hero-mini-sep { margin: 1.4rem 0 1.2rem; }
+      .hero-mini-label { text-align: left; }
 
       /* Badge Google : colonne centrée */
       .google-badge-bar { flex-direction: column; align-items: center; }
@@ -626,6 +629,8 @@
 
     @media (max-width: 480px) {
       .hero-title { font-size: clamp(1.75rem, 8vw, 2.8rem); }
+      .hero-mini-input { font-size: 0.88rem; padding: 0.78rem 0.95rem; }
+      .hero-mini-submit { font-size: 0.85rem; }
       .accompagnement-card,
       .accompagnement-cta-block { padding: 2rem 1.6rem; }
       #contact { padding: 4rem 6%; }
