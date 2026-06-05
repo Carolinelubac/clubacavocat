@@ -707,7 +707,7 @@
         <input class="hero-mini-input" type="email" name="email" placeholder="Votre adresse e-mail" />
         <input class="hero-mini-input" type="text" name="date_audience" placeholder="Date de votre audience (ex : 15/06/2026)" />
         <input class="hero-mini-input" type="text" name="ville_tribunal" placeholder="Ville du tribunal" />
-        <button type="submit" class="hero-mini-submit">Demander à être rappelé(e)</button>
+        <button type="submit" onclick="gtag('event', 'conversion', {'send_to': 'AW-18161264737/soumission_formulaire'});" class="hero-mini-submit">Demander à être rappelé(e)</button>
         <p class="hero-mini-notice">1er rendez-vous de 30 min offert · Réponse sous 24h</p>
       </form>
     </div>
@@ -1020,7 +1020,7 @@
           </select>
         </div>
         <div class="form-field"><label for="message">Votre situation (en quelques mots)</label><textarea id="message" name="message" placeholder="Décrivez brièvement votre situation…"></textarea></div>
-        <div class="form-submit"><button type="submit">Envoyer ma demande</button></div>
+        <div class="form-submit"><button type="submit" onclick="gtag('event', 'conversion', {'send_to': 'AW-18161264737/soumission_formulaire'});">Envoyer ma demande</button></div>
         <p class="form-notice">Vos données sont strictement confidentielles et ne seront jamais transmises à des tiers.</p>
       </form>
     </div>
