@@ -10,16 +10,16 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contentieux BTP · Expertise judiciaire · Caroline Lubac Avocat Paris</title>
-  <meta name="description" content="Avocate au Barreau de Paris. Représentation des artisans et entreprises tous corps d'état lors des expertises judiciaires et en défense. Premier échange offert." />
+  <title>Avocat Référé Expertise BTP · Assignation · Caroline Lubac Avocat Paris</title>
+  <meta name="description" content="Avocate au Barreau de Paris spécialisée en contentieux BTP. Défense des artisans, entreprises générales et sous-traitants lors d'une procédure de référé expertise judiciaire. Premier échange offert." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lubacavocat.fr/contentieux-btp.html" />
-  <meta property="og:title" content="Contentieux BTP · Expertise judiciaire · Caroline Lubac Avocat Paris" />
-  <meta property="og:description" content="Représentation des artisans et entreprises tous corps d'état lors des expertises judiciaires et en défense. Premier échange offert." />
+  <meta property="og:title" content="Avocat Référé Expertise BTP · Assignation en référé · Caroline Lubac Avocat Paris" />
+  <meta property="og:description" content="Défense des artisans et entreprises du bâtiment face à une assignation en référé expertise judiciaire. Avocat contentieux BTP, intervention France entière. Premier échange offert." />
   <meta property="og:image" content="https://lubacavocat.fr/caroline-lubac-avocat.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contentieux BTP · Expertise judiciaire · Caroline Lubac Avocat Paris" />
-  <meta name="twitter:description" content="Représentation des artisans et entreprises tous corps d'état lors des expertises judiciaires et en défense. Premier échange offert." />
+  <meta name="twitter:title" content="Avocat Référé Expertise BTP · Assignation · Caroline Lubac Avocat Paris" />
+  <meta name="twitter:description" content="Défense des artisans et entreprises du bâtiment face à une assignation en référé expertise judiciaire. Avocat contentieux BTP, intervention France entière." />
   <link rel="canonical" href="https://lubacavocat.fr/contentieux-btp.html" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -147,6 +147,41 @@
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right, var(--cream) 0%, transparent 18%);
     }
+    /* ── HERO REASSURANCE ── */
+    .hero-reassurance {
+      display: flex; flex-direction: column; gap: 0.55rem; margin-top: 1.4rem;
+      opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.25,0.46,0.45,0.94) 1.2s forwards;
+    }
+    .hero-reassurance-item {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      font-size: 0.82rem; color: var(--charcoal); line-height: 1.45; text-align: left;
+    }
+    .hero-reassurance-check { color: var(--terracotta); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    /* ── URGENCE ── */
+    .urgence-bloc { background: var(--charcoal); padding: 3rem 8%; }
+    .urgence-inner {
+      max-width: 860px; margin: 0 auto; text-align: center;
+      font-size: 1.05rem; color: rgba(255,255,255,0.82); line-height: 1.8;
+    }
+    .urgence-inner strong { color: var(--terracotta); font-weight: 400; }
+
+    /* ── CARD TAG + PRICE ── */
+    .accompagnement-card-tag {
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 0.6rem;
+    }
+    .accompagnement-card-price {
+      font-family: var(--font-serif); font-size: 2.8rem; font-weight: 300;
+      color: var(--charcoal); line-height: 1; margin-bottom: 1.6rem;
+    }
+    .accompagnement-card-price sup {
+      font-size: 1rem; vertical-align: super; margin-left: 0.2rem;
+    }
+
+    /* ── SECTION CTA BAR ── */
+    .section-cta-bar { text-align: center; padding: 3rem 8%; background: var(--beige); }
+
     /* ── HERO PHONE + MINI FORM ── */
     .hero-phone-btn {
       display: inline-flex; align-items: center; gap: 0.65rem;
@@ -641,6 +676,13 @@
       .etape-title { font-size: 1.05rem; }
     }
 
+    @media (max-width: 768px) {
+      .urgence-bloc { padding: 2.2rem 6%; }
+      .urgence-inner { font-size: 0.96rem; }
+      .section-cta-bar { padding: 2.5rem 6%; }
+      .accompagnement-card-price { font-size: 2.2rem; }
+    }
+
     @media (max-width: 480px) {
       .hero-title { font-size: clamp(1.75rem, 8vw, 2.8rem); }
       .hero-mini-input { font-size: 0.88rem; padding: 0.78rem 0.95rem; }
@@ -653,6 +695,8 @@
       .etapes-list::before { left: 16px; }
       .etape-title { font-size: 1rem; }
       .etape-desc { font-size: 0.85rem; }
+      .accompagnement-card-price { font-size: 2rem; }
+      .hero-reassurance-item { font-size: 0.78rem; }
     }
   </style>
 <!-- Google tag (gtag.js) -->
@@ -691,12 +735,18 @@
     <div class="hero-text">
       <p class="hero-overline">Avocate au Barreau de Paris · Contentieux BTP</p>
       <p class="hero-overline" style="animation-delay:0.45s;margin-top:-0.8rem;margin-bottom:1.5rem;">Intervention en France entière</p>
-      <p class="hero-audience-tag">Artisans, Entreprise générale,</p>
-      <h1 class="hero-title" id="heroTitle">Vous avez reçu une assignation. <em>L'audience approche.</em></h1>
-      <p class="hero-desc">Vous ne savez pas exactement ce qui vous attend, ni ce que ça va vous coûter. Je défends les artisans, les entreprises générales du bâtiment et tous corps d'état à chaque étape, à commencer par le jour J.</p>
+      <p class="hero-audience-tag">Artisans, entreprises générales et sous-traitants du BTP,</p>
+      <h1 class="hero-title" id="heroTitle">Vous avez reçu une assignation en référé expertise. <em>L'audience approche.</em></h1>
+      <p class="hero-desc">Vous ne savez pas exactement ce qui vous attend, ni ce que cette procédure peut avoir comme conséquences pour votre entreprise.<br><br>Chaque étape compte dès le premier jour.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
+        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Prendre rendez-vous</a>
         <a href="#accompagnement" class="btn-outline"><span>Mon accompagnement</span></a>
+      </div>
+      <div class="hero-reassurance">
+        <div class="hero-reassurance-item"><span class="hero-reassurance-check">✓</span><span>Avocate au Barreau de Paris</span></div>
+        <div class="hero-reassurance-item"><span class="hero-reassurance-check">✓</span><span>Plus de 10 ans d'expérience en immobilier, construction et contentieux BTP</span></div>
+        <div class="hero-reassurance-item"><span class="hero-reassurance-check">✓</span><span>Intervention partout en France</span></div>
+        <div class="hero-reassurance-item"><span class="hero-reassurance-check">✓</span><span>Accompagnement des entreprises du bâtiment à chaque étape de l'expertise judiciaire</span></div>
       </div>
       <a href="tel:+33663561541" onclick="gtag('event', 'conversion', {'send_to': 'AW-18161264737/appel_telephone'});" class="hero-phone-btn">
         <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5A1.5 1.5 0 013.5 2h1.926a1 1 0 01.97.757l.69 2.758a1 1 0 01-.29.985L5.3 7.495A11.04 11.04 0 0012.5 14.7l1.995-1.497a1 1 0 01.985-.29l2.758.69A1 1 0 0119 14.574V16.5A1.5 1.5 0 0117.5 18C8.44 18 1 10.56 1 1.5z" transform="translate(0.5,0.5)"/></svg>
@@ -723,6 +773,11 @@
     </div>
   </section>
 
+  <!-- ── URGENCE ── -->
+  <div class="urgence-bloc">
+    <p class="urgence-inner reveal">Une expertise judiciaire mal préparée peut engager la responsabilité de votre entreprise pendant plusieurs années. <strong>Dès réception de l'assignation en référé expertise, chaque décision compte.</strong></p>
+  </div>
+
   <!-- ── ACCOMPAGNEMENT ── -->
   <section id="accompagnement">
     <div class="accompagnement-wrap">
@@ -734,6 +789,8 @@
       </div>
       <div class="accompagnement-grid">
         <div class="accompagnement-card reveal-left">
+          <p class="accompagnement-card-tag">Forfait référé expertise</p>
+          <p class="accompagnement-card-price">1 900 €<sup>HT</sup></p>
           <p class="accompagnement-card-title">Ce forfait comprend :</p>
           <ul class="accompagnement-list">
             <li>La rédaction de vos conclusions en défense</li>
@@ -742,9 +799,9 @@
             <li>Les échanges téléphoniques sur votre dossier</li>
             <li>La rédaction de vos dires <span style="font-size:0.85em;color:var(--terracotta);">(1 dire inclus)</span></li>
           </ul>
-          <p class="accompagnement-forfait">Forfait : 1 900 € HT</p>
           <p class="accompagnement-forfait-note">Accédits et dires supplémentaires définis selon la complexité de votre dossier, communiqués lors du premier échange.</p>
           <p class="accompagnement-pas-surprise">Pas de surprise. Dès le premier échange, vous connaissez le coût exact de votre défense.</p>
+          <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center;margin-top:1.8rem;">Prendre rendez-vous</a>
         </div>
         <div class="accompagnement-cta-block reveal-right">
           <p class="accompagnement-cta-eyebrow">Premier échange offert</p>
@@ -977,6 +1034,10 @@
     </div>
   </section>
 
+  <div class="section-cta-bar reveal">
+    <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Prendre rendez-vous — premier échange offert</a>
+  </div>
+
   <!-- ── CONTACT ── -->
   <section id="contact">
     <div class="contact-inner">
@@ -1064,7 +1125,7 @@
   <script>
     /* ── HERO TITLE — MOT PAR MOT ── */
     const lines = [
-      ['Vous', 'avez', 'reçu', 'une', 'assignation.'],
+      ['Vous', 'avez', 'reçu', 'une', 'assignation', 'en', 'référé', 'expertise.'],
       ['<em>L\'audience</em>', '<em>approche.</em>']
     ];
     const heroTitle = document.getElementById('heroTitle');
