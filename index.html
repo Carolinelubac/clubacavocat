@@ -97,33 +97,33 @@
     /* ── HERO ── */
     #accueil {
       min-height: 100vh; padding-top: var(--nav-h);
-      display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+      display: grid; grid-template-columns: 1.3fr 1fr; overflow: hidden;
     }
     .hero-text {
       display: flex; flex-direction: column; justify-content: center;
       padding: 5% 6% 5% 8%; background: var(--cream);
     }
     .hero-overline {
-      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--terracotta); margin-bottom: 1.5rem;
+      font-size: 0.68rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 1.2rem;
       opacity: 0; transform: translateY(20px);
       animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
     }
     .hero-title {
-      font-family: var(--font-serif); font-size: clamp(2rem, 4.5vw, 4.2rem);
-      font-weight: 300; line-height: 1.15; color: var(--charcoal); margin-bottom: 1.8rem;
-      overflow: hidden;
+      font-family: var(--font-serif); font-size: clamp(3rem, 8.5vw, 7.5rem);
+      font-weight: 300; line-height: 1.02; color: var(--charcoal); margin-bottom: 1.6rem;
+      overflow: hidden; letter-spacing: -0.01em;
     }
     .hero-title .word {
       display: inline-block;
-      margin-right: 0.28em;
+      margin-right: 0.24em;
       opacity: 0; transform: translateY(60px);
       animation: wordUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
-    .hero-title em { font-style: italic; color: var(--terracotta); }
+    .hero-title em { font-style: normal; font-weight: 500; color: var(--terracotta); }
     .hero-desc {
-      font-size: 1rem; font-weight: 300; color: var(--mid-gray);
-      max-width: 440px; margin-bottom: 2.8rem; line-height: 1.8;
+      font-size: 0.9rem; font-weight: 300; color: var(--mid-gray);
+      max-width: 400px; margin-bottom: 2rem; line-height: 1.7;
       opacity: 0; transform: translateY(20px);
       animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s forwards;
     }
