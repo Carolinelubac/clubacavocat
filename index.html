@@ -10,16 +10,16 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caroline Lubac Avocat – Barreau de Paris | Avocate pour fondatrices de marques</title>
-  <meta name="description" content="Maître Caroline Lubac, avocate au Barreau de Paris — contrats fournisseurs, CGV e-commerce et B2B, protection des créations pour fondatrices de marques de produits (bijoux, accessoires, textile, déco, objets). Premier échange offert." />
+  <title>Mon avocat pour 200€ | Caroline Lubac Avocat, Barreau de Paris</title>
+  <meta name="description" content="Maître Caroline Lubac, avocate au Barreau de Paris — mon avocat pour 200€. Contrats fournisseurs, CGV e-commerce et B2B, protection des créations pour fondatrices de marques de produits (bijoux, accessoires, textile, déco, objets). Échange de 15 min offert." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lubacavocat.fr/" />
-  <meta property="og:title" content="Caroline Lubac Avocat – Avocate pour fondatrices de marques" />
-  <meta property="og:description" content="Contrats fournisseurs, CGV e-commerce et B2B, protection des créations pour fondatrices de marques de produits. Premier échange offert." />
+  <meta property="og:title" content="Mon avocat pour 200€ | Caroline Lubac Avocat" />
+  <meta property="og:description" content="Mon avocat pour 200€ — contrats fournisseurs, CGV e-commerce et B2B, protection des créations pour fondatrices de marques de produits. Échange de 15 min offert." />
   <meta property="og:image" content="https://lubacavocat.fr/caroline-lubac-avocat.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Caroline Lubac Avocat – Avocate pour fondatrices de marques" />
-  <meta name="twitter:description" content="Contrats fournisseurs, CGV e-commerce et B2B, protection des créations pour fondatrices de marques de produits. Premier échange offert." />
+  <meta name="twitter:title" content="Mon avocat pour 200€ | Caroline Lubac Avocat" />
+  <meta name="twitter:description" content="Mon avocat pour 200€ — contrats fournisseurs, CGV e-commerce et B2B, protection des créations pour fondatrices de marques de produits. Échange de 15 min offert." />
   <link rel="canonical" href="https://lubacavocat.fr/" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -256,6 +256,28 @@
       .apropos-inner { grid-template-columns: 1fr; gap: 3rem; }
       .apropos-image-wrap img { height: 380px; }
     }
+
+    /* ── OFFRE ── */
+    #offre { background: var(--white); padding: 8rem 8%; text-align: center; }
+    .offre-inner { max-width: 780px; margin: 0 auto; }
+    .offre-intro { font-size: 1.05rem; color: var(--mid-gray); line-height: 1.8; max-width: 560px; margin: 0 auto; }
+    .offre-steps { display: flex; flex-direction: column; gap: 1.4rem; margin: 3rem 0; text-align: left; }
+    .offre-step {
+      display: flex; gap: 1.4rem; align-items: flex-start;
+      padding: 1.6rem 1.8rem; background: var(--cream);
+      border-left: 3px solid var(--terracotta); border-radius: 0 2px 2px 0;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
+    }
+    .offre-step:hover { transform: translateX(6px); box-shadow: 4px 8px 24px rgba(0,0,0,0.07); }
+    .offre-step-number {
+      flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
+      background: var(--terracotta); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-size: 1.3rem;
+    }
+    .offre-step h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.4rem; }
+    .offre-step p { font-size: 0.92rem; color: var(--mid-gray); line-height: 1.7; margin: 0; }
+    @media (max-width: 768px) { #offre { padding: 5rem 6%; } }
 
     /* ── CONTACT ── */
     #contact {
@@ -581,6 +603,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
+      <li><a href="#offre">Mon offre</a></li>
       <li><a href="#avis">Avis</a></li>
       <li><a href="#apropos">À propos</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -591,11 +614,11 @@
   <section id="accueil">
     <div class="hero-text">
       <p class="hero-overline">Avocate au Barreau de Paris · Intervention France entière</p>
-      <h1 class="hero-title" id="heroTitle">Votre marque a une vision. Donnez à vos contrats <em>la même ambition.</em></h1>
-      <p class="hero-desc">Je structure vos contrats, CGV et conditions B2B pour que vous protégiez ce que vous créez, maîtrisiez chaque accord commercial, et pilotiez votre marque seule, sans dépendre d'un avocat au quotidien.</p>
+      <h1 class="hero-title" id="heroTitle">Mon avocat pour <em>200€.</em></h1>
+      <p class="hero-desc">Un échange de 15 minutes, offert et sans engagement, pour comprendre votre besoin. Si je peux vous aider, votre accompagnement démarre à 200€, en toute transparence.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Prendre rendez-vous</a>
-        <a href="#apropos" class="btn-outline"><span>Qui je suis</span></a>
+        <a href="#offre" class="btn-outline"><span>Mon offre à 200€</span></a>
       </div>
       <div class="hero-direct">
         <a href="tel:+33663561541" class="btn-call">
@@ -623,12 +646,40 @@
             <option>Autre</option>
           </select>
           <button type="submit">Demander à être rappelé(e)</button>
-          <p class="hfm-notice">1er rendez-vous de 30 min offert · Réponse sous 24h</p>
+          <p class="hfm-notice">Échange de 15 min offert · Réponse sous 24h</p>
         </form>
       </div>
     </div>
     <div class="hero-image">
       <img src="archCaroline%20(4)%20(2).jpg" alt="Maître Caroline Lubac, avocate au Barreau de Paris" id="heroImg" />
+    </div>
+  </section>
+
+  <section id="offre">
+    <div class="offre-inner">
+      <div class="offre-header reveal">
+        <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Tarif transparent</span>
+        <h2 class="section-title">Mon avocat pour <em>200€</em></h2>
+        <p class="offre-intro">Pas de facturation à l'heure qui angoisse, pas de devis à rallonge. Mon accompagnement démarre à 200€, en toute transparence.</p>
+      </div>
+      <div class="offre-steps">
+        <div class="offre-step reveal delay-1">
+          <span class="offre-step-number">1</span>
+          <div>
+            <h3>Un échange de 15 minutes, offert</h3>
+            <p>Sans engagement. On fait le point sur votre situation, et je vous dis honnêtement si je peux vous aider.</p>
+          </div>
+        </div>
+        <div class="offre-step reveal delay-2">
+          <span class="offre-step-number">2</span>
+          <div>
+            <h3>Un accompagnement à partir de 200€</h3>
+            <p>C'est le forfait de base de mon accompagnement. Le tarif exact vous est communiqué à l'issue de l'échange, sans surprise.</p>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary">Réserver mon échange de 15 min</a>
     </div>
   </section>
 
@@ -782,7 +833,17 @@
             <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
           </button></h3>
           <div class="faq-answer"><div class="faq-answer-inner">
-            Un appel de <strong>30 minutes, offert, sans engagement</strong>. L'objectif : comprendre votre situation, identifier vos besoins juridiques prioritaires, vérifier que l'accompagnement est adapté. Vous repartez avec une vision claire, que vous travailliez avec moi ou non.
+            Un appel de <strong>15 minutes, offert, sans engagement</strong>. L'objectif : comprendre votre situation, identifier vos besoins juridiques prioritaires, vérifier que l'accompagnement est adapté. Vous repartez avec une vision claire, que vous travailliez avec moi ou non.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question-heading"><button class="faq-question">
+            Combien coûte un accompagnement avec vous ?
+            <span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span>
+          </button></h3>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            Mon accompagnement démarre à <strong>200€</strong>. C'est le forfait de base : pas de facturation à l'heure, pas de mauvaise surprise. Le tarif exact vous est confirmé après notre échange de 15 minutes, offert et sans engagement, une fois votre situation comprise.
           </div></div>
         </div>
 
@@ -840,9 +901,9 @@
       <div class="contact-info reveal-left">
         <span class="section-line"></span>
         <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Prenons contact</span>
-        <h2 class="section-title">Prenons 30 minutes pour <em>faire le point</em></h2>
-        <p>Le premier échange est offert. Une conversation pour comprendre votre situation et voir si je peux vous aider, sans engagement.</p>
-        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-calendly">Réserver un créneau — 30 min offerts</a>
+        <h2 class="section-title">Prenons 15 minutes pour <em>faire le point</em></h2>
+        <p>Le premier échange est offert. Une conversation pour comprendre votre situation et voir si je peux vous aider, sans engagement. Si nous travaillons ensemble, votre accompagnement démarre à 200€.</p>
+        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-calendly">Réserver un créneau — 15 min offertes</a>
         <div class="contact-details">
           <div class="contact-detail">
             <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 11a4 4 0 100-8 4 4 0 000 8z"/><path d="M3 18c0-3.314 3.134-6 7-6s7 2.686 7 6"/></svg>
@@ -895,6 +956,7 @@
     <div class="footer-inner">
       <nav class="footer-nav-block">
         <ul>
+          <li><a href="#offre">Mon offre</a></li>
           <li><a href="#avis">Avis</a></li>
           <li><a href="#apropos">À propos</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -927,7 +989,8 @@
     "mainEntity": [
       {"@type":"Question","name":"Vous intervenez sur quels types de marques ?","acceptedAnswer":{"@type":"Answer","text":"Marques de produits physiques : bijoux, accessoires, textile, déco, objets. Mon positionnement est délibérément spécialisé : contrats, CGV et protection des créations pour les marques en croissance."}},
       {"@type":"Question","name":"Je suis en début de développement, est-ce trop tôt ?","acceptedAnswer":{"@type":"Answer","text":"Si vous avez des revendeurs, un fabricant, un site e-commerce actif, et que vos contrats sont absents ou bancals — non, ce n'est pas trop tôt. C'est exactement le bon moment. Attendre le premier litige coûte toujours plus cher."}},
-      {"@type":"Question","name":"Comment se passe le premier échange ?","acceptedAnswer":{"@type":"Answer","text":"Un appel de 30 minutes, offert, sans engagement. L'objectif : comprendre votre situation, identifier vos besoins prioritaires, vérifier que l'accompagnement est adapté. Vous repartez avec une vision claire, que vous travailliez avec moi ou non."}},
+      {"@type":"Question","name":"Comment se passe le premier échange ?","acceptedAnswer":{"@type":"Answer","text":"Un appel de 15 minutes, offert, sans engagement. L'objectif : comprendre votre situation, identifier vos besoins prioritaires, vérifier que l'accompagnement est adapté. Vous repartez avec une vision claire, que vous travailliez avec moi ou non."}},
+      {"@type":"Question","name":"Combien coûte un accompagnement ?","acceptedAnswer":{"@type":"Answer","text":"Mon accompagnement démarre à 200€. C'est le forfait de base : pas de facturation à l'heure, pas de mauvaise surprise. Le tarif exact est confirmé après l'échange initial de 15 minutes, offert et sans engagement."}},
       {"@type":"Question","name":"Est-ce que vous rédigez mes contrats à ma place ?","acceptedAnswer":{"@type":"Answer","text":"Non — et c'est délibéré. Je co-construis avec vous. Vous comprenez ce que vous signez, pourquoi chaque clause est là, et comment vous en servir. À l'issue de l'accompagnement, vous avez des modèles prêts à l'emploi, des process automatisés et les réflexes pour piloter seule."}},
       {"@type":"Question","name":"Intervenez-vous en dehors de Paris ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les accompagnements se font intégralement en visioconférence. Peu importe où vous êtes en France."}},
       {"@type":"Question","name":"Est-ce que ces accompagnements sont faits pour ma marque ?","acceptedAnswer":{"@type":"Answer","text":"Ces accompagnements s'adressent aux fondatrices qui ont déjà une activité commerciale réelle : un e-commerce qui tourne, des revendeurs référencés, un fabricant avec qui vous travaillez régulièrement. Ce qui compte n'est pas votre chiffre d'affaires exact : c'est que vous ayez des relations commerciales en place qui créent de vrais enjeux juridiques. Si vous avez un doute, le premier appel est fait pour ça."}}
@@ -938,7 +1001,7 @@
   <script>
     /* ── HERO TITLE — MOT PAR MOT ── */
     const lines = [
-      ['Votre', 'marque', 'a', 'une', 'vision.', 'Donnez', 'à', 'vos', 'contrats', '<em>la</em>', '<em>même</em>', '<em>ambition.</em>']
+      ['Mon', 'avocat', 'pour', '<em>200€.</em>']
     ];
     const heroTitle = document.getElementById('heroTitle');
     heroTitle.textContent = '';
