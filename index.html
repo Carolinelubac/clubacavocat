@@ -25,7 +25,7 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --terracotta: #C97A62;
@@ -42,7 +42,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
     body { font-family: var(--font-sans); color: var(--charcoal); background: var(--cream); line-height: 1.7; overflow-x: hidden; text-align: justify; }
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
@@ -111,7 +111,7 @@
     }
     .hero-title {
       font-family: var(--font-serif); font-size: clamp(3rem, 8.5vw, 7.5rem);
-      font-weight: 300; line-height: 1.02; color: var(--charcoal); margin-bottom: 1.6rem;
+      font-weight: 700; line-height: 1.02; color: var(--charcoal); margin-bottom: 1.6rem;
       overflow: hidden; letter-spacing: -0.01em;
     }
     .hero-title .word {
@@ -120,7 +120,7 @@
       opacity: 0; transform: translateY(60px);
       animation: wordUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
-    .hero-title em { font-style: normal; font-weight: 500; color: var(--terracotta); }
+    .hero-title em { font-style: normal; font-weight: 700; color: var(--terracotta); }
     .hero-desc {
       font-size: 0.9rem; font-weight: 300; color: var(--mid-gray);
       max-width: 400px; margin-bottom: 2rem; line-height: 1.7;
@@ -278,6 +278,45 @@
     .offre-step h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 0.4rem; }
     .offre-step p { font-size: 0.92rem; color: var(--mid-gray); line-height: 1.7; margin: 0; }
     @media (max-width: 768px) { #offre { padding: 5rem 6%; } }
+
+    /* ── POPUP DE SORTIE / INACTIVITÉ ── */
+    .exit-popup-overlay {
+      position: fixed; inset: 0; z-index: 1200;
+      background: rgba(44,44,44,0.55); backdrop-filter: blur(2px);
+      display: none; align-items: center; justify-content: center; padding: 1.5rem;
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .exit-popup-overlay.open { display: flex; }
+    .exit-popup-overlay.visible { opacity: 1; }
+    .exit-popup {
+      background: var(--cream); border-radius: 4px; max-width: 440px; width: 100%;
+      padding: 2.6rem 2.2rem 2.2rem; position: relative; text-align: center;
+      transform: scale(0.92) translateY(10px); transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    }
+    .exit-popup-overlay.visible .exit-popup { transform: scale(1) translateY(0); }
+    .exit-popup-close {
+      position: absolute; top: 0.9rem; right: 0.9rem; width: 32px; height: 32px;
+      border: none; background: none; color: var(--mid-gray); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; border-radius: 50%;
+      transition: background 0.2s, color 0.2s;
+    }
+    .exit-popup-close:hover { background: var(--beige); color: var(--charcoal); }
+    .exit-popup-close svg { width: 16px; height: 16px; }
+    .exit-popup .section-tag { justify-content: center; margin-bottom: 0.8rem; }
+    .exit-popup h3 {
+      font-family: var(--font-serif); font-size: 1.7rem; font-weight: 700; color: var(--charcoal);
+      line-height: 1.2; margin-bottom: 0.8rem;
+    }
+    .exit-popup h3 em { font-style: normal; color: var(--terracotta); }
+    .exit-popup p { font-size: 0.92rem; color: var(--mid-gray); line-height: 1.7; margin-bottom: 1.6rem; }
+    .exit-popup .btn-primary { width: 100%; }
+    .exit-popup-secondary {
+      display: block; margin: 0.9rem auto 0; font-size: 0.78rem; color: var(--mid-gray);
+      text-decoration: underline; background: none; border: none; padding: 0.3rem; cursor: pointer;
+      font-family: var(--font-sans); transition: color 0.2s;
+    }
+    .exit-popup-secondary:hover { color: var(--charcoal); }
 
     /* ── CONTACT ── */
     #contact {
@@ -642,6 +681,19 @@
     </a>
   </div>
 
+  <div class="exit-popup-overlay" id="exitPopupOverlay" aria-hidden="true">
+    <div class="exit-popup" role="dialog" aria-modal="true" aria-labelledby="exitPopupTitle">
+      <button type="button" class="exit-popup-close" id="exitPopupClose" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+      <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Avant de partir</span>
+      <h3 id="exitPopupTitle">Mon avocat pour <em>200€</em>, ça vous parle ?</h3>
+      <p>Un échange de 15 minutes, offert et sans engagement, pour comprendre votre situation. Si je peux vous aider, votre accompagnement démarre à 200€.</p>
+      <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener" class="btn-primary" id="exitPopupCta">Réserver mon échange de 15 min</a>
+      <button type="button" class="exit-popup-secondary" id="exitPopupDismiss">Non merci, pas maintenant</button>
+    </div>
+  </div>
+
   <section id="accueil">
     <div class="hero-text">
       <p class="hero-overline">Avocate au Barreau de Paris · Intervention France entière</p>
@@ -668,14 +720,6 @@
             <input type="text" name="prenom" placeholder="Votre prénom" required />
             <input type="tel" name="telephone" placeholder="Votre téléphone" required />
           </div>
-          <select name="domaine">
-            <option value="">Domaine</option>
-            <option>CGV e-commerce</option>
-            <option>Contrats fournisseurs / fabricants</option>
-            <option>Contrats de distribution / revendeurs</option>
-            <option>Protection des créations</option>
-            <option>Autre</option>
-          </select>
           <button type="submit">Demander à être rappelé(e)</button>
           <p class="hfm-notice">Échange de 15 min offert · Réponse sous 24h</p>
         </form>
@@ -965,17 +1009,6 @@
         </div>
         <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="votre@email.fr" required /></div>
         <div class="form-field"><label for="telephone">Téléphone</label><input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" /></div>
-        <div class="form-field">
-          <label for="domaine">Domaine</label>
-          <select id="domaine" name="domaine">
-            <option value="">Sélectionnez un domaine</option>
-            <option>CGV e-commerce</option>
-            <option>Contrats fournisseurs / fabricants</option>
-            <option>Contrats de distribution / revendeurs</option>
-            <option>Protection des créations</option>
-            <option>Autre</option>
-          </select>
-        </div>
         <div class="form-field"><label for="message">Votre situation (en quelques mots)</label><textarea id="message" name="message" placeholder="Décrivez brièvement votre situation…"></textarea></div>
         <div class="form-submit"><button type="submit">Envoyer ma demande</button></div>
         <p class="form-notice">Vos données sont strictement confidentielles et ne seront jamais transmises à des tiers.</p>
@@ -1114,6 +1147,76 @@
         if (!isOpen) item.classList.add('open');
       });
     });
+  </script>
+
+  <script>
+    /* ── POPUP DE SORTIE / INACTIVITÉ ── */
+    (function () {
+      var overlay = document.getElementById('exitPopupOverlay');
+      var closeBtn = document.getElementById('exitPopupClose');
+      var dismissBtn = document.getElementById('exitPopupDismiss');
+      var cta = document.getElementById('exitPopupCta');
+      if (!overlay) return;
+
+      var STORAGE_KEY = 'exitPopupShown';
+      var ARM_DELAY_MS = 8000;
+      var INACTIVITY_MS = 30000;
+      var armed = false;
+      var inactivityTimer;
+
+      function alreadyShown() {
+        try { return sessionStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { return false; }
+      }
+      function markShown() {
+        try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+      }
+
+      function showPopup() {
+        if (alreadyShown() || overlay.classList.contains('open')) return;
+        markShown();
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        requestAnimationFrame(function () { overlay.classList.add('visible'); });
+        document.removeEventListener('mouseout', onMouseOut);
+        clearTimeout(inactivityTimer);
+      }
+
+      function hidePopup() {
+        overlay.classList.remove('visible');
+        overlay.setAttribute('aria-hidden', 'true');
+        setTimeout(function () { overlay.classList.remove('open'); }, 300);
+      }
+
+      function onMouseOut(e) {
+        if (!armed || alreadyShown()) return;
+        if (!e.relatedTarget && e.clientY <= 0) showPopup();
+      }
+
+      function resetInactivityTimer() {
+        if (!armed || alreadyShown()) return;
+        clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(showPopup, INACTIVITY_MS);
+      }
+
+      closeBtn.addEventListener('click', hidePopup);
+      dismissBtn.addEventListener('click', hidePopup);
+      cta.addEventListener('click', hidePopup);
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) hidePopup(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) hidePopup();
+      });
+
+      if (!alreadyShown()) {
+        setTimeout(function () {
+          armed = true;
+          document.addEventListener('mouseout', onMouseOut);
+          ['mousemove', 'scroll', 'keydown', 'touchstart'].forEach(function (evt) {
+            document.addEventListener(evt, resetInactivityTimer, { passive: true });
+          });
+          resetInactivityTimer();
+        }, ARM_DELAY_MS);
+      }
+    })();
   </script>
 
   <!-- ── GOOGLE PLACES API – Avis dynamiques ── -->
