@@ -592,6 +592,24 @@
     .sticky-bar-wa { background: #25D366; }
     @media (max-width: 768px) { .sticky-bar { display: flex; } }
 
+    @keyframes stickyPulseCall {
+      0%   { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0 rgba(201,122,98,0.55); }
+      50%  { transform: translateY(-5px); }
+      70%  { box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 13px rgba(201,122,98,0); }
+      100% { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0 rgba(201,122,98,0); }
+    }
+    @keyframes stickyPulseWa {
+      0%   { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0 rgba(37,211,102,0.55); }
+      50%  { transform: translateY(-5px); }
+      70%  { box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 13px rgba(37,211,102,0); }
+      100% { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0 rgba(37,211,102,0); }
+    }
+    .sticky-bar-call.pulse { animation: stickyPulseCall 1.8s ease-in-out infinite; }
+    .sticky-bar-wa.pulse { animation: stickyPulseWa 1.8s ease-in-out infinite; animation-delay: 0.5s; }
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-bar-call.pulse, .sticky-bar-wa.pulse { animation: none; }
+    }
+
     /* ── HERO MINI FORM ── */
     .hero-form-mini { margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--light-gray); }
     .hero-form-mini > p { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 1rem; }
@@ -1096,6 +1114,18 @@
       else if (y < lastY - 5 || y < 10) nav.classList.remove('hidden');
       lastY = y;
     }, { passive: true });
+
+    /* ── PULSE BANDEAU CONTACT AU SCROLL ── */
+    (function () {
+      const stickyBtns = document.querySelectorAll('.sticky-bar-btn');
+      if (!stickyBtns.length) return;
+      function triggerPulse() {
+        if (window.scrollY <= 30) return;
+        stickyBtns.forEach(btn => btn.classList.add('pulse'));
+        window.removeEventListener('scroll', triggerPulse);
+      }
+      window.addEventListener('scroll', triggerPulse, { passive: true });
+    })();
 
     /* ── MENU MOBILE ── */
     const navToggle = document.getElementById('navToggle');
