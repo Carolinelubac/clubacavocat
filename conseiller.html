@@ -736,10 +736,14 @@
       }
       #sidebar-overlay.show { display: block; }
       #sidebar-toggle { display: flex; }
+      .topbar-title { display: none; }
+      .topbar-divider { display: none; }
+      .btn-sm { display: none; }
       #messages { padding: 1.25rem 1rem 0.75rem; }
-      #input-area { padding: 0.75rem 1rem 1rem; }
+      #input-area { padding: 0.75rem 1rem calc(1rem + env(safe-area-inset-bottom)); }
       .input-row { gap: 0.5rem; }
       .msg { max-width: 100%; }
+      #toast { bottom: calc(5rem + env(safe-area-inset-bottom)); right: 1rem; }
     }
   </style>
 </head>
