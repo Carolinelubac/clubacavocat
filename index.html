@@ -522,7 +522,8 @@
     .avis-author { display: flex; flex-direction: column; gap: 0.15rem; padding-top: 1rem; border-top: 1px solid var(--light-gray); }
     .avis-author strong { font-size: 0.85rem; font-weight: 700; color: var(--charcoal); letter-spacing: 0.04em; }
     .avis-author span { font-size: 0.78rem; color: var(--mid-gray); letter-spacing: 0.06em; text-transform: uppercase; }
-    .avis-source { position: absolute; top: 1.4rem; right: 1.6rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); opacity: 0.7; }
+    .avis-source { position: absolute; top: 1.4rem; right: 1.6rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); opacity: 0.7; text-decoration: none; transition: opacity 0.2s; }
+    a.avis-source:hover { opacity: 1; text-decoration: underline; }
     @media (max-width: 900px) { #avis { padding: 5rem 6%; } .avis-grid { grid-template-columns: 1fr; } }
     @media (max-width: 600px) { .avis-quote { font-size: 0.93rem; line-height: 1.7; } }
     @media (min-width: 901px) and (max-width: 1100px) { .avis-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -1486,15 +1487,19 @@
           return;
         }
 
+        var fallbackReviewLink = 'https://www.google.com/maps/search/?api=1&query=C.+LUBAC+Avocat+Paris'
+          + (place.id ? '&query_place_id=' + place.id : '');
+
         track.innerHTML = reviews.map(function (r) {
           var name    = esc((r.authorAttribution && r.authorAttribution.displayName) || 'Client');
           var rawText = (r.text && r.text.text) ? r.text.text : (typeof r.text === 'string' ? r.text : '');
           var text    = esc(rawText);
           var note    = r.rating || 5;
+          var link    = r.googleMapsUri || fallbackReviewLink;
 
           return '<div class="avis-slide" role="listitem">'
             + '<div class="avis-card">'
-            + '<span class="avis-source">Google</span>'
+            + '<a class="avis-source" href="' + esc(link) + '" target="_blank" rel="noopener noreferrer">Google</a>'
             + starsHtml(note)
             + (text ? '<p class="avis-quote">' + text + '</p>' : '')
             + '<div class="avis-author-row">'
