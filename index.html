@@ -280,6 +280,36 @@
     .offre-step p { font-size: 0.92rem; color: var(--mid-gray); line-height: 1.7; margin: 0; }
     @media (max-width: 768px) { #offre { padding: 5rem 6%; } }
 
+    /* ── IA ── */
+    #ia {
+      background: var(--charcoal); padding: 11rem 8%; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #ia::before {
+      content: ''; position: absolute; top: -220px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(201,122,98,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ia-inner { max-width: 700px; margin: 0 auto; position: relative; }
+    .ia-inner .section-tag { justify-content: center; }
+    .ia-inner .section-title {
+      color: var(--white); font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 2.4rem;
+    }
+    .ia-inner .section-title em { color: var(--terracotta); font-style: italic; }
+    .ia-text { font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.85; margin-bottom: 1.3rem; }
+    .ia-text strong { color: var(--white); font-weight: 600; }
+    .ia-tagline {
+      font-family: var(--font-serif); font-size: 1.3rem; font-weight: 300;
+      color: var(--white); margin: 2.6rem 0 3rem;
+    }
+    .ia-tagline em { color: var(--terracotta); font-style: italic; }
+    @media (max-width: 768px) {
+      #ia { padding: 6rem 6%; }
+      .ia-tagline { font-size: 1.15rem; }
+    }
+
     /* ── POPUP DE SORTIE / INACTIVITÉ ── */
     .exit-popup-overlay {
       position: fixed; inset: 0; z-index: 1200;
@@ -817,6 +847,18 @@
         </div>
       </div>
       <a href="#contact" class="btn-primary">Réserver mon échange de 15 min</a>
+    </div>
+  </section>
+
+  <section id="ia">
+    <div class="ia-inner reveal">
+      <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+      <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Intelligence artificielle</span>
+      <h2 class="section-title">L'intelligence artificielle, c'est efficace.<br><em>Contrôlée par votre avocat, c'est mieux.</em></h2>
+      <p class="ia-text">Vous avez utilisé une intelligence artificielle pour trouver une réponse, préparer un courrier ou rédiger un contrat ? <strong>Vous avez déjà fait une partie du chemin.</strong></p>
+      <p class="ia-text">Mon rôle est de vérifier que ce que vous vous apprêtez à utiliser est juridiquement juste, adapté à votre situation et sans risque que vous n'auriez pas identifié.</p>
+      <p class="ia-tagline">Vous gagnez du temps avec l'IA. <em>Je sécurise ce qui compte.</em></p>
+      <a href="#contact" class="btn-primary">Faire vérifier ma situation</a>
     </div>
   </section>
 
