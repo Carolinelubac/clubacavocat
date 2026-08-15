@@ -11,7 +11,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon avocat pour 200€ | Caroline Lubac Avocat, Barreau de Paris</title>
-  <meta name="description" content="Maître Caroline Lubac, avocate au Barreau de Paris — mon avocat pour 200€. Contrats fournisseurs, CGV e-commerce et B2B, protection des créations pour fondatrices de marques de produits (bijoux, accessoires, textile, déco, objets). Échange de 15 min offert." />
+  <meta name="description" content="Maître Caroline Lubac, avocate au Barreau de Paris. Contrats, CGV e-commerce, protection des créations pour marques de produits. Avocat à 200€, 15 min offertes." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lubacavocat.fr/" />
   <meta property="og:title" content="Mon avocat pour 200€ | Caroline Lubac Avocat" />
@@ -26,6 +26,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    "name": "Caroline Lubac",
+    "alternateName": "C. Lubac Avocat",
+    "image": "https://lubacavocat.fr/caroline-lubac-avocat.jpg",
+    "url": "https://lubacavocat.fr/",
+    "telephone": "+33663561541",
+    "email": "contact@clubacavocat.fr",
+    "priceRange": "200€ - 7000€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "11 boulevard de Sébastopol",
+      "postalCode": "75001",
+      "addressLocality": "Paris",
+      "addressCountry": "FR"
+    },
+    "areaServed": "FR",
+    "description": "Maître Caroline Lubac, avocate au Barreau de Paris, accompagne les fondatrices de marques de produits (bijoux, accessoires, textile, déco, objets) sur leurs contrats, CGV et la protection de leurs créations.",
+    "memberOf": {
+      "@type": "Organization",
+      "name": "Barreau de Paris"
+    }
+  }
+  </script>
   <style>
     :root {
       --terracotta: #C97A62;
@@ -256,6 +282,39 @@
       #apropos { padding: 5rem 6%; }
       .apropos-inner { grid-template-columns: 1fr; gap: 3rem; }
       .apropos-image-wrap img { height: 380px; }
+    }
+
+    /* ── SPÉCIALITÉS ── */
+    #specialites { background: var(--beige); padding: 8rem 8%; }
+    .specialites-inner { max-width: 1100px; margin: 0 auto; }
+    .specialites-header { text-align: center; margin-bottom: 4rem; }
+    .specialites-header .section-line { margin: 0 auto 1.5rem; transform-origin: center; }
+    .specialites-intro { font-size: 1.05rem; color: var(--mid-gray); line-height: 1.8; max-width: 620px; margin: 0 auto; }
+    .specialites-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .specialite-card {
+      background: var(--white); padding: 2.6rem 2.2rem; border-radius: 2px;
+      display: flex; flex-direction: column; gap: 1rem; position: relative; overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
+    }
+    .specialite-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+    }
+    .specialite-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .specialite-card-title {
+      font-family: var(--font-serif); font-size: 1.3rem; font-weight: 400;
+      color: var(--charcoal); line-height: 1.3;
+    }
+    .specialite-card-desc { font-size: 0.92rem; color: var(--mid-gray); line-height: 1.75; flex: 1; }
+    .specialite-card-link {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--terracotta); display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.25s;
+    }
+    .specialite-card:hover .specialite-card-link { gap: 0.7rem; }
+    @media (max-width: 900px) {
+      #specialites { padding: 5rem 6%; }
+      .specialites-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     }
 
     /* ── OFFRE ── */
@@ -724,6 +783,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
+      <li><a href="#specialites">Spécialités</a></li>
       <li><a href="#avis">Avis</a></li>
       <li><a href="#offre">Mon offre</a></li>
       <li><a href="#apropos">À propos</a></li>
@@ -787,6 +847,35 @@
     </div>
     <div class="hero-image">
       <img src="archCaroline%20(4)%20(2).jpg" alt="Maître Caroline Lubac, avocate au Barreau de Paris" id="heroImg" />
+    </div>
+  </section>
+
+  <!-- ── SPÉCIALITÉS ── -->
+  <section id="specialites">
+    <div class="specialites-inner">
+      <div class="specialites-header reveal">
+        <span class="section-line"></span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Mes spécialités</span>
+        <h2 class="section-title">Un accompagnement <em>ciblé sur vos besoins</em></h2>
+        <p class="specialites-intro">Chaque marque a des enjeux différents. Voici les domaines sur lesquels j'interviens le plus souvent.</p>
+      </div>
+      <div class="specialites-grid">
+        <a href="cgu-cgv.html" class="specialite-card reveal delay-1">
+          <h3 class="specialite-card-title">CGV & CGU</h3>
+          <p class="specialite-card-desc">Rédaction et mise en conformité de vos conditions générales de vente et d'utilisation, pour votre e-commerce comme pour vos clients B2B.</p>
+          <span class="specialite-card-link">En savoir plus →</span>
+        </a>
+        <a href="protection-marque.html" class="specialite-card reveal delay-2">
+          <h3 class="specialite-card-title">Protection de marque</h3>
+          <p class="specialite-card-desc">Dépôt de marque à l'INPI, contrats avec vos fabricants et façonniers, protection de vos créations et de votre identité.</p>
+          <span class="specialite-card-link">En savoir plus →</span>
+        </a>
+        <a href="contentieux-btp.html" class="specialite-card reveal delay-3">
+          <h3 class="specialite-card-title">Contentieux BTP</h3>
+          <p class="specialite-card-desc">Défense des artisans et entreprises du bâtiment face à une assignation en référé expertise judiciaire.</p>
+          <span class="specialite-card-link">En savoir plus →</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1095,11 +1184,14 @@
     <div class="footer-inner">
       <nav class="footer-nav-block">
         <ul>
+          <li><a href="#specialites">Spécialités</a></li>
           <li><a href="#avis">Avis</a></li>
           <li><a href="#offre">Mon offre</a></li>
           <li><a href="#apropos">À propos</a></li>
           <!-- FAQ temporairement masquée : <li><a href="#faq">FAQ</a></li> -->
           <li><a href="#contact">Contact</a></li>
+          <li><a href="cgu-cgv.html">CGV & CGU</a></li>
+          <li><a href="protection-marque.html">Protection de marque</a></li>
           <li><a href="contentieux-btp.html">Contentieux BTP</a></li>
         </ul>
       </nav>
