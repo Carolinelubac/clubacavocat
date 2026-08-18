@@ -722,9 +722,9 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
+      <li><a href="#avis">Avis</a></li>
       <li><a href="#accompagnement">Accompagnement</a></li>
       <li><a href="#surmoi">Mon expertise</a></li>
-      <li><a href="#avis">Avis</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
@@ -736,7 +736,7 @@
       <p class="hero-overline">Avocate au Barreau de Paris · CGV & CGU</p>
       <p class="hero-overline" style="animation-delay:0.45s;margin-top:-0.8rem;margin-bottom:1.5rem;">Intervention en France entière</p>
       <p class="hero-audience-tag">Fondatrices de marques de produits, e-commerçantes et prestataires B2B,</p>
-      <h1 class="hero-title" id="heroTitle">Vos CGV protègent-elles vraiment votre marque ? <em>Faisons le point.</em></h1>
+      <h1 class="hero-title" id="heroTitle">CGV B2B : êtes-vous protégé ? <em>Je vous le dis.</em></h1>
       <p class="hero-desc">Des CGV copiées sur un modèle générique, ou jamais mises à jour, ne vous protègent pas en cas de litige client, de retard de livraison ou de désaccord avec un partenaire B2B.<br><br>Un échange de 15 minutes suffit pour savoir où vous en êtes.</p>
       <div class="hero-actions">
         <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Prendre rendez-vous</a>
@@ -776,6 +776,47 @@
   <div class="urgence-bloc">
     <p class="urgence-inner reveal">Des CGV non conformes ou absentes vous exposent à des litiges clients, des sanctions et une absence totale de recours en cas de désaccord. <strong>Plus vous attendez, plus le risque grandit avec votre chiffre d'affaires.</strong></p>
   </div>
+
+  <!-- ── AVIS CLIENTS ── -->
+  <section id="avis">
+    <div class="avis-header reveal">
+      <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
+      <span class="section-tag">Témoignages clients</span>
+      <h2 class="section-title">Ce que disent <em>mes clients</em></h2>
+    </div>
+    <div class="google-badge-bar reveal">
+      <a href="https://www.google.com/maps/search/?api=1&query=C.+LUBAC+Avocat+Paris"
+         id="google-badge-link" target="_blank" rel="noopener noreferrer" class="google-badge">
+        <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
+          <path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.1 33.9 29.5 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.9 20-21 0-1.4-.1-2.7-.5-4z"/>
+          <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.5-17.7 11.7z"/>
+          <path fill="#FBBC05" d="M24 45c5.4 0 10.3-1.8 14.1-4.9l-6.5-5.5C29.4 36.4 26.8 37 24 37c-5.4 0-10-3-12.1-7.4l-7 5.4C8.3 40.9 15.6 45 24 45z"/>
+          <path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.9 2.5-2.6 4.6-4.8 6.1l6.5 5.5C41.1 36.9 45 31 45 24c0-1.4-.1-2.7-.5-4z"/>
+        </svg>
+        <span>
+          <span class="google-badge-rating">5,0</span>
+          <span class="google-badge-stars">★★★★★</span>
+          <span class="google-badge-count"><span id="google-avis-count">…</span> avis Google · Voir la fiche</span>
+        </span>
+      </a>
+      <a href="https://www.google.com/maps/search/?q=C.+LUBAC+Avocat+Paris"
+         id="google-review-link" target="_blank" rel="noopener noreferrer" class="google-btn-avis">Laisser un avis Google</a>
+    </div>
+    <div id="avis-slider">
+      <div class="avis-slider-overflow">
+        <div class="avis-slider-track" id="avis-slider-track" role="list" aria-label="Avis Google vérifiés"></div>
+      </div>
+      <div class="avis-slider-nav">
+        <button class="avis-slider-btn" id="avis-prev" aria-label="Avis précédent">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="avis-slider-dots" id="avis-dots"></div>
+        <button class="avis-slider-btn" id="avis-next" aria-label="Avis suivant">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- ── ACCOMPAGNEMENT ── -->
   <section id="accompagnement">
@@ -864,47 +905,6 @@
         <div class="surmoi-cta">
           <a href="#contact" class="btn-primary">Prendre rendez-vous pour un premier échange de 15 minutes</a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── AVIS CLIENTS ── -->
-  <section id="avis">
-    <div class="avis-header reveal">
-      <span class="section-line" style="margin:0 auto 1.5rem;transform-origin:center;"></span>
-      <span class="section-tag">Témoignages clients</span>
-      <h2 class="section-title">Ce que disent <em>mes clients</em></h2>
-    </div>
-    <div class="google-badge-bar reveal">
-      <a href="https://www.google.com/maps/search/?api=1&query=C.+LUBAC+Avocat+Paris"
-         id="google-badge-link" target="_blank" rel="noopener noreferrer" class="google-badge">
-        <svg width="28" height="28" viewBox="0 0 48 48" aria-hidden="true">
-          <path fill="#4285F4" d="M44.5 20H24v8.5h11.7C34.1 33.9 29.5 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21c10.5 0 20-7.9 20-21 0-1.4-.1-2.7-.5-4z"/>
-          <path fill="#34A853" d="M6.3 14.7l7 5.1C15.1 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 5.1 29.6 3 24 3c-7.6 0-14.2 4.5-17.7 11.7z"/>
-          <path fill="#FBBC05" d="M24 45c5.4 0 10.3-1.8 14.1-4.9l-6.5-5.5C29.4 36.4 26.8 37 24 37c-5.4 0-10-3-12.1-7.4l-7 5.4C8.3 40.9 15.6 45 24 45z"/>
-          <path fill="#EA4335" d="M44.5 20H24v8.5h11.7c-.9 2.5-2.6 4.6-4.8 6.1l6.5 5.5C41.1 36.9 45 31 45 24c0-1.4-.1-2.7-.5-4z"/>
-        </svg>
-        <span>
-          <span class="google-badge-rating">5,0</span>
-          <span class="google-badge-stars">★★★★★</span>
-          <span class="google-badge-count"><span id="google-avis-count">…</span> avis Google · Voir la fiche</span>
-        </span>
-      </a>
-      <a href="https://www.google.com/maps/search/?q=C.+LUBAC+Avocat+Paris"
-         id="google-review-link" target="_blank" rel="noopener noreferrer" class="google-btn-avis">Laisser un avis Google</a>
-    </div>
-    <div id="avis-slider">
-      <div class="avis-slider-overflow">
-        <div class="avis-slider-track" id="avis-slider-track" role="list" aria-label="Avis Google vérifiés"></div>
-      </div>
-      <div class="avis-slider-nav">
-        <button class="avis-slider-btn" id="avis-prev" aria-label="Avis précédent">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <div class="avis-slider-dots" id="avis-dots"></div>
-        <button class="avis-slider-btn" id="avis-next" aria-label="Avis suivant">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
       </div>
     </div>
   </section>
@@ -1072,9 +1072,9 @@
     <div class="footer-inner">
       <nav class="footer-nav-block">
         <ul>
+          <li><a href="#avis">Avis</a></li>
           <li><a href="#accompagnement">Accompagnement</a></li>
           <li><a href="#surmoi">Mon expertise</a></li>
-          <li><a href="#avis">Avis</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1099,8 +1099,8 @@
   <script>
     /* ── HERO TITLE — MOT PAR MOT ── */
     const lines = [
-      ['Vos', 'CGV', 'protègent-elles', 'vraiment', 'votre', 'marque ?'],
-      ['<em>Faisons</em>', '<em>le</em>', '<em>point.</em>']
+      ['CGV', 'B2B :', 'êtes-vous', 'protégé ?'],
+      ['<em>Je</em>', '<em>vous</em>', '<em>le</em>', '<em>dis.</em>']
     ];
     const heroTitle = document.getElementById('heroTitle');
     heroTitle.textContent = '';
