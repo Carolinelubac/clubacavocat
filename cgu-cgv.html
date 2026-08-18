@@ -424,40 +424,6 @@
       .accompagnement-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── ÉTAPES CLÉS ── */
-    .etapes-wrap { margin-top: 5rem; }
-    .etapes-section-title {
-      font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 300; color: var(--charcoal); margin-bottom: 3rem; text-align: center;
-    }
-    .etapes-section-title em { font-style: italic; color: var(--terracotta); }
-    .etapes-list { list-style: none; position: relative; max-width: 760px; margin: 0 auto; }
-    .etapes-list::before {
-      content: ''; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 1px;
-      background: var(--light-gray);
-    }
-    .etape-item { display: flex; gap: 2rem; padding-bottom: 2.8rem; position: relative; }
-    .etape-item:last-child { padding-bottom: 0; }
-    .etape-num {
-      flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
-      background: var(--terracotta); color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-serif); font-size: 1rem; font-weight: 400;
-      position: relative; z-index: 1;
-    }
-    .etape-content { padding-top: 0.55rem; }
-    .etape-title {
-      font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400;
-      color: var(--charcoal); line-height: 1.4; margin-bottom: 0.5rem;
-      display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem;
-    }
-    .etape-tag {
-      font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--terracotta);
-      border: 1px solid var(--terracotta); padding: 0.18rem 0.55rem; border-radius: 2px;
-    }
-    .etape-desc { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.75; }
-
     /* ── SUR MOI ── */
     #surmoi { background: var(--white); padding: 8rem 8%; }
     .surmoi-inner {
@@ -709,11 +675,6 @@
       /* FAQ : padding intérieur réduit */
       .faq-answer-inner { font-size: 0.92rem; }
       .faq-step { font-size: 0.97rem; }
-
-      /* Étapes clés */
-      .etapes-wrap { margin-top: 3rem; }
-      .etape-item { gap: 1.3rem; padding-bottom: 2rem; }
-      .etape-title { font-size: 1.05rem; }
     }
 
     @media (max-width: 768px) {
@@ -731,10 +692,6 @@
       .accompagnement-cta-block { padding: 2rem 1.6rem; }
       #contact { padding: 4rem 6%; }
       .btn-calendly { font-size: 0.78rem; padding: 0.85rem 1.2rem; }
-      .etape-num { width: 34px; height: 34px; font-size: 0.88rem; }
-      .etapes-list::before { left: 16px; }
-      .etape-title { font-size: 1rem; }
-      .etape-desc { font-size: 0.85rem; }
       .accompagnement-card-price { font-size: 2rem; }
       .hero-reassurance-item { font-size: 0.78rem; }
     }
@@ -896,40 +853,6 @@
           <p class="accompagnement-cta-desc">On fait le point sur votre activité et vos CGV/CGU actuelles. Je vous dis honnêtement si et comment je peux vous aider.</p>
           <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="accompagnement-cta-btn">Réserver mon échange de 15 minutes</a>
         </div>
-      </div>
-
-      <div class="etapes-wrap reveal">
-        <h3 class="etapes-section-title">Le déroulé de <em>votre accompagnement</em></h3>
-        <ol class="etapes-list">
-          <li class="etape-item">
-            <span class="etape-num">1</span>
-            <div class="etape-content">
-              <p class="etape-title">Échange téléphonique <span class="etape-tag">15 min offertes</span></p>
-              <p class="etape-desc">Vous m'exposez votre activité, vos canaux de vente et vos CGV/CGU actuelles si vous en avez.</p>
-            </div>
-          </li>
-          <li class="etape-item">
-            <span class="etape-num">2</span>
-            <div class="etape-content">
-              <p class="etape-title">Diagnostic et proposition</p>
-              <p class="etape-desc">Je vous indique précisément ce qui doit être fait et le tarif fixe correspondant.</p>
-            </div>
-          </li>
-          <li class="etape-item">
-            <span class="etape-num">3</span>
-            <div class="etape-content">
-              <p class="etape-title">Rédaction ou mise à jour de vos CGV/CGU</p>
-              <p class="etape-desc">Sur mesure, adaptées à votre activité réelle — pas un modèle générique téléchargé en ligne.</p>
-            </div>
-          </li>
-          <li class="etape-item">
-            <span class="etape-num">4</span>
-            <div class="etape-content">
-              <p class="etape-title">Livraison de vos documents, prêts à l'emploi</p>
-              <p class="etape-desc">Vous les intégrez à votre site ou à vos process de vente, avec les explications nécessaires pour les faire vivre seule.</p>
-            </div>
-          </li>
-        </ol>
       </div>
     </div>
   </section>
