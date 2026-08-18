@@ -13,14 +13,14 @@
   <title>Avocat Référé Expertise BTP · Assignation · Caroline Lubac Avocat Paris</title>
   <meta name="description" content="Avocate au Barreau de Paris spécialisée en contentieux BTP. Défense des artisans et entreprises face à une assignation en référé expertise. Appel 30 min offert." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lubacavocat.fr/contentieux-btp.html" />
+  <meta property="og:url" content="https://lubacavocat.fr/contentieux-btp" />
   <meta property="og:title" content="Avocat Référé Expertise BTP · Assignation en référé · Caroline Lubac Avocat Paris" />
   <meta property="og:description" content="Défense des artisans et entreprises du bâtiment face à une assignation en référé expertise judiciaire. Avocat contentieux BTP, intervention France entière. Appel découverte 30 min." />
   <meta property="og:image" content="https://lubacavocat.fr/caroline-lubac-avocat.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Avocat Référé Expertise BTP · Assignation · Caroline Lubac Avocat Paris" />
   <meta name="twitter:description" content="Défense des artisans et entreprises du bâtiment face à une assignation en référé expertise judiciaire. Avocat contentieux BTP, intervention France entière." />
-  <link rel="canonical" href="https://lubacavocat.fr/contentieux-btp.html" />
+  <link rel="canonical" href="https://lubacavocat.fr/contentieux-btp" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -452,7 +452,7 @@
     .avis-header { max-width: 1100px; margin: 0 auto 4rem; text-align: center; }
     .avis-card {
       background: var(--white); padding: 2.2rem 2rem; border-radius: 2px;
-      display: flex; flex-direction: column; gap: 1.2rem;
+      display: flex; flex-direction: column; gap: 1.2rem; height: 100%;
       transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
       position: relative;
     }
@@ -462,9 +462,17 @@
     .avis-quote {
       font-family: var(--font-serif); font-size: 1.08rem; font-weight: 300;
       color: var(--charcoal); line-height: 1.75; font-style: italic; flex: 1;
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
     }
+    .avis-quote.expanded { -webkit-line-clamp: unset; overflow: visible; }
     .avis-quote::before { content: '\201C'; color: var(--terracotta); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-right: 2px; }
     .avis-quote::after  { content: '\201D'; color: var(--terracotta); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-left: 2px; }
+    .avis-more {
+      display: none; align-self: flex-start; margin-top: -0.8rem;
+      background: none; border: none; padding: 0; cursor: pointer;
+      font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.04em; color: var(--terracotta); text-decoration: underline;
+    }
     .avis-author { display: flex; flex-direction: column; gap: 0.15rem; padding-top: 1rem; border-top: 1px solid var(--light-gray); }
     .avis-author strong { font-size: 0.85rem; font-weight: 700; color: var(--charcoal); letter-spacing: 0.04em; }
     .avis-source { position: absolute; top: 1.4rem; right: 1.6rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); opacity: 0.7; }
@@ -715,7 +723,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <nav id="navbar">
-    <a class="nav-logo" href="index.html">
+    <a class="nav-logo" href="/">
       <img src="navbar-logo-transparent.png" alt="C Lubac Avocat" />
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -756,7 +764,7 @@
       <p class="hero-mini-label">Être rappelé(e) rapidement</p>
       <form class="hero-mini-form" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
         <input type="hidden" name="_subject" value="Demande de rappel · Contentieux BTP" />
-        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="text" name="_honey" style="display:none" />
         <input class="hero-mini-input" type="text" name="prenom" placeholder="Votre prénom" required />
@@ -1068,7 +1076,7 @@
       </div>
       <form class="contact-form reveal-right" name="contact-btp" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
         <input type="hidden" name="_subject" value="Nouveau contact · Contentieux BTP · lubacavocat.fr" />
-        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="text" name="_honey" style="display:none" />
         <div class="form-row">
@@ -1108,16 +1116,16 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-brand-bottom">
-        <a class="footer-logo" href="index.html"><img src="favicon.png" alt="C Lubac Avocat" /></a>
+        <a class="footer-logo" href="/"><img src="favicon.png" alt="C Lubac Avocat" /></a>
         <div class="footer-brand-text">
           <p class="footer-company">C. LUBAC AVOCAT, SELARL</p>
           <p class="footer-copy">© 2025 C. LUBAC AVOCAT, SELARL</p>
         </div>
       </div>
       <div class="footer-legal">
-        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales">Mentions légales</a>
         <span>/</span>
-        <a href="rgpd.html">RGPD</a>
+        <a href="rgpd">RGPD</a>
       </div>
     </div>
   </footer>
@@ -1301,14 +1309,31 @@
           var rawText = (r.text && r.text.text) ? r.text.text : (typeof r.text === 'string' ? r.text : '');
           var text = esc(rawText); var note = r.rating || 5;
           return '<div class="avis-slide" role="listitem"><div class="avis-card"><span class="avis-source">Google</span>'
-            + starsHtml(note) + (text ? '<p class="avis-quote">' + text + '</p>' : '')
+            + starsHtml(note) + (text ? '<p class="avis-quote">' + text + '</p><button type="button" class="avis-more">Voir plus</button>' : '')
             + '<div class="avis-author-row"><div class="avis-avatar" aria-hidden="true">' + initials(name) + '</div>'
             + '<div class="avis-author"><strong>' + name + '</strong></div></div></div></div>';
         }).join('');
         sliderEl.classList.add('loaded');
         initSlider(reviews.length);
+        initReviewCards();
       } catch (e) { showFallback('Avis temporairement indisponibles.'); }
     };
+
+    function initReviewCards() {
+      document.querySelectorAll('.avis-card').forEach(function (card) {
+        var quote = card.querySelector('.avis-quote');
+        var moreBtn = card.querySelector('.avis-more');
+        if (quote && moreBtn && quote.scrollHeight > quote.clientHeight + 1) {
+          moreBtn.style.display = 'inline-block';
+        }
+        if (moreBtn) {
+          moreBtn.addEventListener('click', function () {
+            var expanded = quote.classList.toggle('expanded');
+            moreBtn.textContent = expanded ? 'Voir moins' : 'Voir plus';
+          });
+        }
+      });
+    }
 
     var s = document.createElement('script');
     s.src = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY + '&callback=_googlePlacesCallback&loading=async&language=fr';
