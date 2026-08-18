@@ -1,7 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /merci
 Disallow: /merci.html
+Disallow: /mentions-legales
 Disallow: /mentions-legales.html
+Disallow: /rgpd
 Disallow: /rgpd.html
 
 Sitemap: https://lubacavocat.fr/sitemap.xml

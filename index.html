@@ -565,7 +565,7 @@
     .avis-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .avis-card {
       background: var(--white); padding: 2.2rem 2rem; border-radius: 2px;
-      display: flex; flex-direction: column; gap: 1.2rem;
+      display: flex; flex-direction: column; gap: 1.2rem; height: 100%;
       transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
       position: relative; cursor: pointer;
     }
@@ -833,7 +833,7 @@
         <p>— Être rappelé(e) rapidement —</p>
         <form name="rappel" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
           <input type="hidden" name="_subject" value="Demande de rappel · lubacavocat.fr" />
-          <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+          <input type="hidden" name="_next" value="https://lubacavocat.fr/merci" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="text" name="_honey" style="display:none" />
           <div class="hfm-row">
@@ -903,12 +903,12 @@
         <p class="specialites-intro">Chaque marque a des enjeux différents. Voici les domaines sur lesquels j'interviens le plus souvent.</p>
       </div>
       <div class="specialites-grid">
-        <a href="cgu-cgv.html" class="specialite-card reveal delay-1">
+        <a href="cgu-cgv" class="specialite-card reveal delay-1">
           <h3 class="specialite-card-title">CGV & CGU</h3>
           <p class="specialite-card-desc">Rédaction et mise en conformité de vos conditions générales de vente et d'utilisation, pour votre e-commerce comme pour vos clients B2B.</p>
           <span class="specialite-card-link">En savoir plus →</span>
         </a>
-        <a href="protection-marque.html" class="specialite-card reveal delay-2">
+        <a href="protection-marque" class="specialite-card reveal delay-2">
           <h3 class="specialite-card-title">Protection de marque</h3>
           <p class="specialite-card-desc">Dépôt de marque à l'INPI, contrats avec vos fabricants et façonniers, protection de vos créations et de votre identité.</p>
           <span class="specialite-card-link">En savoir plus →</span>
@@ -1159,7 +1159,7 @@
       </div>
       <form class="contact-form reveal-right" name="contact" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
         <input type="hidden" name="_subject" value="Nouveau contact · lubacavocat.fr" />
-        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="text" name="_honey" style="display:none" />
         <div class="form-row">
@@ -1185,9 +1185,9 @@
           <li><a href="#apropos">À propos</a></li>
           <!-- FAQ temporairement masquée : <li><a href="#faq">FAQ</a></li> -->
           <li><a href="#contact">Contact</a></li>
-          <li><a href="cgu-cgv.html">CGV & CGU</a></li>
-          <li><a href="protection-marque.html">Protection de marque</a></li>
-          <li><a href="contentieux-btp.html">Contentieux BTP</a></li>
+          <li><a href="cgu-cgv">CGV & CGU</a></li>
+          <li><a href="protection-marque">Protection de marque</a></li>
+          <li><a href="contentieux-btp">Contentieux BTP</a></li>
         </ul>
       </nav>
     </div>
@@ -1201,9 +1201,9 @@
         </div>
       </div>
       <div class="footer-legal">
-        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales">Mentions légales</a>
         <span>—</span>
-        <a href="rgpd.html">RGPD</a>
+        <a href="rgpd">RGPD</a>
       </div>
     </div>
   </footer>
