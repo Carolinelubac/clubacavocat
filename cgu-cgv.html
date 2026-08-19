@@ -13,14 +13,14 @@
   <title>Avocat CGV & CGU E-commerce et B2B · Caroline Lubac Avocat Paris</title>
   <meta name="description" content="Avocate au Barreau de Paris, rédaction de CGV et CGU conformes pour e-commerce et B2B. Sécurisez vos ventes et votre site. Mon avocat, 200€, 15 min offertes." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lubacavocat.fr/cgu-cgv.html" />
+  <meta property="og:url" content="https://lubacavocat.fr/cgu-cgv" />
   <meta property="og:title" content="Avocat CGV & CGU E-commerce et B2B · Caroline Lubac Avocat Paris" />
   <meta property="og:description" content="Rédaction de CGV et CGU conformes pour e-commerce et B2B, sur mesure et adaptées à votre activité réelle. Avocate au Barreau de Paris. Échange de 15 min offert." />
   <meta property="og:image" content="https://lubacavocat.fr/caroline-lubac-avocat.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Avocat CGV & CGU E-commerce et B2B · Caroline Lubac Avocat Paris" />
   <meta name="twitter:description" content="Rédaction de CGV et CGU conformes pour e-commerce et B2B, sur mesure et adaptées à votre activité réelle. Avocate au Barreau de Paris." />
-  <link rel="canonical" href="https://lubacavocat.fr/cgu-cgv.html" />
+  <link rel="canonical" href="https://lubacavocat.fr/cgu-cgv" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -116,16 +116,16 @@
       animation: wordUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.38s forwards;
     }
     .hero-title {
-      font-family: var(--font-serif); font-size: clamp(2rem, 4.5vw, 4.2rem);
-      font-weight: 300; line-height: 1.15; color: var(--charcoal); margin-bottom: 1.8rem;
-      overflow: hidden;
+      font-family: var(--font-serif); font-size: clamp(2.6rem, 6vw, 5.5rem);
+      font-weight: 700; line-height: 1.05; color: var(--charcoal); margin-bottom: 1.8rem;
+      overflow: hidden; letter-spacing: -0.01em;
     }
     .hero-title .word {
       display: inline-block; margin-right: 0.28em;
       opacity: 0; transform: translateY(60px);
       animation: wordUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
-    .hero-title em { font-style: italic; color: var(--terracotta); }
+    .hero-title em { font-style: normal; font-weight: 700; color: var(--terracotta); }
     .hero-desc {
       font-size: 1rem; font-weight: 300; color: var(--mid-gray);
       max-width: 440px; margin-bottom: 2.8rem; line-height: 1.8;
@@ -181,6 +181,46 @@
 
     /* ── SECTION CTA BAR ── */
     .section-cta-bar { text-align: center; padding: 3rem 8%; background: var(--beige); }
+
+    /* ── BANDEAU FIXE APPEL / WHATSAPP ── */
+    .sticky-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 998;
+      display: none; align-items: center; justify-content: center; gap: 1.1rem;
+      padding: 0.9rem 1rem calc(0.9rem + env(safe-area-inset-bottom));
+      background: rgba(250,247,244,0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid rgba(232,224,216,0.6);
+    }
+    .sticky-bar-btn {
+      width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.2s;
+    }
+    .sticky-bar-btn:active { transform: scale(0.93); }
+    .sticky-bar-btn svg { width: 26px; height: 26px; flex-shrink: 0; }
+    .sticky-bar-call { background: var(--terracotta); }
+    .sticky-bar-wa { background: #25D366; }
+    @media (max-width: 768px) { .sticky-bar { display: flex; } }
+
+    @keyframes stickyPulseCall {
+      0%   { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0 rgba(201,122,98,0.55); }
+      50%  { transform: translateY(-5px); }
+      70%  { box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 13px rgba(201,122,98,0); }
+      100% { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0 rgba(201,122,98,0); }
+    }
+    @keyframes stickyPulseWa {
+      0%   { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0 rgba(37,211,102,0.55); }
+      50%  { transform: translateY(-5px); }
+      70%  { box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 13px rgba(37,211,102,0); }
+      100% { transform: translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.18), 0 0 0 0 rgba(37,211,102,0); }
+    }
+    .sticky-bar-call.pulse { animation: stickyPulseCall 1.8s ease-in-out infinite; }
+    .sticky-bar-wa.pulse { animation: stickyPulseWa 1.8s ease-in-out infinite; animation-delay: 0.5s; }
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-bar-call.pulse, .sticky-bar-wa.pulse { animation: none; }
+    }
 
     /* ── HERO PHONE + MINI FORM ── */
     .hero-phone-btn {
@@ -384,40 +424,6 @@
       .accompagnement-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── ÉTAPES CLÉS ── */
-    .etapes-wrap { margin-top: 5rem; }
-    .etapes-section-title {
-      font-family: var(--font-serif); font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 300; color: var(--charcoal); margin-bottom: 3rem; text-align: center;
-    }
-    .etapes-section-title em { font-style: italic; color: var(--terracotta); }
-    .etapes-list { list-style: none; position: relative; max-width: 760px; margin: 0 auto; }
-    .etapes-list::before {
-      content: ''; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 1px;
-      background: var(--light-gray);
-    }
-    .etape-item { display: flex; gap: 2rem; padding-bottom: 2.8rem; position: relative; }
-    .etape-item:last-child { padding-bottom: 0; }
-    .etape-num {
-      flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%;
-      background: var(--terracotta); color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-serif); font-size: 1rem; font-weight: 400;
-      position: relative; z-index: 1;
-    }
-    .etape-content { padding-top: 0.55rem; }
-    .etape-title {
-      font-family: var(--font-serif); font-size: 1.15rem; font-weight: 400;
-      color: var(--charcoal); line-height: 1.4; margin-bottom: 0.5rem;
-      display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem;
-    }
-    .etape-tag {
-      font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--terracotta);
-      border: 1px solid var(--terracotta); padding: 0.18rem 0.55rem; border-radius: 2px;
-    }
-    .etape-desc { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.75; }
-
     /* ── SUR MOI ── */
     #surmoi { background: var(--white); padding: 8rem 8%; }
     .surmoi-inner {
@@ -452,7 +458,7 @@
     .avis-header { max-width: 1100px; margin: 0 auto 4rem; text-align: center; }
     .avis-card {
       background: var(--white); padding: 2.2rem 2rem; border-radius: 2px;
-      display: flex; flex-direction: column; gap: 1.2rem;
+      display: flex; flex-direction: column; gap: 1.2rem; height: 100%;
       transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
       position: relative;
     }
@@ -462,9 +468,17 @@
     .avis-quote {
       font-family: var(--font-serif); font-size: 1.08rem; font-weight: 300;
       color: var(--charcoal); line-height: 1.75; font-style: italic; flex: 1;
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
     }
+    .avis-quote.expanded { -webkit-line-clamp: unset; overflow: visible; }
     .avis-quote::before { content: '\201C'; color: var(--terracotta); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-right: 2px; }
     .avis-quote::after  { content: '\201D'; color: var(--terracotta); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-left: 2px; }
+    .avis-more {
+      display: none; align-self: flex-start; margin-top: -0.8rem;
+      background: none; border: none; padding: 0; cursor: pointer;
+      font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.04em; color: var(--terracotta); text-decoration: underline;
+    }
     .avis-author { display: flex; flex-direction: column; gap: 0.15rem; padding-top: 1rem; border-top: 1px solid var(--light-gray); }
     .avis-author strong { font-size: 0.85rem; font-weight: 700; color: var(--charcoal); letter-spacing: 0.04em; }
     .avis-source { position: absolute; top: 1.4rem; right: 1.6rem; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); opacity: 0.7; }
@@ -669,11 +683,6 @@
       /* FAQ : padding intérieur réduit */
       .faq-answer-inner { font-size: 0.92rem; }
       .faq-step { font-size: 0.97rem; }
-
-      /* Étapes clés */
-      .etapes-wrap { margin-top: 3rem; }
-      .etape-item { gap: 1.3rem; padding-bottom: 2rem; }
-      .etape-title { font-size: 1.05rem; }
     }
 
     @media (max-width: 768px) {
@@ -684,17 +693,13 @@
     }
 
     @media (max-width: 480px) {
-      .hero-title { font-size: clamp(1.75rem, 8vw, 2.8rem); }
+      .hero-title { font-size: clamp(2.1rem, 10vw, 3.2rem); }
       .hero-mini-input { font-size: 0.88rem; padding: 0.78rem 0.95rem; }
       .hero-mini-submit { font-size: 0.85rem; }
       .accompagnement-card,
       .accompagnement-cta-block { padding: 2rem 1.6rem; }
       #contact { padding: 4rem 6%; }
       .btn-calendly { font-size: 0.78rem; padding: 0.85rem 1.2rem; }
-      .etape-num { width: 34px; height: 34px; font-size: 0.88rem; }
-      .etapes-list::before { left: 16px; }
-      .etape-title { font-size: 1rem; }
-      .etape-desc { font-size: 0.85rem; }
       .accompagnement-card-price { font-size: 2rem; }
       .hero-reassurance-item { font-size: 0.78rem; }
     }
@@ -715,29 +720,37 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <nav id="navbar">
-    <a class="nav-logo" href="index.html">
+    <a class="nav-logo" href="/">
       <img src="navbar-logo-transparent.png" alt="C Lubac Avocat" />
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
+      <li><a href="#avis">Avis</a></li>
       <li><a href="#accompagnement">Accompagnement</a></li>
       <li><a href="#surmoi">Mon expertise</a></li>
-      <li><a href="#avis">Avis</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
+
+  <div class="sticky-bar" role="navigation" aria-label="Contact rapide">
+    <a href="tel:+33663561541" class="sticky-bar-btn sticky-bar-call" aria-label="Appeler Caroline Lubac">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.02L6.91 7.22a11.05 11.05 0 005.87 5.87l1.22-1.21a1 1 0 011.02-.23l3.3 1.1A1 1 0 0119 13.72V16a2 2 0 01-2 2C8.61 18 2 11.39 2 3z"/></svg>
+    </a>
+    <a href="https://wa.me/33663561541" target="_blank" rel="noopener" class="sticky-bar-btn sticky-bar-wa" aria-label="Contacter sur WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.36 5.07L2 22l5.25-1.38a9.85 9.85 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.71 14.16c-.24.68-1.19 1.24-1.95 1.4-.53.11-1.22.2-3.54-.76-2.97-1.23-4.88-4.24-5.03-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.53-.15.15-.31.31-.13.6.18.3.79 1.31 1.7 2.12 1.17 1.04 2.15 1.37 2.45 1.52.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.35.08.13.08.75-.16 1.43z"/></svg>
+    </a>
+  </div>
 
   <!-- ── HERO ── -->
   <section id="accueil">
     <div class="hero-text">
       <p class="hero-overline">Avocate au Barreau de Paris · CGV & CGU</p>
       <p class="hero-overline" style="animation-delay:0.45s;margin-top:-0.8rem;margin-bottom:1.5rem;">Intervention en France entière</p>
-      <p class="hero-audience-tag">Fondatrices de marques de produits, e-commerçantes et prestataires B2B,</p>
-      <h1 class="hero-title" id="heroTitle">Vos CGV parlent à votre place. <em>Sont-elles prêtes à le faire ?</em></h1>
-      <p class="hero-desc">Copiées sur un modèle générique, ou jamais mises à jour, elles ne tiennent pas face à un vrai litige : produit défectueux, retard de livraison, désaccord avec un partenaire B2B.<br><br>Un échange de 15 minutes suffit pour savoir où vous en êtes.</p>
+      <h1 class="hero-title" id="heroTitle">Mon avocat en CGV pour <em>200€.</em></h1>
+      <p class="hero-desc">Des CGV copiées sur un modèle générique, ou jamais mises à jour, ne vous protègent pas en cas de litige client, de retard de livraison ou de désaccord avec un partenaire B2B.<br><br>Un échange de 15 minutes suffit pour savoir où vous en êtes.</p>
       <div class="hero-actions">
         <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Prendre rendez-vous</a>
         <a href="#accompagnement" class="btn-outline"><span>Mon accompagnement</span></a>
@@ -756,7 +769,7 @@
       <p class="hero-mini-label">Être rappelé(e) rapidement</p>
       <form class="hero-mini-form" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
         <input type="hidden" name="_subject" value="Demande de rappel · CGV/CGU" />
-        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="text" name="_honey" style="display:none" />
         <input class="hero-mini-input" type="text" name="prenom" placeholder="Votre prénom" required />
@@ -776,97 +789,6 @@
   <div class="urgence-bloc">
     <p class="urgence-inner reveal">Des CGV non conformes ou absentes vous exposent à des litiges clients, des sanctions et une absence totale de recours en cas de désaccord. <strong>Plus vous attendez, plus le risque grandit avec votre chiffre d'affaires.</strong></p>
   </div>
-
-  <!-- ── ACCOMPAGNEMENT ── -->
-  <section id="accompagnement">
-    <div class="accompagnement-wrap">
-      <div class="accompagnement-header reveal">
-        <span class="section-line"></span>
-        <span class="section-tag">Accompagnement</span>
-        <h2 class="section-title">Vos CGV et CGU, mises à plat.<br><em>Voici comment je vous accompagne.</em></h2>
-        <p class="accompagnement-subtitle">Pas de facturation à l'heure qui angoisse, pas de devis à rallonge. Un premier accompagnement juridique à prix fixe : 200&nbsp;€.</p>
-      </div>
-      <div class="accompagnement-grid">
-        <div class="accompagnement-card reveal-left">
-          <p class="accompagnement-card-tag">Mon avocat</p>
-          <p class="accompagnement-card-price">200 €<sup>HT</sup></p>
-          <p class="accompagnement-card-title">Cet accompagnement comprend :</p>
-          <ul class="accompagnement-list">
-            <li>Un échange de 15 minutes, offert, pour comprendre votre activité et vos canaux de vente</li>
-            <li>L'analyse de vos CGV/CGU existantes, ou de votre besoin de rédaction</li>
-            <li>Une feuille de route claire : ce qui est prioritaire, ce qui peut attendre</li>
-            <li>Si je peux vous aider : la suite de l'accompagnement à prix fixe, annoncé avant de commencer</li>
-          </ul>
-          <p class="accompagnement-forfait-note">Le tarif de la rédaction ou de la mise à jour de vos CGV/CGU vous est communiqué après ce premier échange, une fois votre besoin précisément identifié.</p>
-          <p class="accompagnement-pas-surprise">Pas de surprise. Vous savez toujours, avant de vous engager, ce que ça va vous coûter.</p>
-          <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center;margin-top:1.8rem;">Prendre rendez-vous</a>
-        </div>
-        <div class="accompagnement-cta-block reveal-right">
-          <p class="accompagnement-cta-eyebrow">Échange découverte 15 min</p>
-          <h3 class="accompagnement-cta-title"><em>15 minutes</em> pour faire le point</h3>
-          <p class="accompagnement-cta-desc">On fait le point sur votre activité et vos CGV/CGU actuelles. Je vous dis honnêtement si et comment je peux vous aider.</p>
-          <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="accompagnement-cta-btn">Réserver mon échange de 15 minutes</a>
-        </div>
-      </div>
-
-      <div class="etapes-wrap reveal">
-        <h3 class="etapes-section-title">Le déroulé de <em>votre accompagnement</em></h3>
-        <ol class="etapes-list">
-          <li class="etape-item">
-            <span class="etape-num">1</span>
-            <div class="etape-content">
-              <p class="etape-title">Échange téléphonique <span class="etape-tag">15 min offertes</span></p>
-              <p class="etape-desc">Vous m'exposez votre activité, vos canaux de vente et vos CGV/CGU actuelles si vous en avez.</p>
-            </div>
-          </li>
-          <li class="etape-item">
-            <span class="etape-num">2</span>
-            <div class="etape-content">
-              <p class="etape-title">Diagnostic et proposition</p>
-              <p class="etape-desc">Je vous indique précisément ce qui doit être fait et le tarif fixe correspondant.</p>
-            </div>
-          </li>
-          <li class="etape-item">
-            <span class="etape-num">3</span>
-            <div class="etape-content">
-              <p class="etape-title">Rédaction ou mise à jour de vos CGV/CGU</p>
-              <p class="etape-desc">Sur mesure, adaptées à votre activité réelle — pas un modèle générique téléchargé en ligne.</p>
-            </div>
-          </li>
-          <li class="etape-item">
-            <span class="etape-num">4</span>
-            <div class="etape-content">
-              <p class="etape-title">Livraison de vos documents, prêts à l'emploi</p>
-              <p class="etape-desc">Vous les intégrez à votre site ou à vos process de vente, avec les explications nécessaires pour les faire vivre seule.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SUR MOI ── -->
-  <section id="surmoi">
-    <div class="surmoi-inner">
-      <div class="surmoi-image-wrap reveal-left">
-        <img src="caroline-lubac-bureau.jpg" alt="Maître Caroline Lubac, avocate spécialisée en CGV et CGU" />
-      </div>
-      <div class="reveal-right">
-        <span class="section-line"></span>
-        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Mon expertise contractuelle</span>
-        <h2 class="section-title">Pourquoi me confier vos <em>CGV et CGU ?</em></h2>
-        <div class="surmoi-text">
-          <p>Avant d'être avocate, j'ai été juriste d'entreprise pendant plus de 10 ans, spécialisée en droit des contrats.</p>
-          <p>Depuis la création de mon cabinet, j'accompagne des dirigeants, prestataires de services et créateurs de marque sur leurs contrats et leurs CGV/CGU, cette part du droit que l'on signe — ou que l'on publie sur son site — souvent sans vraiment comprendre ce qu'elle engage.</p>
-          <p>Des CGV conformes doivent couvrir les conditions de vente, la politique de retour, la protection des données et les mentions légales obligatoires. Les CGU encadrent l'utilisation de votre site : accès, responsabilités, données personnelles. Les deux sont obligatoires pour un e-commerce conforme au droit français.</p>
-          <p>Je les rédige sur mesure, adaptées à votre activité réelle et à vos canaux de vente — y compris si vous vendez via les réseaux sociaux.</p>
-        </div>
-        <div class="surmoi-cta">
-          <a href="#contact" class="btn-primary">Prendre rendez-vous pour un premier échange de 15 minutes</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ── AVIS CLIENTS ── -->
   <section id="avis">
@@ -905,6 +827,63 @@
         <button class="avis-slider-btn" id="avis-next" aria-label="Avis suivant">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACCOMPAGNEMENT ── -->
+  <section id="accompagnement">
+    <div class="accompagnement-wrap">
+      <div class="accompagnement-header reveal">
+        <span class="section-line"></span>
+        <span class="section-tag">Accompagnement</span>
+        <h2 class="section-title">Vos CGV et CGU, mises à plat.<br><em>Voici comment je vous accompagne.</em></h2>
+        <p class="accompagnement-subtitle">Pas de facturation à l'heure qui angoisse, pas de devis à rallonge. Un premier accompagnement juridique à prix fixe : 200&nbsp;€.</p>
+      </div>
+      <div class="accompagnement-grid">
+        <div class="accompagnement-card reveal-left">
+          <p class="accompagnement-card-tag">Mon avocat</p>
+          <p class="accompagnement-card-price">200 €<sup>HT</sup></p>
+          <p class="accompagnement-card-title">Cet accompagnement comprend :</p>
+          <ul class="accompagnement-list">
+            <li>Un échange de 15 minutes, offert, pour comprendre votre activité et vos canaux de vente</li>
+            <li>L'analyse de vos CGV/CGU existantes, ou de votre besoin de rédaction</li>
+            <li>Une feuille de route claire : ce qui est prioritaire, ce qui peut attendre</li>
+            <li>Si je peux vous aider : la suite de l'accompagnement à prix fixe, annoncé avant de commencer</li>
+          </ul>
+          <p class="accompagnement-forfait-note">Le tarif de la rédaction ou de la mise à jour de vos CGV/CGU vous est communiqué après ce premier échange, une fois votre besoin précisément identifié.</p>
+          <p class="accompagnement-pas-surprise">Pas de surprise. Vous savez toujours, avant de vous engager, ce que ça va vous coûter.</p>
+          <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center;margin-top:1.8rem;">Prendre rendez-vous</a>
+        </div>
+        <div class="accompagnement-cta-block reveal-right">
+          <p class="accompagnement-cta-eyebrow">Échange découverte 15 min</p>
+          <h3 class="accompagnement-cta-title"><em>15 minutes</em> pour faire le point</h3>
+          <p class="accompagnement-cta-desc">On fait le point sur votre activité et vos CGV/CGU actuelles. Je vous dis honnêtement si et comment je peux vous aider.</p>
+          <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="accompagnement-cta-btn">Réserver mon échange de 15 minutes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SUR MOI ── -->
+  <section id="surmoi">
+    <div class="surmoi-inner">
+      <div class="surmoi-image-wrap reveal-left">
+        <img src="caroline-lubac-bureau.jpg" alt="Maître Caroline Lubac, avocate spécialisée en CGV et CGU" />
+      </div>
+      <div class="reveal-right">
+        <span class="section-line"></span>
+        <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Mon expertise contractuelle</span>
+        <h2 class="section-title">Pourquoi me confier vos <em>CGV et CGU ?</em></h2>
+        <div class="surmoi-text">
+          <p>Avant d'être avocate, j'ai été juriste d'entreprise pendant plus de 10 ans, spécialisée en droit des contrats.</p>
+          <p>Depuis la création de mon cabinet, j'accompagne des dirigeants, prestataires de services et créateurs de marque sur leurs contrats et leurs CGV/CGU, cette part du droit que l'on signe — ou que l'on publie sur son site — souvent sans vraiment comprendre ce qu'elle engage.</p>
+          <p>Des CGV conformes doivent couvrir les conditions de vente, la politique de retour, la protection des données et les mentions légales obligatoires. Les CGU encadrent l'utilisation de votre site : accès, responsabilités, données personnelles. Les deux sont obligatoires pour un e-commerce conforme au droit français.</p>
+          <p>Je les rédige sur mesure, adaptées à votre activité réelle et à vos canaux de vente — y compris si vous vendez via les réseaux sociaux.</p>
+        </div>
+        <div class="surmoi-cta">
+          <a href="#contact" class="btn-primary">Prendre rendez-vous pour un premier échange de 15 minutes</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1042,7 +1021,7 @@
       </div>
       <form class="contact-form reveal-right" name="contact-cgv" method="POST" action="https://formsubmit.co/contact@clubacavocat.fr">
         <input type="hidden" name="_subject" value="Nouveau contact · CGV/CGU · lubacavocat.fr" />
-        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci.html" />
+        <input type="hidden" name="_next" value="https://lubacavocat.fr/merci" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="text" name="_honey" style="display:none" />
         <div class="form-row">
@@ -1072,9 +1051,9 @@
     <div class="footer-inner">
       <nav class="footer-nav-block">
         <ul>
+          <li><a href="#avis">Avis</a></li>
           <li><a href="#accompagnement">Accompagnement</a></li>
           <li><a href="#surmoi">Mon expertise</a></li>
-          <li><a href="#avis">Avis</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1082,16 +1061,16 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-brand-bottom">
-        <a class="footer-logo" href="index.html"><img src="favicon.png" alt="C Lubac Avocat" /></a>
+        <a class="footer-logo" href="/"><img src="favicon.png" alt="C Lubac Avocat" /></a>
         <div class="footer-brand-text">
           <p class="footer-company">C. LUBAC AVOCAT, SELARL</p>
           <p class="footer-copy">© 2025 C. LUBAC AVOCAT, SELARL</p>
         </div>
       </div>
       <div class="footer-legal">
-        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales">Mentions légales</a>
         <span>/</span>
-        <a href="rgpd.html">RGPD</a>
+        <a href="rgpd">RGPD</a>
       </div>
     </div>
   </footer>
@@ -1099,8 +1078,7 @@
   <script>
     /* ── HERO TITLE — MOT PAR MOT ── */
     const lines = [
-      ['Vos', 'CGV', 'parlent', 'à', 'votre', 'place.'],
-      ['<em>Sont-elles</em>', '<em>prêtes</em>', '<em>à</em>', '<em>le</em>', '<em>faire ?</em>']
+      ['Mon', 'avocat', 'en', 'CGV', 'pour', '<em>200€.</em>']
     ];
     const heroTitle = document.getElementById('heroTitle');
     heroTitle.textContent = '';
@@ -1129,6 +1107,18 @@
       else if (y < lastY - 5 || y < 10) nav.classList.remove('hidden');
       lastY = y;
     }, { passive: true });
+
+    /* ── PULSE BANDEAU CONTACT AU SCROLL ── */
+    (function () {
+      const stickyBtns = document.querySelectorAll('.sticky-bar-btn');
+      if (!stickyBtns.length) return;
+      function triggerPulse() {
+        if (window.scrollY <= 30) return;
+        stickyBtns.forEach(btn => btn.classList.add('pulse'));
+        window.removeEventListener('scroll', triggerPulse);
+      }
+      window.addEventListener('scroll', triggerPulse, { passive: true });
+    })();
 
     /* ── MENU MOBILE ── */
     const navToggle = document.getElementById('navToggle');
@@ -1275,14 +1265,31 @@
           var rawText = (r.text && r.text.text) ? r.text.text : (typeof r.text === 'string' ? r.text : '');
           var text = esc(rawText); var note = r.rating || 5;
           return '<div class="avis-slide" role="listitem"><div class="avis-card"><span class="avis-source">Google</span>'
-            + starsHtml(note) + (text ? '<p class="avis-quote">' + text + '</p>' : '')
+            + starsHtml(note) + (text ? '<p class="avis-quote">' + text + '</p><button type="button" class="avis-more">Voir plus</button>' : '')
             + '<div class="avis-author-row"><div class="avis-avatar" aria-hidden="true">' + initials(name) + '</div>'
             + '<div class="avis-author"><strong>' + name + '</strong></div></div></div></div>';
         }).join('');
         sliderEl.classList.add('loaded');
         initSlider(reviews.length);
+        initReviewCards();
       } catch (e) { showFallback('Avis temporairement indisponibles.'); }
     };
+
+    function initReviewCards() {
+      document.querySelectorAll('.avis-card').forEach(function (card) {
+        var quote = card.querySelector('.avis-quote');
+        var moreBtn = card.querySelector('.avis-more');
+        if (quote && moreBtn && quote.scrollHeight > quote.clientHeight + 1) {
+          moreBtn.style.display = 'inline-block';
+        }
+        if (moreBtn) {
+          moreBtn.addEventListener('click', function () {
+            var expanded = quote.classList.toggle('expanded');
+            moreBtn.textContent = expanded ? 'Voir moins' : 'Voir plus';
+          });
+        }
+      });
+    }
 
     var s = document.createElement('script');
     s.src = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY + '&callback=_googlePlacesCallback&loading=async&language=fr';
