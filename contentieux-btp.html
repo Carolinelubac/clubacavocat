@@ -11,7 +11,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Avocat Référé Expertise BTP · Assignation · Caroline Lubac Avocat Paris</title>
-  <meta name="description" content="Avocate au Barreau de Paris spécialisée en contentieux BTP. Défense des artisans et entreprises face à une assignation en référé expertise. Appel 30 min offert." />
+  <meta name="description" content="Assignation en référé expertise construction ? Caroline Lubac, avocate au Barreau de Paris, accompagne artisans et entreprises du BTP. Échange initial de 30 min offert." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lubacavocat.fr/contentieux-btp" />
   <meta property="og:title" content="Avocat Référé Expertise BTP · Assignation en référé · Caroline Lubac Avocat Paris" />
@@ -706,6 +706,19 @@
       .accompagnement-card-price { font-size: 2rem; }
       .hero-reassurance-item { font-size: 0.78rem; }
     }
+  
+    /* Valeur du parcours référé : présentation claire et accessible */
+    .benefices-refere{background:var(--white);padding:5rem 8%;text-align:left}
+    .benefices-refere-inner{max-width:1120px;margin:0 auto}
+    .benefices-refere-kicker{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A45F4B;margin-bottom:1rem}
+    .benefices-refere h2{font-family:var(--font-serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:400;line-height:1.13;margin:0 0 2.1rem}
+    .benefices-refere h2 em{color:var(--terracotta)}
+    .benefices-refere-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+    .benefices-refere-grid article{background:var(--cream);padding:1.6rem;border-top:3px solid var(--terracotta);text-align:left}
+    .benefices-refere-grid h3{font-family:var(--font-serif);font-size:1.7rem;font-weight:500;line-height:1.16;margin-bottom:.65rem}
+    .benefices-refere-grid p{color:var(--mid-gray);font-size:.92rem;line-height:1.55}
+    .benefices-refere-link{display:inline-block;color:#965643;font-weight:700;margin-top:1.6rem;text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:850px){.benefices-refere{padding:4rem 6%}.benefices-refere-grid{grid-template-columns:1fr}}
   </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18161264737"></script>
@@ -730,6 +743,8 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="conseil.html">Conseil · 200 € TTC</a></li>
       <li><a href="#accompagnement">Accompagnement</a></li>
       <li><a href="#surmoi">Mon expertise terrain</a></li>
       <li><a href="#avis">Avis</a></li>
@@ -745,9 +760,9 @@
       <p class="hero-overline" style="animation-delay:0.45s;margin-top:-0.8rem;margin-bottom:1.5rem;">Intervention en France entière</p>
       <p class="hero-audience-tag">Artisans, entreprises générales et sous-traitants du BTP,</p>
       <h1 class="hero-title" id="heroTitle">Vous avez reçu une assignation en référé expertise. <em>L'audience approche.</em></h1>
-      <p class="hero-desc">Vous ne savez pas exactement ce qui vous attend, ni ce que cette procédure peut avoir comme conséquences pour votre entreprise.<br><br>Chaque étape compte dès le premier jour.</p>
+      <p class="hero-desc">Préparer votre audience, comprendre les enjeux de l’expertise et organiser votre défense&nbsp;: je vous accompagne pour aborder chaque étape avec une stratégie adaptée aux éléments de votre dossier.</p>
       <div class="hero-actions">
-        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Prendre rendez-vous</a>
+        <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Parler de mon assignation</a>
         <a href="#accompagnement" class="btn-outline"><span>Mon accompagnement</span></a>
       </div>
       <div class="hero-reassurance">
@@ -756,7 +771,7 @@
         <div class="hero-reassurance-item"><span class="hero-reassurance-check">✓</span><span>Intervention partout en France</span></div>
         <div class="hero-reassurance-item"><span class="hero-reassurance-check">✓</span><span>Accompagnement des entreprises du bâtiment à chaque étape de l'expertise judiciaire</span></div>
       </div>
-      <a href="tel:+33663561541" onclick="gtag('event', 'conversion', {'send_to': 'AW-18161264737/appel_telephone'});" class="hero-phone-btn">
+      <a href="tel:+33663561541" class="hero-phone-btn">
         <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3.5A1.5 1.5 0 013.5 2h1.926a1 1 0 01.97.757l.69 2.758a1 1 0 01-.29.985L5.3 7.495A11.04 11.04 0 0012.5 14.7l1.995-1.497a1 1 0 01.985-.29l2.758.69A1 1 0 0119 14.574V16.5A1.5 1.5 0 0117.5 18C8.44 18 1 10.56 1 1.5z" transform="translate(0.5,0.5)"/></svg>
         06 63 56 15 41
       </a>
@@ -770,10 +785,10 @@
         <input class="hero-mini-input" type="text" name="prenom" placeholder="Votre prénom" required />
         <input class="hero-mini-input" type="tel" name="telephone" placeholder="Votre téléphone" required />
         <input class="hero-mini-input" type="email" name="email" placeholder="Votre adresse e-mail" />
-        <input class="hero-mini-input" type="text" name="date_audience" placeholder="Date de votre audience (ex : 15/06/2026)" />
+        <input class="hero-mini-input" type="text" name="date_audience" placeholder="Date d’audience (JJ/MM/AAAA), si connue" />
         <input class="hero-mini-input" type="text" name="ville_tribunal" placeholder="Ville du tribunal" />
-        <button type="submit" onclick="gtag('event', 'conversion', {'send_to': 'AW-18161264737/soumission_formulaire'});" class="hero-mini-submit">Demander à être rappelé(e)</button>
-        <p class="hero-mini-notice">1er rendez-vous de 30 min offert · Réponse sous 24h</p>
+        <button type="submit" class="hero-mini-submit">Demander à être rappelé(e)</button>
+        <p class="hero-mini-notice">Premier échange de 30 minutes offert · Pour une urgence liée à l’audience, appelez directement le cabinet.</p>
       </form>
     </div>
     <div class="hero-image">
@@ -782,6 +797,19 @@
   </section>
 
   <!-- ── URGENCE ── -->
+  <section id="benefices-refere" class="benefices-refere" aria-labelledby="benefices-refere-title">
+    <div class="benefices-refere-inner">
+      <p class="benefices-refere-kicker">Votre défense, concrètement</p>
+      <h2 id="benefices-refere-title">Une assignation reçue. <em>Les prochaines décisions comptent.</em></h2>
+      <div class="benefices-refere-grid">
+        <article><h3>Comprendre la procédure</h3><p>Identifier les enjeux de l’assignation et les prochaines échéances de votre dossier.</p></article>
+        <article><h3>Préparer votre défense</h3><p>Examiner les pièces utiles, les éléments techniques à discuter et la position à soutenir.</p></article>
+        <article><h3>Vous accompagner pendant l’expertise</h3><p>Organiser votre représentation et les échanges avec l’expert dans les limites de la mission convenue.</p></article>
+      </div>
+      <a class="benefices-refere-link" href="#contact">Présenter ma situation au cabinet →</a>
+    </div>
+  </section>
+
   <div class="urgence-bloc">
     <p class="urgence-inner reveal">Une expertise judiciaire mal préparée peut engager la responsabilité de votre entreprise pendant plusieurs années. <strong>Dès réception de l'assignation en référé expertise, chaque décision compte.</strong></p>
   </div>
@@ -793,7 +821,7 @@
         <span class="section-line"></span>
         <span class="section-tag">Accompagnement</span>
         <h2 class="section-title">Vous avez reçu une assignation.<br><em>Voici comment je vous accompagne.</em></h2>
-        <p class="accompagnement-subtitle">Un seul forfait. Une prise en charge complète de votre dossier, de la première audience jusqu'au rapport final.</p>
+        <p class="accompagnement-subtitle">Un forfait dont les prestations incluses sont détaillées ci-dessous. Les diligences complémentaires éventuelles sont définies selon les besoins de votre dossier.</p>
       </div>
       <div class="accompagnement-grid">
         <div class="accompagnement-card reveal-left">
@@ -808,13 +836,13 @@
             <li>La rédaction de vos dires <span style="font-size:0.85em;color:var(--terracotta);">(1 dire inclus)</span></li>
           </ul>
           <p class="accompagnement-forfait-note">Accédits et dires supplémentaires définis selon la complexité de votre dossier, communiqués lors du premier échange.</p>
-          <p class="accompagnement-pas-surprise">Pas de surprise. Dès le premier échange, vous connaissez le coût exact de votre défense.</p>
+          <p class="accompagnement-pas-surprise">Le périmètre de la mission et ses honoraires sont précisés avant votre engagement, dans une convention d’honoraires.</p>
           <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:block;text-align:center;margin-top:1.8rem;">Prendre rendez-vous</a>
         </div>
         <div class="accompagnement-cta-block reveal-right">
           <p class="accompagnement-cta-eyebrow">Appel découverte 30 min</p>
           <h3 class="accompagnement-cta-title"><em>30 minutes</em> pour faire le point</h3>
-          <p class="accompagnement-cta-desc">On fait le point sur votre dossier. Je vous indique le montant du forfait adapté à votre situation.</p>
+          <p class="accompagnement-cta-desc">Un premier échange pour qualifier votre situation, identifier les échéances et envisager le périmètre de mon intervention. Les honoraires sont ensuite précisés avant tout engagement.</p>
           <a href="https://calendly.com/contact-lubacavocat/30min" target="_blank" rel="noopener noreferrer" class="accompagnement-cta-btn">Réserver mon créneau de 30 minutes</a>
         </div>
       </div>
@@ -868,7 +896,7 @@
           <li class="etape-item">
             <span class="etape-num">8</span>
             <div class="etape-content">
-              <p class="etape-title">Rapport final de l'expert fixant la cause et l'origine du désordre</p>
+              <p class="etape-title">Rapport final présentant les constatations et conclusions techniques de l’expert</p>
             </div>
           </li>
         </ol>
@@ -1066,7 +1094,7 @@
           </div>
           <div class="contact-detail">
             <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.23 1.02L7.91 9.22a11.05 11.05 0 005.87 5.87l2.22-1.21a1 1 0 011.02-.23l3.3 1.1A1 1 0 0121 15.72V18a2 2 0 01-2 2C9.61 20 0 10.39 0 1 0 3.61.9 2 2 2z" transform="scale(0.85) translate(1.5,1)"/></svg>
-            <div class="contact-detail-text"><strong>Téléphone</strong><a href="tel:+33663561541" onclick="gtag('event', 'conversion', {'send_to': 'AW-18161264737/appel_telephone'});">06 63 56 15 41</a></div>
+            <div class="contact-detail-text"><strong>Téléphone</strong><a href="tel:+33663561541">06 63 56 15 41</a></div>
           </div>
           <div class="contact-detail">
             <svg class="contact-detail-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="16" height="14" rx="1"/><line x1="2" y1="8" x2="18" y2="8"/><line x1="7" y1="3" x2="7" y2="8"/><line x1="13" y1="3" x2="13" y2="8"/></svg>
@@ -1096,8 +1124,8 @@
           </select>
         </div>
         <div class="form-field"><label for="message">Votre situation (en quelques mots)</label><textarea id="message" name="message" placeholder="Décrivez brièvement votre situation…"></textarea></div>
-        <div class="form-submit"><button type="submit" onclick="gtag('event', 'conversion', {'send_to': 'AW-18161264737/soumission_formulaire'});">Envoyer ma demande</button></div>
-        <p class="form-notice">Vos données sont strictement confidentielles et ne seront jamais transmises à des tiers.</p>
+        <div class="form-submit"><button type="submit">Envoyer ma demande</button></div>
+        <p class="form-notice">N’indiquez ici que les éléments nécessaires à une première prise de contact. Ne transmettez pas de pièces confidentielles par ce formulaire. Pour en savoir plus, consultez notre <a href="rgpd.html">politique de confidentialité</a>.</p>
       </form>
     </div>
   </section>
