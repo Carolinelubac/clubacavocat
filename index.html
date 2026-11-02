@@ -755,6 +755,23 @@
 .hero-actions{gap:0.85rem;flex-wrap:wrap}
 .hero-actions .btn-primary,.hero-actions .btn-outline{min-height:47px}
 @media(max-width:700px){.hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:.8rem}.hero-actions a{text-align:center}}
+
+/* TYPOGRAPHIE 2026-11 — grille commune desktop et mobile */
+:root{--font-sans:'Lato',Arial,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}
+body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7;text-align:left}
+.hero-title{font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.12}
+.section-title,.ia-inner .section-title{font-size:clamp(1.625rem,2.3vw,1.875rem);line-height:1.25}
+.specialite-card-title,.offre-step h3,.faq-question,.cta-bar-text strong{font-size:clamp(1.25rem,1.8vw,1.375rem);line-height:1.35}
+.hero-desc,.specialite-card-desc,.offre-step p,.apropos-text p,.contact-info p,.faq-answer-inner,.form-field input,.form-field select,.form-field textarea,.hero-form-mini input,.hero-form-mini select,.ia-text{font-size:1rem;font-weight:400;line-height:1.75}
+.hero-overline,.section-tag,.footer-company,.footer-copy,.stat-label,.avis-source,.google-badge-count,.hero-form-mini>p,.hero-form-mini .hfm-notice,.form-notice{font-size:clamp(.75rem,1.2vw,.875rem)}
+.footer-copy,.footer-tagline,.footer-legal a,.footer-company,.footer-address{color:rgba(255,255,255,.68)}
+.form-notice{color:rgba(255,255,255,.7)}
+@media(max-width:768px){
+ .hero-title{font-size:clamp(2.25rem,9vw,2.75rem)}
+ .section-title,.ia-inner .section-title{font-size:clamp(1.625rem,7vw,1.875rem)}
+ .specialite-card-title,.offre-step h3{font-size:1.25rem}
+ .hero-text,.apropos-text,.specialites-intro,.offre-inner{ text-align:left }
+}
 </style>
 
 </head>
