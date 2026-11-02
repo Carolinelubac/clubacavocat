@@ -39,7 +39,7 @@
     var panel = document.createElement("aside");
     panel.className = "lubac-cookie-panel";
     panel.setAttribute("aria-label", "Préférences de cookies");
-    panel.innerHTML = '<h2>Vos préférences de cookies</h2><p>Avec votre accord, nous utilisons des traceurs Google pour mesurer les visites et l’efficacité de nos publicités. Vous pouvez refuser sans perdre l’accès au site et revenir sur votre choix à tout moment.</p><div class="lubac-cookie-buttons"><button type="button" class="lubac-cookie-reject">Tout refuser</button><button type="button" class="lubac-cookie-accept">Tout accepter</button></div><p style="margin:12px 0 0;font-size:12px"><a href="rgpd.html">Politique de confidentialité</a></p>';
+    panel.innerHTML = '<h2>Vos préférences de cookies</h2><p>Avec votre accord, j’utilise des traceurs Google pour mesurer les visites et l’efficacité de mes publicités. Vous pouvez refuser sans perdre l’accès au site et revenir sur votre choix à tout moment.</p><div class="lubac-cookie-buttons"><button type="button" class="lubac-cookie-reject">Tout refuser</button><button type="button" class="lubac-cookie-accept">Tout accepter</button></div><p style="margin:12px 0 0;font-size:12px"><a href="rgpd.html">Politique de confidentialité</a></p>';
     panel.style.display = "none";
     document.body.appendChild(panel);
     function choice(c) {
