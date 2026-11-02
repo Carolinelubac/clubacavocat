@@ -713,7 +713,26 @@
     .benefices-refere-grid p{color:var(--mid-gray);font-size:.92rem;line-height:1.55}
     .benefices-refere-link{display:inline-block;color:#965643;font-weight:700;margin-top:1.6rem;text-decoration:underline;text-underline-offset:3px}
     @media(max-width:850px){.benefices-refere{padding:4rem 6%}.benefices-refere-grid{grid-template-columns:1fr}}
-  </style>
+  
+/* TYPOGRAPHIE 2026-11 — grille commune desktop et mobile */
+:root{--font-sans:'Lato',Arial,sans-serif;--font-serif:'Cormorant Garamond',Georgia,serif}
+body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7;text-align:left}
+.hero-title{font-size:clamp(2.25rem,4vw,3.5rem);line-height:1.18}
+.hero-audience-tag{font-size:clamp(1.5rem,2.5vw,1.875rem);line-height:1.3}
+.section-title,.benefices-refere h2,.etapes-section-title,.accompagnement-cta-title{font-size:clamp(1.625rem,2.3vw,1.875rem);line-height:1.25}
+.benefices-refere-grid h3,.etape-title,.faq-question,.accompagnement-card-title,.accompagnement-card .accompagnement-forfait{font-size:clamp(1.25rem,1.8vw,1.375rem);line-height:1.35}
+.hero-desc,.benefices-refere-grid p,.accompagnement-list li,.accompagnement-cta-desc,.accompagnement-forfait-note,.etape-desc,.surmoi-text p,.contact-info p,.faq-answer-inner,.form-field input,.form-field select,.form-field textarea,.hero-mini-input,.hero-mini-submit{font-size:1rem;font-weight:400;line-height:1.75}
+.hero-reassurance-item,.hero-mini-notice{font-size:.875rem;line-height:1.6}
+.hero-overline,.hero-mini-label,.section-tag,.accompagnement-card-tag,.accompagnement-cta-eyebrow,.etape-tag,.footer-company,.footer-copy,.avis-source,.google-badge-count,.form-notice,.benefices-refere-kicker{font-size:clamp(.75rem,1.2vw,.875rem)}
+.footer-copy,.footer-tagline,.footer-legal a,.footer-company,.footer-address{color:rgba(255,255,255,.68)}
+.form-notice{color:rgba(255,255,255,.7)}
+@media(max-width:768px){
+ .hero-title{font-size:clamp(2.25rem,9vw,2.75rem)}
+ .hero-audience-tag{font-size:clamp(1.5rem,6.5vw,1.875rem)}
+ .section-title,.benefices-refere h2,.etapes-section-title,.accompagnement-cta-title{font-size:clamp(1.625rem,7vw,1.875rem)}
+ .hero-text,.benefices-refere-grid article,.surmoi-text,.accompagnement-card,.etape-content{text-align:left}
+}
+</style>
 
 </head>
 <body>
