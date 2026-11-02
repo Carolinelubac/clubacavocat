@@ -42,6 +42,13 @@ h1,h2,h3,.value-grid strong,.hero-question{font-family:'Cormorant Garamond',Geor
  .section h2,.cta h2{font-size:clamp(1.625rem,7vw,1.875rem)}
  .hero-copy,.value-section,.cta,.card{text-align:left}
 }
+
+/* Harmonisation définitive : identique à l'accueil et au référé construction. */
+:root{--font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Lato',Arial,sans-serif}
+html,body{font-family:var(--font-sans)}
+.hero h1,.hero-question,.section h2,.cta h2,.card h3,.value-grid strong{font-family:var(--font-serif);font-weight:400}
+.btn,.eyebrow,.fine,.lead,.steps-info,.navlink,footer,.card p{font-family:var(--font-sans)}
+@media(max-width:690px){.hero h1{font-size:clamp(2.25rem,9vw,2.75rem)}}
 </style>
 </head>
 <body>
@@ -92,4 +99,5 @@ h1,h2,h3,.value-grid strong,.hero-question{font-family:'Cormorant Garamond',Geor
 </main>
 <footer><div class="wrap"><span>C. LUBAC AVOCAT, SELARL · SIRET 948 369 509 00013<br>11 boulevard de Sébastopol, 75001 Paris · Barreau de Paris</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="rgpd.html">Protection des données</a> · <a href="#" class="lubac-manage-cookies">Cookies</a> · <a href="/">Accueil</a></span></div></footer>
 <script defer src="cookies-consent.js"></script>
+<script defer src="appel-sortie.js"></script>
 </body></html>
