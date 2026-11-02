@@ -772,6 +772,14 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
  .specialite-card-title,.offre-step h3{font-size:1.25rem}
  .hero-text,.apropos-text,.specialites-intro,.offre-inner{ text-align:left }
 }
+
+    /* Deux axes d'intervention : séparation des paragraphes sur toutes les tailles d'écran. */
+    .hero-desc-axes p { margin: 0; }
+    .hero-desc-axes p + p { margin-top: 1.5rem; }
+    .intervention-axes p { margin: 0; }
+    .intervention-axes p + p { margin-top: 1.15rem; }
+    .intervention-axes p:last-child { margin-top: 1.5rem; }
+    .exit-popup p + p { margin-top: .9rem; }
 </style>
 
 </head>
@@ -813,7 +821,9 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
       </button>
       <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Avant de partir</span>
       <h3 id="exitPopupTitle">Une question juridique avant de partir&nbsp;?</h3>
-      <p>Pour vos contrats, vos CGV ou une procédure de référé expertise construction, appelez le cabinet afin de présenter votre demande.</p>
+      <p>Vous avez une question sur vos contrats, vos CGV ou une réponse obtenue avec l’IA&nbsp;?</p>
+      <p>Vous êtes assigné en référé expertise construction&nbsp;?</p>
+      <p>Appelez le cabinet afin de présenter votre demande.</p>
       <a href="tel:+33663561541" class="btn-primary" id="exitPopupCta">Appeler le cabinet</a>
       <button type="button" class="exit-popup-secondary" id="exitPopupDismiss">Non merci, pas maintenant</button>
     </div>
@@ -823,7 +833,10 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
     <div class="hero-text">
       <p class="hero-overline">Caroline Lubac · Avocate au Barreau de Paris</p>
       <h1 class="hero-title" id="heroTitle">Conseil &amp; <em>contentieux.</em></h1>
-      <p class="hero-desc">Vous avez obtenu une réponse juridique avec l’IA&nbsp;? Faites-la vérifier dans le cadre de l’offre « Mon avocat pour 200 € TTC ». Vous êtes assigné en référé construction&nbsp;? Préparons votre défense. Deux besoins distincts, deux parcours adaptés.</p>
+      <div class="hero-desc hero-desc-axes">
+        <p>Vous avez obtenu une réponse juridique avec l’IA&nbsp;? Faites-la vérifier dans le cadre de l’offre « Mon avocat pour 200 € TTC ».</p>
+        <p>Vous êtes assigné en référé construction&nbsp;? Préparons votre défense. Deux besoins distincts, deux parcours adaptés.</p>
+      </div>
       <div class="hero-actions">
         <a href="conseil.html" class="btn-primary">Mon avocat pour 200 € TTC</a>
         <a href="contentieux-btp.html" class="btn-outline"><span>Défense en référé construction</span></a>
@@ -905,7 +918,11 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
         <span class="section-line"></span>
         <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Deux pôles du cabinet</span>
         <h2 class="section-title">Votre besoin, <em>le bon accompagnement.</em></h2>
-        <p class="specialites-intro">Vous recherchez une vérification juridique d’un travail réalisé avec l’IA ou une défense à la suite d’une assignation en référé construction&nbsp;? Accédez directement au parcours correspondant.</p>
+        <div class="specialites-intro intervention-axes">
+          <p>Vous recherchez une vérification juridique d’un travail réalisé avec l’IA&nbsp;?</p>
+          <p>Vous recherchez une défense à la suite d’une assignation en référé construction&nbsp;?</p>
+          <p>Accédez directement au parcours correspondant.</p>
+        </div>
       </div>
       <div class="specialites-grid">
         <a href="conseil.html" class="specialite-card reveal delay-1">
@@ -1201,7 +1218,7 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
         <div class="footer-brand-text">
           <p class="footer-company">C. LUBAC AVOCAT, SELARL · SIRET 948 369 509 00013</p><p class="footer-address">11 boulevard de Sébastopol, 75001 Paris · Barreau de Paris</p>
           
-          <p class="footer-tagline">Caroline Lubac, avocate en contrats et contentieux de la construction</p>
+          <p class="footer-tagline">Caroline Lubac, avocate<br>Contrats · CGV · Vérification IA<br>Référé expertise construction</p>
           <p class="footer-copy">© 2026 C. LUBAC AVOCAT, SELARL</p>
         </div>
       </div>
