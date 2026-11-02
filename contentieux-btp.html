@@ -1354,7 +1354,8 @@
     var s = document.createElement('script');
     s.src = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY + '&callback=_googlePlacesCallback&loading=async&language=fr';
     s.async = true; s.defer = true;
-    document.head.appendChild(s);
+    window.addEventListener('lubac:consent-accepted', function () { document.head.appendChild(s); }, { once: true });
+    if (window.lubacAnalyticsConsent) document.head.appendChild(s);
   })();
   </script>
 <script defer src="cookies-consent.js"></script>
