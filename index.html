@@ -780,6 +780,13 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
     .intervention-axes p + p { margin-top: 1.15rem; }
     .intervention-axes p:last-child { margin-top: 1.5rem; }
     .exit-popup p + p { margin-top: .9rem; }
+
+    /* Accroches jumelles, espaces entre les deux axes et lisibilité téléphone. */
+    .hero-title-axes {font-size:clamp(1.9rem,3.6vw,3.35rem);line-height:1.14}
+    .hero-title-axes .title-line {display:block;overflow:hidden}
+    .hero-title-axes .title-line + .title-line {margin-top:.38em;padding-top:.32em;border-top:1px solid rgba(201,122,98,.32)}
+    .hero-title-axes em {white-space:normal}
+    @media(max-width:768px){.hero-title-axes{font-size:clamp(1.85rem,7vw,2.45rem)}}
 </style>
 
 </head>
@@ -832,14 +839,14 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
   <section id="accueil">
     <div class="hero-text">
       <p class="hero-overline">Caroline Lubac · Avocate au Barreau de Paris</p>
-      <h1 class="hero-title" id="heroTitle">Conseil &amp; <em>contentieux.</em></h1>
+      <h1 class="hero-title hero-title-axes" id="heroTitle"><span class="title-line">Mon avocat pour <em>200 €</em></span><span class="title-line">Mon avocat en <em>référé expertise</em></span></h1>
       <div class="hero-desc hero-desc-axes">
         <p>Vous avez obtenu une réponse juridique avec l’IA&nbsp;? Faites-la vérifier dans le cadre de l’offre « Mon avocat pour 200 € TTC ».</p>
         <p>Vous êtes assigné en référé construction&nbsp;? Préparons votre défense. Deux besoins distincts, deux parcours adaptés.</p>
       </div>
       <div class="hero-actions">
         <a href="conseil.html" class="btn-primary">Mon avocat pour 200 € TTC</a>
-        <a href="contentieux-btp.html" class="btn-outline"><span>Défense en référé construction</span></a>
+        <a href="contentieux-btp.html" class="btn-outline"><span>Mon avocat en référé expertise</span></a>
       </div>
       <div class="hero-direct">
         <a href="tel:+33663561541" class="btn-call">
@@ -931,7 +938,7 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
           <span class="specialite-card-link">Découvrir l'offre →</span>
         </a>
         <a href="contentieux-btp.html" class="specialite-card reveal delay-2">
-          <h3 class="specialite-card-title">Contentieux · Référé construction</h3>
+          <h3 class="specialite-card-title">Contentieux · Mon avocat en référé expertise</h3>
           <p class="specialite-card-desc">Vous avez reçu une assignation en référé expertise&nbsp;? Accompagnement des entreprises du bâtiment pour préparer leur défense et les étapes de la procédure.</p>
           <span class="specialite-card-link">Découvrir l'accompagnement →</span>
         </a>
@@ -1160,7 +1167,7 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
         <span class="section-tag"><img src="favicon.png" class="brand-mark" alt="" />Prenons contact</span>
         <h2 class="section-title">Prenons 15 minutes pour <em>faire le point</em></h2>
         <p>Vous avez une question sur vos contrats ou vous êtes assigné en référé construction&nbsp;? Choisissez votre parcours. Les modalités du premier échange dépendent de votre demande.</p>
-        <a href="conseil.html" class="btn-calendly">Conseil · Mon avocat pour 200 € TTC</a> <a href="contentieux-btp.html" class="btn-calendly">Référé construction · Défense</a>
+        <a href="conseil.html" class="btn-calendly">Conseil · Mon avocat pour 200 € TTC</a> <a href="contentieux-btp.html" class="btn-calendly">Mon avocat en référé expertise</a>
         <a href="https://calendly.com/contact-lubacavocat/15min" target="_blank" rel="noopener noreferrer" class="btn-calendly">Réserver un échange de 15 minutes</a>
         <div class="contact-details">
           <div class="contact-detail">
@@ -1253,13 +1260,15 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
   <script>
     /* ── HERO TITLE — MOT PAR MOT ── */
     const lines = [
-      ['Mon', 'avocat', 'pour', '<em>200€.</em>']
+      ['Mon', 'avocat', 'pour', '<em>200 €</em>'],
+      ['Mon', 'avocat', 'en', '<em>référé</em>', '<em>expertise</em>']
     ];
     const heroTitle = document.getElementById('heroTitle');
     heroTitle.textContent = '';
     let d = 0.45;
     lines.forEach(words => {
       const line = document.createElement('span');
+      line.className = 'title-line';
       line.style.cssText = 'display:block;overflow:hidden;';
       words.forEach(w => {
         const span = document.createElement('span');
