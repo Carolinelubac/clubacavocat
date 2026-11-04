@@ -21,31 +21,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Attorney",
-    "name": "Caroline Lubac",
-    "alternateName": "C. Lubac Avocat",
-    "image": "https://lubacavocat.fr/caroline-lubac-avocat.jpg",
-    "url": "https://lubacavocat.fr/",
-    "telephone": "+33663561541",
-    "email": "contact@clubacavocat.fr",
-    "priceRange": "200€ - 7000€",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "11 boulevard de Sébastopol",
-      "postalCode": "75001",
-      "addressLocality": "Paris",
-      "addressCountry": "FR"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": "https://lubacavocat.fr/#cabinet",
+      "name": "C. LUBAC AVOCAT",
+      "legalName": "C. LUBAC AVOCAT",
+      "description": "Cabinet d'avocate exerçant en SELARL, inscrit au Barreau de Paris. Vérification juridique de réponses et documents préparés avec l’IA ; défense des entreprises du BTP en référé expertise construction.",
+      "url": "https://lubacavocat.fr/",
+      "image": "https://lubacavocat.fr/caroline-lubac-bureau.jpg",
+      "telephone": "+33663561541",
+      "email": "contact@clubacavocat.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11 boulevard de Sébastopol",
+        "postalCode": "75001",
+        "addressLocality": "Paris",
+        "addressCountry": "FR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "employee": {
+        "@type": "Person",
+        "name": "Caroline Lubac",
+        "jobTitle": "Avocate",
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Barreau de Paris"
+        }
+      }
     },
-    "areaServed": "FR",
-    "description": "Maître Caroline Lubac, avocate au Barreau de Paris, accompagne les fondatrices de marques de produits (bijoux, accessoires, textile, déco, objets) sur leurs contrats, CGV et la protection de leurs créations.",
-    "memberOf": {
-      "@type": "Organization",
-      "name": "Barreau de Paris"
+    {
+      "@type": "WebSite",
+      "@id": "https://lubacavocat.fr/#site",
+      "name": "LUBAC AVOCAT",
+      "url": "https://lubacavocat.fr/",
+      "publisher": {
+        "@id": "https://lubacavocat.fr/#cabinet"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://lubacavocat.fr/#page",
+      "name": "Caroline Lubac Avocate – Contrats et Construction",
+      "url": "https://lubacavocat.fr/",
+      "isPartOf": {
+        "@id": "https://lubacavocat.fr/#site"
+      },
+      "about": {
+        "@id": "https://lubacavocat.fr/#cabinet"
+      }
     }
-  }
-  </script>
+  ]
+}
+</script>
   <style>
     :root {
       --terracotta: #C97A62;
@@ -1241,23 +1274,7 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
     </div>
   </footer>
 
-  <!-- FAQPage structured data masquée avec la section FAQ (contenu conservé pour réactivation ultérieure) :
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"Vous intervenez sur quels types de marques ?","acceptedAnswer":{"@type":"Answer","text":"Marques de produits physiques : bijoux, accessoires, textile, déco, objets. Mon positionnement est délibérément spécialisé : contrats, CGV et protection des créations pour les marques en croissance."}},
-      {"@type":"Question","name":"Je suis en début de développement, est-ce trop tôt ?","acceptedAnswer":{"@type":"Answer","text":"Si vous avez des revendeurs, un fabricant, un site e-commerce actif, et que vos contrats sont absents ou bancals — non, ce n'est pas trop tôt. C'est exactement le bon moment. Attendre le premier litige coûte toujours plus cher."}},
-      {"@type":"Question","name":"Comment se passe le premier échange ?","acceptedAnswer":{"@type":"Answer","text":"Un appel de 15 minutes, offert, sans engagement. L'objectif : comprendre votre situation, identifier vos besoins prioritaires, vérifier que l'accompagnement est adapté. Vous repartez avec une vision claire, que vous travailliez avec moi ou non."}},
-      {"@type":"Question","name":"Combien coûte un accompagnement ?","acceptedAnswer":{"@type":"Answer","text":"Mon avocat, c'est 200€, prix fixe : pas de facturation à l'heure, pas de mauvaise surprise."}},
-      {"@type":"Question","name":"Est-ce que vous rédigez mes contrats à ma place ?","acceptedAnswer":{"@type":"Answer","text":"Non — et c'est délibéré. Je co-construis avec vous. Vous comprenez ce que vous signez, pourquoi chaque clause est là, et comment vous en servir. À l'issue de l'accompagnement, vous avez des modèles prêts à l'emploi, des process automatisés et les réflexes pour piloter seule."}},
-      {"@type":"Question","name":"Intervenez-vous en dehors de Paris ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les accompagnements se font intégralement en visioconférence. Peu importe où vous êtes en France."}},
-      {"@type":"Question","name":"Est-ce que ces accompagnements sont faits pour ma marque ?","acceptedAnswer":{"@type":"Answer","text":"Ces accompagnements s'adressent aux fondatrices qui ont déjà une activité commerciale réelle : un e-commerce qui tourne, des revendeurs référencés, un fabricant avec qui vous travaillez régulièrement. Ce qui compte n'est pas votre chiffre d'affaires exact : c'est que vous ayez des relations commerciales en place qui créent de vrais enjeux juridiques. Si vous avez un doute, le premier appel est fait pour ça."}}
-    ]
-  }
-  </script>
-  -->
+  
 
   <script>
     /* ── HERO TITLE — MOT PAR MOT ── */
