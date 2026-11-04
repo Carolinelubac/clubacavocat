@@ -1241,7 +1241,28 @@ body{font-family:var(--font-sans);font-size:16px;font-weight:400;line-height:1.7
     </div>
   </section>
 
-  <footer>
+  <section class="geo-resources" aria-labelledby="geo-resources-heading">
+  <div class="geo-resources-inner">
+    <p class="geo-resources-eyebrow">Ressources pratiques</p>
+    <h2 id="geo-resources-heading">Les premières réponses à vos questions</h2>
+    <div class="geo-resources-grid">
+      <a href="reponse-ia-cgv-contrat-verification.html"><strong>CGV ou contrat rédigé avec une IA : que vérifier ?</strong><span>Les précautions avant d’utiliser une réponse juridique.</span></a>
+      <a href="assignation-refere-expertise-que-faire.html"><strong>Assignation en référé expertise : que faire ?</strong><span>Les premières démarches d’une entreprise du BTP.</span></a>
+    </div>
+  </div>
+</section>
+<style>
+.geo-resources{background:#F0E6DC;padding:3.6rem 6%;text-align:left}
+.geo-resources-inner{max-width:1110px;margin:auto}
+.geo-resources-eyebrow{font:700 12px/1.5 'Lato',sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#A65F49;margin-bottom:.8rem}
+.geo-resources h2{font:400 clamp(26px,3vw,34px)/1.2 'Cormorant Garamond',Georgia,serif;margin:0 0 1.35rem}
+.geo-resources-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.geo-resources-grid a{display:block;background:#FAF7F4;color:#2C2C2C;text-decoration:none;padding:1.3rem 1.4rem;border-left:3px solid #C97A62}
+.geo-resources-grid strong{display:block;font:500 23px/1.25 'Cormorant Garamond',Georgia,serif}
+.geo-resources-grid span{display:block;font:400 15px/1.6 'Lato',Arial,sans-serif;margin-top:.5rem;color:#625b56}
+@media(max-width:690px){.geo-resources{padding:2.8rem 6%}.geo-resources-grid{grid-template-columns:1fr}}
+</style>
+<footer>
     <div class="footer-inner">
       <nav class="footer-nav-block">
         <ul>
