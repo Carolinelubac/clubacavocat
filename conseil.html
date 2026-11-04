@@ -50,6 +50,45 @@ html,body{font-family:var(--font-sans)}
 .btn,.eyebrow,.fine,.lead,.steps-info,.navlink,footer,.card p{font-family:var(--font-sans)}
 @media(max-width:690px){.hero h1{font-size:clamp(2.25rem,9vw,2.75rem)}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://lubacavocat.fr/conseil.html#page",
+      "name": "Mon avocat pour 200 € – Vérification juridique IA",
+      "url": "https://lubacavocat.fr/conseil.html",
+      "isPartOf": {
+        "@id": "https://lubacavocat.fr/#site"
+      },
+      "about": {
+        "@id": "https://lubacavocat.fr/conseil.html#service"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://lubacavocat.fr/conseil.html#service",
+      "name": "Mon avocat pour 200 € TTC",
+      "serviceType": "Vérification juridique d'une réponse ou d'un document préparé avec une intelligence artificielle dans le périmètre de la mission convenue",
+      "provider": {
+        "@id": "https://lubacavocat.fr/#cabinet"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "France"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "200",
+        "priceCurrency": "EUR",
+        "url": "https://lubacavocat.fr/conseil.html",
+        "description": "Prestation juridique au prix de 200 € TTC dans le cadre de la mission définie avec le cabinet. Le rendez-vous de qualification de 15 minutes est offert et ne comporte pas de conseil juridique."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header><a href="/" aria-label="Retour à l'accueil de LUBAC AVOCAT"><img src="navbar-logo-transparent.png" alt="LUBAC AVOCAT"></a><a class="navlink" href="/">Accueil du cabinet ↗</a></header>
